@@ -1,0 +1,44 @@
+
+field creation
+{
+accounts: null
+columnSeqId: "00001" // required
+contacts: null
+dataType: "String" 
+deals: null
+defaultValue: null
+displayInFilter: "Y"
+displayInList: "Y"
+etype: "email" // required
+fieldId: 1023
+fieldTypeId: null // required
+isMultiple: "N"    
+isRequired: "Y"  
+isVisible: "Y"
+label: "Lead name" // required
+layoutId: "LEAD"
+leads: null
+mxlen: 250
+name: "Lead name" //required
+optionTypeId: null
+originalEntityName: "Party"
+originalFieldName: "leadName"
+partyId: "10000"
+secSequenceNum: 1 // required
+sectionId: "1000"
+sequenceNum: 1   // required
+sorting: "Y"
+}
+
+
+// section creation
+{
+columnSeqId: "00001"  //required
+fields: []             //requied
+layoutId: "LEAD"       
+name: "New Section1001" //required
+partyId: "10000"
+sectionId: 1001        // required     
+sectionName: "Lead information"  // required
+sequenceNum: 1   // required
+}

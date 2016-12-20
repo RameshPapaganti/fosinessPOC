@@ -1,0 +1,874 @@
+<div>
+    <div class="row">
+        <!--  <div class="col-xs-12 fos-bottom-margin">
+            <button data-toggle="tooltip" title="Add a new Lead" data-placement="left" class="btn fos-btn-default-crm fos-btn-add-field pull-right" id="btnAdd">Add</button>
+        </div> -->
+    </div>
+    <div class="well well-sm" style="overflow: hidden;">
+        <header class="col-xs-8 crm-well-header">New Lead</header>
+        <!-- <div class="crm-right-dropdown col-xs-4">
+			<div class="btn-group pull-right">
+			  <button type="button" class="btn crm-btn-dropdown"><i class="fa fa-bars"></i></button>
+			  <button type="button" class="btn crm-btn-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span class="caret"></span>
+			    <span class="sr-only">Toggle Dropdown</span>
+			  </button>
+			  <ul class="dropdown-menu crm-dropdown-nav">
+			    <li><a href="#">Reset seetings</a></li>
+			    <li><a href="#">Save preference for all Users</a></li>
+			    <li><a href="#">Sample Link 1</a></li>
+			    <li><a href="#">Sample Link 2</a></li>
+			    <li><a href="#">Sample Link 3</a></li>
+			    <li><a href="#">Sample Link 4</a></li>
+			    <li><a href="#">Sample Link 5</a></li>
+			  </ul>
+			</div>
+		</div> -->
+    </div>
+    <ul class="crm-sortable-section-wrapper" ui-tree='treeOptions' id="tree-root">
+        <!-- <form name='editForm' editable-form> -->
+        <div class="form-horizontal" role="form" ui-tree-nodes ng-model="section">
+            <li class="crm-sortable-section" ng-repeat="node in section " ui-tree-node style="border: 1px solid #bbb; padding: 5px; margin: 15px 0;">
+                <div class="crm-section-header">
+                    <span class="crm-sort-handle" ui-tree-handle><i class="fa fa-list fa-lg">[H]</i></span>
+                    <!-- <span class="crm-section-title">{{node.sectionName}}</span> -->
+                    <span class="crm-section-title">
+                    <a class="control-label col-sm-2"  editable-text="node.sectionName"  e-form="sectionNameForm" onbeforesave="updateLabel(node,$data)">{{ node.sectionName || 'empty' }}:</a>
+                   <!--  <span class="crm-section-action">
+						<a><i class="fa fa-pencil fa-lg editLabel"></i></a>
+						<a><i class="fa fa-times fa-lg deleteSection"></i></a>
+					</span> -->
+                    <button class="btn btn-default" ng-click="sectionNameForm.$show()" ng-hide="sectionNameForm.$visible">
+                        edit
+                    </button>
+                    </span>
+                </div>
+                <div ui-tree-nodes ng-model="node.fields" >
+                    <div ng-repeat="eachField in node.fields" ui-tree-node ng-switch on="eachField.etype">
+                        <div class="form-group" ng-switch-when="email">
+                            <div>
+                                <span class="crm-sort-handle" ui-tree-handle><i class="fa fa-list fa-lg">[H]</i></span>
+                                <a class="control-label col-sm-2" for="email" editable-text="eachField.name" e-form="fieldNameForm1"  onbeforesave="updateLabel(eachField,$data)">{{ eachField.name || 'empty' }}:</a>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                </div>
+                                <button class="btn btn-default" ng-click="fieldNameForm1.$show()" ng-hide="fieldNameForm1.$visible">
+                                    edit
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-switch-when="textField">
+                            <span class="crm-sort-handle" ui-tree-handle><i class="fa fa-list fa-lg">[H]</i></span>
+                            <a class="control-label col-sm-2" for="number" editable-text="eachField.name" e-form="fieldNameForm2"  onbeforesave="updateLabel(eachField,$data)">{{ eachField.label || 'empty' }}:</a>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="email" placeholder="Enter email">
+                            </div>
+                            <button class="btn btn-default" ng-click="fieldNameForm2.$show()" ng-hide="fieldNameForm2.$visible">
+                                edit
+                            </button>
+                        </div>
+                        <div class="form-group" ng-switch-when="selectField">
+                            <span class="crm-sort-handle" ui-tree-handle><i class="fa fa-list fa-lg">[H]</i></span>
+                            <a class="control-label col-sm-2" for="email" editable-text="eachField.name" onbeforesave="updateLabel(eachField,$data)" e-form="fieldNameForm3">{{ eachField.label || 'empty' }}:</a>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                            </div>
+                        </div>
+                        <div class="form-group" ng-switch-when="checkbox">
+                            <span class="crm-sort-handle" ui-tree-handle><i class="fa fa-list fa-lg">[H]</i></span>
+                            <span class="control-label col-sm-2" for="email" e-form="myForm" editable-text="eachField.name" onbeforesave="updateLabel(eachField,$data)" e-form="fieldNameForm4">{{ eachField.name || 'empty' }}:</span>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                            </div>
+                            <button ng-click="fieldNameForm4.$show()" ng-hide="fieldNameForm4.$visible">edit</button>
+                        </div>
+                        <!--  <div class="form-group"  ng-switch-when="textarea">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group"  ng-switch-when="textarea">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                    </div> -->
+                    </div>
+                    <div>
+                        <a href="" ng-click="addField(node, $index)">Add</a>
+                    </div>
+                    <div>
+                        <a href="" ng-click="addSection(node, $index)">Add Section</a>
+                    </div>
+                </div>
+            </li>
+        </div>
+        <!-- <div class="col-sm-6">
+            <div class="info">
+                {{info}}
+            </div>
+            <pre class="code">{{ section | json }}</pre>
+        </div> -->
+        <!-- </form> -->
+        <!-- <table class="crm_sortable_row fos-relative">
+					<tbody class="crm-form-table"  ng-repeat="eachField in node.fields" ui-tree-node>
+		      			<tr class="crm-sortable-row" style="display: none;" ui-tree-handle>
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label" contenteditable>Status  </label></td>
+		      				<td class="crm-form-table-field">
+		      					 <div class="fos-select">
+		      						<select class="form-control" name="encoding">
+		      							<option value="" disabled selected>None </option>
+		      							<option value="" >Period</option>
+		      						</select>
+		      					</div>
+
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr> -->
+        <!-- <tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Description  </label></td>
+		      				<td class="crm-form-table-field">
+		      					<textarea class="form-control fos-form-textarea" rows="3" name="description" maxlength='1024' ></textarea>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Currency</label></td>
+		      				<td class="crm-form-table-field">
+		      					<div class="fos-select">
+		      						<select class="form-control" name="encoding">
+		      							<option value="" disabled selected>None </option>
+		      							<option value="" >Period</option>
+		      						</select>
+		      					</div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label"> Opportunity</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Available to everyone</label></td>
+		      				<td class="crm-form-table-field">
+		      					<div class="fos-form-ui-checkbox">
+		                            <input type="checkbox" id="activeProduct" name="activeProduct" checked/>
+		                            <label for="activeProduct">&nbsp; </label>
+		                        </div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Responsible</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+		      			<!-- Add dynamic filed action --
+		      			<tr class="crm-action-hidden">
+		      				<td class="crm-form-table-label sr-only"></td>
+		      				<td class="crm-form-table-field">
+		      					<!-- <span><a class="fos-crm-action" data="popover"  data-popover-content="#addNewField" data-placement="top">Add field</a>
+		      						
+		      					</span> --
+		      					<div class="btn-group dropup">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Add field</button>
+								  <button type="button" class="btn crm-btn-dropdown dropdown-toggle crm-dynamic-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu crm-dropdown-nav">
+								    <li><a ng-click="alert('Sample')" href="#"><i class="fa fa-font"></i>&nbsp;Text field</a></li>
+								    <li><a href="#"><i class="fa fa-text-width"></i>&nbsp;Textarea</a></li>
+								    <li><a href="#"><i class="fa fa-dot-circle-o"></i>&nbsp;Radio button</a></li>
+								    <li><a href="#"><i class="fa fa-check-square-o"></i>&nbsp;Checkbox</a></li>
+								    <li><a href="#"><i class="fa fa-calendar"></i>&nbsp;Date field</a></li>
+								    <li><a href="#"><i class="fa fa-server"></i>&nbsp;Select</a></li>
+								  </ul>
+								</div>
+		      					<!-- <span><a class="fos-crm-action">Add section</a></span> --
+		      					<div class="btn-group">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Add section</button>
+								</div>
+		      					<!-- <span><a class="fos-crm-action">Show field</a></span> --
+		      					<div class="btn-group dropup">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Show field</button>
+								  <button type="button" class="btn crm-btn-dropdown dropdown-toggle crm-dynamic-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu crm-dropdown-nav">
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 1</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 2</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 3</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 4</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 5</a></li>
+								  </ul>
+								</div>
+		      				</td>
+		      				<td class="crm-form-table-action sr-only">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr> -->
+        <!-- </tbody>
+				</table> -->
+        <!-- <li class="crm-sortable-section">
+				<div class="crm-section-header">
+					<span class="crm-sort-handle"><i class="fa fa-list fa-lg"></i></span>
+					<span class="crm-section-title">Contact Information</span>
+					<span class="crm-section-action">
+						<a><i class="fa fa-pencil fa-lg editLabel"></i></a>
+						<a><i class="fa fa-times fa-lg deleteSection"></i></a>
+					</span>
+				</div>
+				<table class="crm_sortable_row fos-relative">
+					<tbody class="crm-form-table">
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">First Name</label></td>
+		      				<td class="crm-form-table-field">
+		      					 <input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Source</label></td>
+		      				<td class="crm-form-table-field">
+		      					<div class="fos-select">
+		      						<select class="form-control" name="encoding">
+		      							<option value="" disabled selected>None </option>
+		      							<option value="" >Period</option>
+		      						</select>
+		      					</div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Last Name</label></td>
+		      				<td class="crm-form-table-field">
+		      					 <input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Middle Name</label></td>
+		      				<td class="crm-form-table-field">
+		      					 <input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Date of birth</label></td>
+		      				<td class="crm-form-table-field">
+		      					<div class="input-group">
+							      <input type="text" class="form-control fos-form-field fos-no-boxshadow crm-date-picker" readonly>
+							      <span class="input-group-btn crm-calendar-field">
+							        <button class="btn btn-default crm-group-btn" type="button"><i class="fa fa-calendar"></i></button>
+							      </span>
+							    </div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Email</label></td>
+		      				<td class="crm-form-table-field">
+	      						<input type="hidden" name="count" value="1" />
+						        <div class="control-group" id="fields">
+						            <div class="controls" id="profs"> 
+
+					                    <div id="emailFieldDynamic">
+					                    	<div id="addEmailField" class="fos-top-margin">
+					                    		<div class="col-xs-7 fos-no-around-spacing">
+						                    		<input autocomplete="off" class="form-control fos-form-field" id="field1" name="prof1" type="text" data-items="8"/>
+						                    	</div>
+						                    	<div class="col-xs-4">
+						                    		<div class="fos-select">
+							      						<select class="form-control" name="encoding">
+							      							<option value="" selected>Work</option>
+							      							<option value="" >Home</option>
+							      							<option value="" >Other</option>
+							      						</select>
+							      					</div>
+						                    	</div>
+						                    	<div class="col-xs-1 crm-dynamic-action">
+						                    		<a><i class="fa fa-times"></i></a>
+						                    	</div>
+					                    	</div>
+					                    </div>
+					                    <div class="col-xs-12 fos-no-around-spacing">
+					                    	<a class="fos-top-margin crm-add-more-field-btn add-more-email" type="button">Add</a>
+					                    </div>
+
+						            <br>
+						            </div>
+						        </div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Email</label></td>
+		      				<td class="crm-form-table-field">
+	      						<input type="hidden" name="count" value="1" />
+						        <div class="control-group" id="fields">
+						            <div class="controls" id="profs"> 
+
+					                    <div id="phoneFieldDynamic">
+					                    	<div id="addPhoneField" class="fos-top-margin">
+					                    		<div class="col-xs-7 fos-no-around-spacing">
+						                    		<input autocomplete="off" class="form-control fos-form-field" id="field1" name="prof1" type="text" data-items="8"/>
+						                    	</div>
+						                    	<div class="col-xs-4">
+						                    		<div class="fos-select">
+							      						<select class="form-control" name="encoding">
+							      							<option value="" selected>Work Phone</option>
+							      							<option value="" >Mobile</option>
+							      							<option value="" >Fax</option>
+							      							<option value="" >Home</option>
+							      							<option value="" >Pager</option>
+							      							<option value="" >Other</option>
+							      						</select>
+							      					</div>
+						                    	</div>
+
+						                    	<div class="col-xs-1 crm-dynamic-action">
+						                    		<a><i class="fa fa-times"></i></a>
+						                    	</div>
+					                    	</div>
+					                    </div>
+					                    <div class="col-xs-12 fos-no-around-spacing">
+					                    	<a class="fos-top-margin crm-add-more-field-btn add-more-phone" type="button">Add</a>
+					                    </div>
+					                    
+						            </div>
+						        </div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Address</label></td>
+		      				<td class="crm-form-table-field">
+		      					<div class="form-horizontal fos-top-margin" role="form">
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="building">Street,building</label>
+									    <div class="col-sm-8">
+											<textarea class="form-control fos-form-textarea" id="building" rows="3" name="description" maxlength='1024' ></textarea>
+									    </div>
+									</div>
+
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="apartment">Suite/Apartment</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="apartment" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="city">City</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="city" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="region">Region</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="region" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="state">State/Province</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="state" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="zip">Zip</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="zip" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="company">Country</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="company" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+									<div class="form-group">
+									    <label class="control-label col-sm-4 crm-form-label" for="country">Country</label>
+									    <div class="col-sm-8">
+											 <input type="text" id="country" class="form-control fos-form-field" name="">
+									    </div>
+									</div>
+								</div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+		      			
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Site</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="hidden" name="count" value="1" />
+						        <div class="control-group" id="fields">
+						            <div class="controls" id="profs"> 
+
+					                    <div id="siteFieldDynamic">
+					                    	<div id="addSiteField" class="fos-top-margin">
+					                    		<div class="col-xs-7 fos-no-around-spacing">
+						                    		<input autocomplete="off" class="form-control fos-form-field" id="field1" name="prof1" type="text" data-items="8"/>
+						                    	</div>
+						                    	<div class="col-xs-4">
+						                    		<div class="fos-select">
+							      						<select class="form-control" name="encoding">
+							      							<option value="" selected>Corporate</option>
+							      							<option value="" >Personal</option>
+							      							<option value="" >Facebook</option>
+							      							<option value="" >Live Journal</option>
+							      							<option value="" >Twitter</option>
+							      							<option value="" >Other</option>
+							      						</select>
+							      					</div>
+						                    	</div>
+						                    	<div class="col-xs-1 crm-dynamic-action">
+						                    		<a><i class="fa fa-times"></i></a>
+						                    	</div>
+					                    	</div>
+					                    </div>
+					                    <div class="col-xs-12 fos-no-around-spacing">
+					                    	<a class="fos-top-margin crm-add-more-field-btn add-more-site" type="button">Add</a>
+					                    </div>
+					                    
+						            </div>
+						        </div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Messenger</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="hidden" name="count" value="1" />
+						        <div class="control-group" id="fields">
+						            <div class="controls" id="profs"> 
+
+					                    <div id="messengerFieldDynamic">
+					                    	<div id="addMessengerField" class="fos-top-margin">
+					                    		<div class="col-xs-7 fos-no-around-spacing">
+						                    		<input autocomplete="off" class="form-control fos-form-field" id="field1" name="prof1" type="text" data-items="8"/>
+						                    	</div>
+						                    	<div class="col-xs-4">
+						                    		<div class="fos-select">
+							      						<select class="form-control" name="encoding">
+							      							<option value="" selected>Skype</option>
+							      							<option value="" >ICQ</option>
+							      							<option value="" >MSN / Live</option>
+							      							<option value="" >Jabber</option>
+							      							<option value="" >Other</option>
+							      						</select>
+							      					</div>
+						                    	</div>
+						                    	<div class="col-xs-1 crm-dynamic-action">
+						                    		<a><i class="fa fa-times"></i></a>
+						                    	</div>
+					                    	</div>
+					                    </div>
+					                    <div class="col-xs-12 fos-no-around-spacing">
+					                    	<a class="fos-top-margin crm-add-more-field-btn add-more-messenger" type="button">Add</a>
+					                    </div>
+						            </div>
+						        </div>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Company</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Position</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Lead Name</label></td>
+		      				<td class="crm-form-table-field">
+		      					<input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Comment</label></td>
+		      				<td class="crm-form-table-field">
+		      					<textarea class="form-control fos-form-textarea" rows="8" name="comments" maxlength='1024' ></textarea>
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<!-- Add dynamic filed action --
+		      			<tr class="crm-action-hidden">
+		      				<td class="crm-form-table-label sr-only"></td>
+		      				<td class="crm-form-table-field">
+		      					<!-- <span><a class="fos-crm-action" data="popover"  data-popover-content="#addNewField" data-placement="top">Add field</a>
+		      						
+		      					</span> --
+		      					<div class="btn-group dropup">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Add field</button>
+								  <button type="button" class="btn crm-btn-dropdown dropdown-toggle crm-dynamic-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu crm-dropdown-nav">
+								    <li><a ng-click="alert('Sample')" href="#"><i class="fa fa-font"></i>&nbsp;Text field</a></li>
+								    <li><a href="#"><i class="fa fa-text-width"></i>&nbsp;Textarea</a></li>
+								    <li><a href="#"><i class="fa fa-dot-circle-o"></i>&nbsp;Radio button</a></li>
+								    <li><a href="#"><i class="fa fa-check-square-o"></i>&nbsp;Checkbox</a></li>
+								    <li><a href="#"><i class="fa fa-calendar"></i>&nbsp;Date field</a></li>
+								    <li><a href="#"><i class="fa fa-server"></i>&nbsp;Select</a></li>
+								  </ul>
+								</div>
+		      					<!-- <span><a class="fos-crm-action">Add section</a></span> --
+		      					<div class="btn-group">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Add section</button>
+								</div>
+		      					<!-- <span><a class="fos-crm-action">Show field</a></span> --
+		      					<div class="btn-group dropup">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Show field</button>
+								  <button type="button" class="btn crm-btn-dropdown dropdown-toggle crm-dynamic-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu crm-dropdown-nav">
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 1</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 2</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 3</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 4</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 5</a></li>
+								  </ul>
+								</div>
+		      				</td>
+		      				<td class="crm-form-table-action sr-only">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      		</tbody>
+			    </table>
+			</li>
+			<li class="crm-sortable-section">
+				<div class="crm-section-header">
+					<span class="crm-sort-handle"><i class="fa fa-list fa-lg"></i></span>
+					<span class="crm-section-title">More</span>
+					<span class="crm-section-action">
+						<a><i class="fa fa-pencil fa-lg editLabel"></i></a>
+						<a><i class="fa fa-times fa-lg deleteSection"></i></a>
+					</span>
+				</div>
+				<table class="crm_sortable_row fos-relative">
+					<tbody class="crm-form-table">
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label required-field">Ward Number</label></td>
+		      				<td class="crm-form-table-field">
+		      					 <input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Speed</label></td>
+		      				<td class="crm-form-table-field">
+		      					 <input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+		      			<tr class="crm-sortable-row">
+		      				<td class="crm-form-table-label"><span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">Total Quantity</label></td>
+		      				<td class="crm-form-table-field">
+		      					 <input type="text" class="form-control fos-form-field" name="">
+		      				</td>
+		      				<td class="crm-form-table-action">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+
+		      			<!-- Add dynamic filed action --
+		      			<tr class="crm-action-hidden">
+		      				<td class="crm-form-table-label sr-only"></td>
+		      				<td class="crm-form-table-field">
+		      					<!-- <span><a class="fos-crm-action" data="popover"  data-popover-content="#addNewField" data-placement="top">Add field</a>
+		      						
+		      					</span> --
+		      					<div class="btn-group dropup">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Add field</button>
+								  <button type="button" class="btn crm-btn-dropdown dropdown-toggle crm-dynamic-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu crm-dropdown-nav">
+								    <li><a ng-click="alert('Sample')" href="#"><i class="fa fa-font"></i>&nbsp;Text field</a></li>
+								    <li><a href="#"><i class="fa fa-text-width"></i>&nbsp;Textarea</a></li>
+								    <li><a href="#"><i class="fa fa-dot-circle-o"></i>&nbsp;Radio button</a></li>
+								    <li><a href="#"><i class="fa fa-check-square-o"></i>&nbsp;Checkbox</a></li>
+								    <li><a href="#"><i class="fa fa-calendar"></i>&nbsp;Date field</a></li>
+								    <li><a href="#"><i class="fa fa-server"></i>&nbsp;Select</a></li>
+								  </ul>
+								</div>
+		      					<!-- <span><a class="fos-crm-action">Add section</a></span> --
+		      					<div class="btn-group">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Add section</button>
+								</div>
+		      					<!-- <span><a class="fos-crm-action">Show field</a></span> --
+		      					<div class="btn-group dropup">
+								  <button type="button" class="btn crm-btn-dropdown crm-dynamic-links crm-quick-links">Show field</button>
+								  <button type="button" class="btn crm-btn-dropdown dropdown-toggle crm-dynamic-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu crm-dropdown-nav">
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 1</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 2</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 3</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 4</a></li>
+								    <li><a href="#"><i class="fa fa-eye"></i>&nbsp;Hidden field 5</a></li>
+								  </ul>
+								</div>
+		      				</td>
+		      				<td class="crm-form-table-action sr-only">
+		      					<span class="editField"><a><i class="fa fa-pencil"></i></a></span>
+		      					<span class="deleteField"><a><i class="fa fa-times"></i></a></span>
+		      				</td>
+		      			</tr>
+		      		</tbody>
+		      	</table>
+		    </li> -->
+</div>
+</ul>
+<!-- <div class="col-xs-12 col-xs-offset-4">
+    <button class="btn fos-btn fos-btn-2x">Save</button>
+    <button class="btn fos-btn fos-btn-2x">Save and add More</button>
+    <button class="btn fos-btn-default">Cancel</button>
+</div> -->
+</div>
+<!-- Add new fields popover Menu Items -->
+<div id="addNewField" class="hide">
+    <ul class="fos-popover-add-field">
+        <li>
+            <a>String</a>
+        </li>
+        <li>
+            <a>Number</a>
+        </li>
+        <li>
+            <a>Yes/ No</a>
+        </li>
+        <li>
+            <a>Date</a>
+        </li>
+    </ul>
+</div>
+<script>
+$(document).ready(function(e) {
+    $('a').click(function(e) {
+        e.preventDefault();
+    });
+
+    /* Calendar Container height*/
+    var container_height = $('.fos-dashboard-content-wrapper').height();
+    $('.fos-crm-wrapper').height(container_height - 100);
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+/* Settings popover*/
+$(function() {
+    $('[data="popover"]').popover({
+        container: 'body',
+        html: true,
+        content: function() {
+            return $($(this).data('popover-content')).removeClass('hide');
+        }
+    }).click(function(e) {
+        e.preventDefault();
+    });
+});
+
+/* Remove section*/
+$('.crm-sortable-section-wrapper').on('click', '.deleteSection', function() {
+    $(this).closest('li').remove();
+});
+
+/* Remove field*/
+$('.crm-sortable-row').on('click', '.deleteField', function() {
+    $(this).closest('tr').css('display', 'none');
+});
+
+/* Edit field*/
+$('.crm-sortable-row').on('click', '.editField', function() {
+    var currentElement = $(this).parent().siblings('td.crm-form-table-label').children('label.crm-form-label');
+    currentElement.replaceWith("<input type='text' class='crm-editable-field' value='" + currentElement.text() + "'>");
+    $('.crm-editable-field').focus();
+    $('.crm-editable-field').blur(function() {
+        var newLableValue = $(this).val();
+        $('.crm-editable-field').hide();
+        $(this).parent().append('<span class="crm-field-handler"><i class="fa fa-align-justify"></i></span><label class="crm-form-label">' + newLableValue + '</label>');
+    });
+});
+
+/* Edit section name*/
+$('.crm-sortable-section-wrapper').on('click', '.editLabel', function() {
+    var currentElement = $(this).parent().parent().parent().children('span.crm-section-title');
+    currentElement.replaceWith("<input type='text' class='crm-editable-section' value='" + currentElement.text() + "'>");
+    $('.crm-editable-section').focus();
+    $('.crm-editable-section').blur(function() {
+        var newLableValue = $(this).val();
+        $('.crm-editable-section').hide();
+        $(this).parent().append('<span class="crm-section-title">' + newLableValue + '</span>');
+    });
+});
+
+
+// Sortable rows
+/*$('.crm_sortable_row').sortable({
+	  containerSelector: 'table',
+	  itemPath: '> tbody',
+	  itemSelector: 'tr.crm-sortable-row',
+	  handle: 'span.crm-field-handler',
+	  placeholder: '<tr class="row-placeholder"/>'
+	});*/
+/*Sortable sections*/
+/*var oldContainer;
+	$("ul.crm-sortable-section-wrapper").sortable({
+	  group: 'nested',
+	  pullPlaceholder: true,
+	  distance: 10,
+	  handle: 'span.crm-sort-handle',
+	  onDrop: function  ($item, container, _super) {
+	    var $clonedItem = $('<li/>').css({height: 0});
+	    $item.before($clonedItem);
+	    $clonedItem.animate({'height': $item.height()});
+
+	    $item.animate($clonedItem.position(), function  () {
+	      $clonedItem.detach();
+	      _super($item, container);
+	    });
+	  },
+	  afterMove: function (placeholder, container) {
+	    if(oldContainer != container){
+	      if(oldContainer)
+	        oldContainer.el.removeClass("active");
+	      container.el.addClass("active");
+
+	      oldContainer = container;
+	    }
+	  },*/
+// set $item relative to cursor position
+/*onDragStart: function ($item, container, _super) {
+	    var offset = $item.offset(),
+	        pointer = container.rootGroup.pointer;
+
+	    adjustment = {
+	      left: pointer.left - offset.left,
+	      top: pointer.top - offset.top
+	    };
+
+	    _super($item, container);
+	  },
+	  
+	  onDrag: function ($item, position) {
+	    $item.css({
+	      left: position.left - adjustment.left,
+	      top: position.top - adjustment.top
+	    });
+	  }
+	});*/
+</script>

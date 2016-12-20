@@ -1,0 +1,1810 @@
+/*custom style
+	Author			: MIVIM IT Solutions Pvt. Ltd.
+	Date Created	: 19-10-2015 12:40 PM
+	Project			: Foosiness 
+===================================================================================
+*/
+
+// Importing required configuration files
+
+	@import (reference) "mivim-theme-config.less";
+
+//=================================================================================
+.fos-crm-wrapper{
+	width: 100%;
+	min-height: 100px;
+	overflow-y:auto;
+	overflow-x: hidden;
+	padding: 15px 5px;
+	position: relative;
+}
+.fos-crm-wrapper .tab-pane{
+	padding: 15px;
+}
+.fos-crm-wrapper .nav-tabs li.active a{
+	color: @fos-theme-color;
+}
+.fos-crm-form-wrapper{
+	margin: 10px 0;
+}
+.fos-crm-wrapper .nav-tabs li a{
+	color: lighten(@fos-base-font-color, 70%);
+}
+.fos-crm-tab-header{
+	color: lighten(@fos-base-font-color, 100%);
+	padding: 10px 15px;
+	margin-bottom: 5px;
+	font-weight: 100;
+	font-size: @fos-basefont-size + 0.3em;
+	text-shadow: 2px 2px 3px lighten(@fos-base-font-color, 40%);
+	background-color: lighten(@fos-shadow-border, 75%);
+}
+.fos-crm-tab-h3{
+	color: lighten(@fos-base-font-color, 40%);
+	padding: 10px 5px;
+	font-weight: 600;
+	font-size: @fos-basefont-size !important;
+	text-shadow: 2px 2px 3px lighten(@fos-base-font-color, 100%);
+}
+.fos-crm-action-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+}
+.fos-crm-action-wrapper a{
+	color: lighten(@fos-base-font-color, 40%);
+	padding: 0 5px 0 0;
+}
+.fos-crm-action-wrapper a:hover{
+	color: @fos-theme-color;
+}
+.fos-crm-action-wrapper a.fos-calendar-links{
+	color: lighten(@fos-base-font-color, 100%);
+	padding: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background: lighten(@fos-shadow-border, 80%);
+}
+.fos-crm-action-wrapper a.fos-calendar-links:hover{
+	background: @fos-theme-color;
+}
+
+.fos-crm-menubar{
+	background-color: lighten(@fos-theme-color, 50%);
+	padding: 0 5px 10px 5px;
+}
+
+/*Seetings options*/
+.fos-crm-list-items{
+	list-style: none;
+	padding: 0;
+}
+.fos-crm-list-items a{
+	color: lighten(@fos-base-font-color, 50%);
+}
+.fos-crm-list-items a:hover{
+	color: @fos-theme-color;
+}
+.fos-crm-list-items a:hover li:before{
+	padding-left: 50px;
+}
+.fos-crm-list-items li{
+	padding: 10px;
+	margin: 5px 0;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-crm-list-items li:before{
+	font-family: FontAwesome;
+  	content: '\f101';
+  	font-size: @fos-basefont-size + 0.5em;
+  	padding: 0 10px;
+}
+
+.fos-crm-selection-list{
+	list-style: none;
+	padding: 0;
+}
+.fos-crm-selection-list a{
+	color: lighten(@fos-base-font-color, 50%);
+
+}
+.fos-crm-selection-list li{
+	padding: 10px;
+	margin: 5px 0;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+}
+.fos-crm-selection-list a.active li, .fos-crm-selection-list a:hover li{
+	border: 1px solid @fos-theme-color;
+	background-color: @fos-theme-color;
+	color: lighten(@fos-base-font-color, 100%);
+}
+.fos-crm-selection-list a.active li:after, .fos-crm-selection-list a:hover li:after{
+	font-family: FontAwesome;
+  	content: '\f04b';
+  	font-size: @fos-basefont-size + 2em;
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	right: -40px;
+	top: -7px;
+	color: @fos-theme-color;
+
+}
+.fos-crm-fields-wrapper{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	margin-left: 25px;
+	padding: 15px 10px 0 0;
+}
+.fos-crm-field-action{
+	padding: 5px 0;
+}
+.fos-crm-field-action a{
+	color: lighten(@fos-base-font-color, 60%);
+	float: right;
+	padding-left: 5px;
+}
+.fos-crm-dynamic-field{
+	min-height: 50px;
+}
+.fos-crm-dynamic-field-short{
+	color: lighten(@fos-base-font-color, 60%);
+	padding: 10px 0;
+}
+.fos-crm-dynamic-field-short a{
+	line-height: 1;
+	text-align: center;
+}
+.fos-delete-field{
+	position: absolute;
+	top: 5px;
+	color: lighten(@fos-base-font-color, 50%);
+	right: -5px;
+}
+.crm-table-col-width-1x{
+	width: 25px;
+}
+.crm-table-col-width-2x{
+	width: 65px;
+}
+.fos-remove-field{
+	position: absolute;
+	top: 5px;
+	color: lighten(@fos-base-font-color, 50%);
+	right: -100px;
+}
+.crm-list-table-container table tbody{
+	overflow: auto;
+}
+.crm-list-table-container table thead tr th{
+	font-size: @fos-basefont-size - 0.1em;
+	vertical-align: top;
+}
+.crm-list-table-container table thead{
+	margin-top: 10px;
+	background: lighten(@fos-shadow-border, 90%);
+}
+.fos-crm-popover-link{
+	color: lighten(@fos-base-font-color, 60%);
+	margin: 0;
+	padding: 0;
+	font-size: @fos-basefont-size + 0.4em;
+}
+.fos-crm-table-footer{
+	background: lighten(@fos-shadow-border, 90%);
+	padding: 10px;
+	overflow: hidden;
+}
+
+.fos-popover-items-calendar .sub-menu {
+    left: 156px;
+    position: absolute;
+    top: 40px;
+    display:none;
+    margin-top: -1px;
+	border-top-left-radius:0;
+	border-bottom-left-radius:0;
+	box-shadow:none;
+	overflow: hidden;
+}
+
+.fos-crm-tab-sub-header{
+	background-color: lighten(@fos-shadow-border, 80%);
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	font-size: @fos-basefont-size + 0.3em;
+	color: lighten(@fos-base-font-color, 40%);
+	text-shadow: 1px 1px 3px lighten(@fos-shadow-border, 100%);
+}
+.crm-form-setting-link{
+	padding: 0;
+	color: lighten(@fos-base-font-color, 60%);
+}
+
+
+.crm-context-menu li{
+	width: 100%;
+	padding: 2px 0;
+}
+.crm-context-menu li a span{
+	padding-right: 5px;
+}
+.crm-context-menu li a:hover{
+	background-color: @fos-theme-color;
+	color: lighten(@fos-base-font-color, 100%);
+	clear: both;
+}
+.fos-crm-filed-placeholder{
+	padding: 5px 0 0 0;
+}
+.fos-crm-notifications{
+	padding: 15px;
+	line-height: 1.5;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	color: lighten(@fos-base-font-color, 50%);
+	font-size: @fos-basefont-size _ 0.1em;
+}
+.fos-crm-statics-notification{
+	padding: 15px;
+	line-height: 1.5;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	color: lighten(@fos-base-font-color, 50%);
+	font-size: @fos-basefont-size _ 0.1em;
+	margin-bottom: 15px;
+	width: 50%;
+}
+.fos-crm-statics-notification ul{
+	padding: 0 0 0 50px;
+}
+.fos-crm-statics-notification ul li{
+	padding-bottom: 2px;
+}
+.fos-crm-statics-notification ul li.nav-divider{
+	list-style: none;
+}
+.fos-crm-file-input{
+	margin: 15px 0;
+}
+.fos-crm-conditional-opt{
+	display: none;
+}
+.fos-crm-times{
+	width: 10px;
+	color: lighten(@fos-base-font-color, 50%);
+	font-size: @fos-basefont-size + 0.5em;
+}
+.fos-crm-trigger-links{
+	color: lighten(@fos-base-font-color, 50%) !important;
+	font-size: @fos-basefont-size;
+	margin-top: 5px;
+}
+.fos-crm-trigger-links:hover{
+	color: @fos-theme-color !important;
+}
+.itemDelete{
+	line-height: 3;
+}
+
+.fos-crm-popover-wrapper{
+	width: 300px;
+	height: 250px;
+	padding: 10px 15px 0 0;
+}
+
+.crm-nav-pills, .crm-nav-pills:active, .crm-nav-pills:hover {
+	min-width: 40px !important;
+	height: 38px !important;
+	font-size: @fos-basefont-size - 0.1em !important;
+	padding: 2px;
+}
+.crm-popover-list ul{
+	width: 100%;
+	height: 100%;
+	padding: 5px 0 0 0;
+	list-style: none;
+}
+.crm-popover-list ul li{
+	width: 50%;
+	height: 30px;
+	padding: 3px;
+	list-style: none;
+	float: left;
+}
+.crm-popover-list ul li a{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	color: lighten(@fos-base-font-color, 50%);
+	padding: 5px;
+	width: 100%;
+	font-size: @fos-basefont-size - 0.2em;
+}
+.crm-popover-list ul li a:hover{
+	color: lighten(@fos-base-font-color, 20%);
+}
+.fos-crm-custom-h1{
+	color: lighten(@fos-base-font-color, 40%);
+	font-size: @fos-basefont-size + 0.2em;
+	font-weight: 600;
+	padding-left: 15px;
+}
+.fos-crm-custom-h2{
+	color: lighten(@fos-base-font-color, 65%);
+	font-size: @fos-basefont-size + 0.1em;
+	padding-left: 15px;
+}
+.fos-crm-custom-fields{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	padding: 5px;
+	margin-bottom: 30px;	
+}
+.fos-crm-list-heading{
+	color: lighten(@fos-base-font-color, 45%);
+	font-weight: 600;
+	background-color: lighten(@fos-theme-color, 48%);
+	padding: 10px;
+}
+.fos-crm-access-list{
+	padding: 0;
+	margin: 0;
+}
+.crm-user-role{
+	line-height: 2.7;
+	padding: 5px 0;
+}
+.fos-crm-access-list ul{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	list-style: none;
+	margin: 0 0 20px 0;
+	padding: 0 15px 5px 15px;
+}
+.fos-crm-access-list ul li{
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	overflow: hidden;
+	padding: 5px 0;
+}
+.fos-crm-access-list ul li:last-child{
+	border-bottom: none;
+}
+.table-bordered thead{
+	background-color: lighten(@fos-theme-color, 48%);
+	text-align: center !important;
+}
+.fos-crm-permission{
+	text-align: center;
+	border-bottom: 1px dashed lighten(@fos-shadow-border, 60%);
+}
+.fos-crm-permission:hover{
+	color: @fos-theme-color;
+	cursor: pointer;
+	border-color: @fos-theme-color;
+}
+.crm-table-footer{
+	padding: 10px;
+}
+
+/*  Dynamic section*/
+.crm-sortable-section{
+	min-height: 100px;
+	border: 1px solid lighten(@fos-theme-color, 47%);
+	margin-bottom: 5px;
+	padding: 0 0 15px 0;
+}
+.crm-action-hidden{
+	opacity: 0;
+	font-size: @fos-basefont-size - 0.2em !important;
+	border: none;
+}
+.crm-sortable-section:hover .crm-action-hidden{
+	opacity: 1;
+}
+.crm-section-header{
+	width: 100%;
+	background-color: lighten(@fos-theme-color, 47%);
+	padding: 10px;
+}
+.crm-sort-handle{
+	width: 35px;
+	height: 35px;
+	color: lighten(@fos-theme-color, 25%);
+	padding: 0 15px 0 0;
+	cursor: move;
+}
+.crm-section-title{
+	font-size: @fos-basefont-size + 0.2em;
+	color: lighten(@fos-base-font-color, 45%);
+}
+.crm-section-action{
+	height: 35px;
+	float: right;
+}
+.crm-section-action a{
+	padding-left: 5px;
+	width: 30px;
+	height: 30px;
+	color: lighten(@fos-base-font-color, 60%);
+}
+.crm-section-action a:hover{
+	color: lighten(@fos-theme-color, 15%);
+}
+
+
+
+
+/*	============================================================================
+	CRM Calender plugin Styling
+*/
+
+.fc {
+	direction: ltr;
+	text-align: left;
+}
+
+.fc-rtl {
+	text-align: right;
+}
+
+/* Colors
+--------------------------------------------------------------------------------------------------*/
+
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-popover {
+	border-color: #ddd;
+}
+
+.fc-unthemed .fc-popover {
+	background-color: #fff;
+}
+
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-popover .fc-header {
+	background: #eee;
+}
+
+.fc-unthemed .fc-popover .fc-header .fc-close {
+	color: #666;
+}
+
+.fc-unthemed .fc-today {
+	background: lighten(@fos-theme-color, 40%);
+	color: @fos-theme-color;
+	font-weight: 600;
+
+}
+
+.fc-highlight { /* when user is selecting cells */
+	background: #bce8f1;
+	opacity: .3;
+	filter: alpha(opacity=30); /* for IE */
+}
+
+.fc-bgevent { /* default look for background events */
+	background: rgb(143, 223, 130);
+	opacity: .3;
+	filter: alpha(opacity=30); /* for IE */
+}
+
+.fc-nonbusiness { /* default look for non-business-hours areas */
+	/* will inherit .fc-bgevent's styles */
+	background: #d7d7d7;
+}
+
+
+/* Icons (inline elements with styled text that mock arrow icons)
+--------------------------------------------------------------------------------------------------*/
+
+.fc-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	line-height: 1em;
+	font-size: 1em;
+	text-align: center;
+	overflow: hidden;
+	font-family: "Courier New", Courier, monospace;
+
+	/* don't allow browser text-selection */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	}
+
+/*
+Acceptable font-family overrides for individual icons:
+	"Arial", sans-serif
+	"Times New Roman", serif
+
+NOTE: use percentage font sizes or else old IE chokes
+*/
+
+.fc-icon:after {
+	position: relative;
+	margin: 0 -1em; /* ensures character will be centered, regardless of width */
+}
+
+.fc-icon-left-single-arrow:after {
+	content: "\02039";
+	font-weight: bold;
+	font-size: 200%;
+	top: -7%;
+	left: 3%;
+}
+
+.fc-icon-right-single-arrow:after {
+	content: "\0203A";
+	font-weight: bold;
+	font-size: 200%;
+	top: -7%;
+	left: -3%;
+}
+
+.fc-icon-left-double-arrow:after {
+	content: "\000AB";
+	font-size: 160%;
+	top: -7%;
+}
+
+.fc-icon-right-double-arrow:after {
+	content: "\000BB";
+	font-size: 160%;
+	top: -7%;
+}
+
+.fc-icon-left-triangle:after {
+	content: "\25C4";
+	font-size: 125%;
+	top: 3%;
+	left: -2%;
+}
+
+.fc-icon-right-triangle:after {
+	content: "\25BA";
+	font-size: 125%;
+	top: 3%;
+	left: 2%;
+}
+
+.fc-icon-down-triangle:after {
+	content: "\25BC";
+	font-size: 125%;
+	top: 2%;
+}
+
+.fc-icon-x:after {
+	content: "\000D7";
+	font-size: 300%;
+	color: @fos-theme-color;
+	top: 6%;
+}
+
+
+/* Buttons (styled <button> tags, normalized to work cross-browser)
+--------------------------------------------------------------------------------------------------*/
+
+.fc button {
+	/* force height to include the border and padding */
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+	/* dimensions */
+	margin: 0;
+	height: 2.1em;
+	padding: 0 .6em;
+
+	/* text & cursor */
+	font-size: 1em; /* normalize */
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+/* Firefox has an annoying inner border */
+.fc button::-moz-focus-inner { margin: 0; padding: 0; }
+	
+.fc-state-default { /* non-theme */
+	border: 1px solid;
+}
+
+.fc-state-default.fc-corner-left { /* non-theme */
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.fc-state-default.fc-corner-right { /* non-theme */
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+/* icons in buttons */
+
+.fc button .fc-icon { /* non-theme */
+	position: relative;
+	top: -0.05em; /* seems to be a good adjustment across browsers */
+	margin: 0 .2em;
+	vertical-align: middle;
+}
+	
+/*
+  button states
+  borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
+*/
+
+.fc-state-default {
+	background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: #333;
+	//text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-state-hover,
+.fc-state-down,
+.fc-state-active,
+.fc-state-disabled {
+	color: #333333;
+	background-color: darken(@fos-theme-color, 15%);
+}
+
+.fc-state-hover {
+	color: #333333;
+	text-decoration: none;
+	background-position: 0 -15px;
+	-webkit-transition: background-position 0.1s linear;
+	   -moz-transition: background-position 0.1s linear;
+	     -o-transition: background-position 0.1s linear;
+	        transition: background-position 0.1s linear;
+}
+
+.fc-state-down,
+.fc-state-active {
+	background-color: #cccccc;
+	background-image: none;
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-state-disabled {
+	cursor: default;
+	background-image: none;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+	box-shadow: none;
+}
+
+
+/* Buttons Groups
+--------------------------------------------------------------------------------------------------*/
+
+.fc-button-group {
+	display: inline-block;
+}
+
+/*
+every button that is not first in a button group should scootch over one pixel and cover the
+previous button's border...
+*/
+
+.fc .fc-button-group > * { /* extra precedence b/c buttons have margin set to zero */
+	float: left;
+	margin: 0 0 0 -1px;
+}
+.fc .fc-button-group > :first-child { /* same */
+	margin-left: 0;
+}
+/* Popover
+--------------------------------------------------------------------------------------------------*/
+.fc-popover {
+	position: absolute;
+	box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+.fc-popover .fc-header { /* TODO: be more consistent with fc-head/fc-body */
+	padding: 2px 4px;
+}
+.fc-popover .fc-header .fc-title {
+	margin: 0 2px;
+}
+.fc-popover .fc-header .fc-close {
+	cursor: pointer;
+}
+.fc-ltr .fc-popover .fc-header .fc-title,
+.fc-rtl .fc-popover .fc-header .fc-close {
+	float: left;
+}
+.fc-rtl .fc-popover .fc-header .fc-title,
+.fc-ltr .fc-popover .fc-header .fc-close {
+	float: right;
+}
+/* unthemed */
+.fc-unthemed .fc-popover {
+	border-width: 1px;
+	border-style: solid;
+}
+.fc-unthemed .fc-popover .fc-header .fc-close {
+	font-size: .9em;
+	margin-top: 2px;
+}
+/* jqui themed */
+.fc-popover > .ui-widget-header + .ui-widget-content {
+	border-top: 0; /* where they meet, let the header have the border */
+}
+/* Misc Reusable Components
+--------------------------------------------------------------------------------------------------*/
+.fc-divider {
+	border-style: solid;
+	border-width: 1px;
+}
+hr.fc-divider {
+	height: 0;
+	margin: 0;
+	padding: 0 0 2px; /* height is unreliable across browsers, so use padding */
+	border-width: 1px 0;
+}
+.fc-clear {
+	clear: both;
+}
+.fc-bg,
+.fc-bgevent-skeleton,
+.fc-highlight-skeleton,
+.fc-helper-skeleton {
+	/* these element should always cling to top-left/right corners */
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.fc-bg {
+	bottom: 0; /* strech bg to bottom edge */
+}
+.fc-bg table {
+	height: 90%; /* strech bg to bottom edge */
+}
+/* Tables
+--------------------------------------------------------------------------------------------------*/
+.fc table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 1em; /* normalize cross-browser */
+}
+.fc th {
+	text-align: center;
+}
+.fc th,
+.fc td {
+	border-style: solid;
+	border-width: 1px;
+	padding: 0;
+	vertical-align: top;
+}
+.fc td.fc-today {
+	border-style: double; /* overcome neighboring borders */
+}
+/* Fake Table Rows
+--------------------------------------------------------------------------------------------------*/
+.fc .fc-row { /* extra precedence to overcome themes w/ .ui-widget-content forcing a 1px border */
+	/* no visible border by default. but make available if need be (scrollbar width compensation) */
+	border-style: solid;
+	border-width: 0;
+}
+.fc-row table {
+	/* don't put left/right border on anything within a fake row.
+	   the outer tbody will worry about this */
+	border-left: 0 hidden transparent;
+	border-right: 0 hidden transparent;
+	/* no bottom borders on rows */
+	border-bottom: 0 hidden transparent; 
+}
+.fc-row:first-child table {
+	border-top: 0 hidden transparent; /* no top border on first row */
+}
+/* Day Row (used within the header and the DayGrid)
+--------------------------------------------------------------------------------------------------*/
+.fc-row {
+	position: relative;
+}
+.fc-row .fc-bg {
+	z-index: 1;
+}
+/* highlighting cells & background event skeleton */
+.fc-row .fc-bgevent-skeleton,
+.fc-row .fc-highlight-skeleton {
+	bottom: 0; /* stretch skeleton to bottom of row */
+}
+.fc-row .fc-bgevent-skeleton table,
+.fc-row .fc-highlight-skeleton table {
+	height: 100%; /* stretch skeleton to bottom of row */
+}
+.fc-row .fc-highlight-skeleton td,
+.fc-row .fc-bgevent-skeleton td {
+	border-color: transparent;
+}
+.fc-row .fc-bgevent-skeleton {
+	z-index: 2;
+}
+.fc-row .fc-highlight-skeleton {
+	z-index: 3;
+}
+/*
+row content (which contains day/week numbers and events) as well as "helper" (which contains
+temporary rendered events).
+*/
+.fc-row .fc-content-skeleton {
+	position: relative;
+	z-index: 4;
+	padding-bottom: 2px; /* matches the space above the events */
+}
+.fc-row .fc-helper-skeleton {
+	z-index: 5;
+}
+.fc-row .fc-content-skeleton td,
+.fc-row .fc-helper-skeleton td {
+	/* see-through to the background below */
+	background: none; /* in case <td>s are globally styled */
+	border-color: transparent;
+	/* don't put a border between events and/or the day number */
+	border-bottom: 0;
+}
+.fc-row .fc-content-skeleton tbody td, /* cells with events inside (so NOT the day number cell) */
+.fc-row .fc-helper-skeleton tbody td {
+	/* don't put a border between event cells */
+	border-top: 0;
+}
+/* Scrolling Container
+--------------------------------------------------------------------------------------------------*/
+.fc-scroller { /* this class goes on elements for guaranteed vertical scrollbars */
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.fc-scroller > * { /* we expect an immediate inner element */
+	position: relative; /* re-scope all positions */
+	width: 100%; /* hack to force re-sizing this inner element when scrollbars appear/disappear */
+	overflow: hidden; /* don't let negative margins or absolute positioning create further scroll */
+}
+/* Global Event Styles
+--------------------------------------------------------------------------------------------------*/
+.fc-event {
+	position: relative; /* for resize handle and other inner positioning */
+	display: block; /* make the <a> tag block */
+	font-size: .85em;
+	line-height: 1.3;
+	border-radius: 0x;
+	border: 1px solid darken(@fos-theme-color, 10%); /* default BORDER color */
+	background-color: @fos-theme-color; /* default BACKGROUND color */
+	font-weight: normal; /* undo jqui's ui-widget-header bold */
+}
+/* overpower some of bootstrap's and jqui's styles on <a> tags */
+.fc-event,
+.fc-event:hover,
+.ui-widget .fc-event {
+	color: #fff; /* default TEXT color */
+	text-decoration: none; /* if <a> has an href */
+}
+.fc-event[href],
+.fc-event.fc-draggable {
+	cursor: pointer; /* give events with links and draggable events a hand mouse pointer */
+}
+.fc-not-allowed, /* causes a "warning" cursor. applied on body */
+.fc-not-allowed .fc-event { /* to override an event's custom cursor */
+	cursor: not-allowed;
+}
+.fc-event .fc-bg { /* the generic .fc-bg already does position */
+	z-index: 1;
+	background: #fff;
+	opacity: .25;
+	filter: alpha(opacity=25); /* for IE */
+}
+.fc-event .fc-content {
+	position: relative;
+	z-index: 2;
+}
+.fc-event .fc-resizer {
+	position: absolute;
+	z-index: 3;
+}
+/* Horizontal Events
+--------------------------------------------------------------------------------------------------*/
+/* events that are continuing to/from another week. kill rounded corners and butt up against edge */
+.fc-ltr .fc-h-event.fc-not-start,
+.fc-rtl .fc-h-event.fc-not-end {
+	margin-left: 0;
+	border-left-width: 0;
+	padding-left: 1px; /* replace the border with padding */
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.fc-ltr .fc-h-event.fc-not-end,
+.fc-rtl .fc-h-event.fc-not-start {
+	margin-right: 0;
+	border-right-width: 0;
+	padding-right: 1px; /* replace the border with padding */
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+/* resizer */
+.fc-h-event .fc-resizer { /* positioned it to overcome the event's borders */
+	top: -1px;
+	bottom: -1px;
+	left: -1px;
+	right: -1px;
+	width: 5px;
+}
+/* left resizer  */
+.fc-ltr .fc-h-event .fc-start-resizer,
+.fc-ltr .fc-h-event .fc-start-resizer:before,
+.fc-ltr .fc-h-event .fc-start-resizer:after,
+.fc-rtl .fc-h-event .fc-end-resizer,
+.fc-rtl .fc-h-event .fc-end-resizer:before,
+.fc-rtl .fc-h-event .fc-end-resizer:after {
+	right: auto; /* ignore the right and only use the left */
+	cursor: w-resize;
+}
+/* right resizer */
+.fc-ltr .fc-h-event .fc-end-resizer,
+.fc-ltr .fc-h-event .fc-end-resizer:before,
+.fc-ltr .fc-h-event .fc-end-resizer:after,
+.fc-rtl .fc-h-event .fc-start-resizer,
+.fc-rtl .fc-h-event .fc-start-resizer:before,
+.fc-rtl .fc-h-event .fc-start-resizer:after {
+	left: auto; /* ignore the left and only use the right */
+	cursor: e-resize;
+}
+/* DayGrid events
+----------------------------------------------------------------------------------------------------
+We use the full "fc-day-grid-event" class instead of using descendants because the event won't
+be a descendant of the grid when it is being dragged.
+*/
+.fc-day-grid-event {
+	margin: 1px 2px 0; /* spacing between events and edges */
+	padding: 0 1px;
+}
+.fc-day-grid-event .fc-content { /* force events to be one-line tall */
+	white-space: nowrap;
+	overflow: hidden;
+}
+.fc-day-grid-event .fc-time {
+	font-weight: bold;
+}
+.fc-day-grid-event .fc-resizer { /* enlarge the default hit area */
+	left: -3px;
+	right: -3px;
+	width: 7px;
+}
+.fc-sun, .fc-sat{
+	color: @fos-theme-color !important;
+	font-weight: 700;
+}
+/* Event Limiting
+--------------------------------------------------------------------------------------------------*/
+/* "more" link that represents hidden events */
+a.fc-more {
+	margin: 1px 3px;
+	font-size: .85em;
+	cursor: pointer;
+	text-decoration: none;
+	color: darken(@fos-theme-color, 20%);
+}
+a.fc-more:hover {
+	text-decoration: underline;
+	color: @fos-theme-color;
+}
+.fc-limited { /* rows and cells that are hidden because of a "more" link */
+	display: none;
+}
+/* popover that appears when "more" link is clicked */
+.fc-day-grid .fc-row {
+	z-index: 1; /* make the "more" popover one higher than this */
+}
+.fc-more-popover {
+	z-index: 2;
+	width: 220px;
+}
+.fc-more-popover .fc-event-container {
+	padding: 10px;
+}
+/* Toolbar
+--------------------------------------------------------------------------------------------------*/
+.fc-toolbar {
+	text-align: center;
+	margin-bottom: 1em;
+}
+.fc-toolbar .fc-left {
+	float: left;
+}
+.fc-toolbar .fc-right {
+	float: right;
+}
+.fc-toolbar .fc-center {
+	display: inline-block;
+}
+/* the things within each left/right/center section */
+.fc .fc-toolbar > * > * { /* extra precedence to override button border margins */
+	float: left;
+	margin-left: .75em;
+}
+/* the first thing within each left/center/right section */
+.fc .fc-toolbar > * > :first-child { /* extra precedence to override button border margins */
+	margin-left: 0;
+}	
+/* title text */
+.fc-toolbar h2 {
+	margin: 0;
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + 0.5em;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+/* button layering (for border precedence) */
+.fc-toolbar button {
+	position: relative;
+	background: #b54927;
+	color: #fff;
+}
+.fc-toolbar .fc-state-hover,
+.fc-toolbar .ui-state-hover {
+	z-index: 2;
+}	
+.fc-toolbar .fc-state-down {
+	z-index: 3;
+}
+.fc-toolbar .fc-state-active,
+.fc-toolbar .ui-state-active {
+	z-index: 4;
+}
+.fc-toolbar button:focus {
+	z-index: 5;
+}
+/* View Structure
+--------------------------------------------------------------------------------------------------*/
+/* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
+/* don't do this for the toolbar because we'll want bootstrap to style those buttons as some pt */
+.fc-view-container *,
+.fc-view-container *:before,
+.fc-view-container *:after {
+	-webkit-box-sizing: content-box;
+	   -moz-box-sizing: content-box;
+	        box-sizing: content-box;
+}
+.fc-view, /* scope positioning and z-index's for everything within the view */
+.fc-view > table { /* so dragged elements can be above the view's main element */
+	position: relative;
+	z-index: 1;
+}
+.fc-view > table >thead{ /* so dragged elements can be above the view's main element */
+	background: lighten(@fos-shadow-border, 60%);
+	color: lighten(@fos-base-font-color, 100%);
+	padding: 15px;
+}
+/* BasicView
+--------------------------------------------------------------------------------------------------*/
+/* day row structure */
+.fc-basicWeek-view .fc-content-skeleton,
+.fc-basicDay-view .fc-content-skeleton {
+	/* we are sure there are no day numbers in these views, so... */
+	padding-top: 1px; /* add a pixel to make sure there are 2px padding above events */
+	padding-bottom: 1em; /* ensure a space at bottom of cell for user selecting/clicking */
+}
+.fc-basic-view .fc-body .fc-row {
+	min-height: 4em; /* ensure that all rows are at least this tall */
+}
+/* a "rigid" row will take up a constant amount of height because content-skeleton is absolute */
+.fc-row.fc-rigid {
+	overflow: hidden;
+}
+.fc-row.fc-rigid .fc-content-skeleton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+/* week and day number styling */
+.fc-basic-view .fc-week-number,
+.fc-basic-view .fc-day-number {
+	padding: 0 2px;
+}
+.fc-basic-view td.fc-week-number span,
+.fc-basic-view td.fc-day-number {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.fc-basic-view .fc-week-number {
+	text-align: center;
+}
+.fc-basic-view .fc-week-number span {
+	/* work around the way we do column resizing and ensure a minimum width */
+	display: inline-block;
+	min-width: 1.25em;
+}
+.fc-ltr .fc-basic-view .fc-day-number {
+	text-align: right;
+}
+.fc-rtl .fc-basic-view .fc-day-number {
+	text-align: left;
+}
+.fc-day-number.fc-other-month {
+	opacity: 0.3;
+	filter: alpha(opacity=30); /* for IE */
+	/* opacity with small font can sometimes look too faded
+	   might want to set the 'color' property instead
+	   making day-numbers bold also fixes the problem */
+}
+/* AgendaView all-day area
+--------------------------------------------------------------------------------------------------*/
+.fc-agenda-view .fc-day-grid {
+	position: relative;
+	z-index: 2; /* so the "more.." popover will be over the time grid */
+}
+.fc-agenda-view .fc-day-grid .fc-row {
+	min-height: 3em; /* all-day section will never get shorter than this */
+}
+.fc-agenda-view .fc-day-grid .fc-row .fc-content-skeleton {
+	padding-top: 2px; /* add a pixel to make sure there are 2px padding above events */
+	padding-bottom: 2em; /* give space underneath events for clicking/selecting days */
+}
+/* TimeGrid axis running down the side (for both the all-day area and the slot area)
+--------------------------------------------------------------------------------------------------*/
+.fc .fc-axis { /* .fc to overcome default cell styles */
+	vertical-align: middle;
+	padding: 0 4px;
+	white-space: nowrap;
+}
+.fc-ltr .fc-axis {
+	text-align: right;
+}
+.fc-rtl .fc-axis {
+	text-align: left;
+}
+.ui-widget td.fc-axis {
+	font-weight: normal; /* overcome jqui theme making it bold */
+}
+/* TimeGrid Structure
+--------------------------------------------------------------------------------------------------*/
+.fc-time-grid-container, /* so scroll container's z-index is below all-day */
+.fc-time-grid { /* so slats/bg/content/etc positions get scoped within here */
+	position: relative;
+	z-index: 1;
+}
+.fc-time-grid {
+	min-height: 100%; /* so if height setting is 'auto', .fc-bg stretches to fill height */
+}
+.fc-time-grid table { /* don't put outer borders on slats/bg/content/etc */
+	border: 0 hidden transparent;
+}
+.fc-time-grid > .fc-bg {
+	z-index: 1;
+}
+.fc-time-grid .fc-slats,
+.fc-time-grid > hr { /* the <hr> AgendaView injects when grid is shorter than scroller */
+	position: relative;
+	z-index: 2;
+}
+.fc-time-grid .fc-bgevent-skeleton,
+.fc-time-grid .fc-content-skeleton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.fc-time-grid .fc-bgevent-skeleton {
+	z-index: 3;
+}
+.fc-time-grid .fc-highlight-skeleton {
+	z-index: 4;
+}
+.fc-time-grid .fc-content-skeleton {
+	z-index: 5;
+}
+.fc-time-grid .fc-helper-skeleton {
+	z-index: 6;
+}
+/* TimeGrid Slats (lines that run horizontally)
+--------------------------------------------------------------------------------------------------*/
+.fc-time-grid .fc-slats td {
+	height: 1.5em;
+	border-bottom: 0; /* each cell is responsible for its top border */
+}
+.fc-time-grid .fc-slats .fc-minor td {
+	border-top-style: dotted;
+}
+.fc-time-grid .fc-slats .ui-widget-content { /* for jqui theme */
+	background: none; /* see through to fc-bg */
+}
+/* TimeGrid Highlighting Slots
+--------------------------------------------------------------------------------------------------*/
+.fc-time-grid .fc-highlight-container { /* a div within a cell within the fc-highlight-skeleton */
+	position: relative; /* scopes the left/right of the fc-highlight to be in the column */
+}
+.fc-time-grid .fc-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	/* top and bottom will be in by JS */
+}
+/* TimeGrid Event Containment
+--------------------------------------------------------------------------------------------------*/
+.fc-time-grid .fc-event-container, /* a div within a cell within the fc-content-skeleton */
+.fc-time-grid .fc-bgevent-container { /* a div within a cell within the fc-bgevent-skeleton */
+	position: relative;
+}
+.fc-ltr .fc-time-grid .fc-event-container { /* space on the sides of events for LTR (default) */
+	margin: 0 2.5% 0 2px;
+}
+.fc-rtl .fc-time-grid .fc-event-container { /* space on the sides of events for RTL */
+	margin: 0 2px 0 2.5%;
+}
+.fc-time-grid .fc-event,
+.fc-time-grid .fc-bgevent {
+	position: absolute;
+	z-index: 1; /* scope inner z-index's */
+}
+.fc-time-grid .fc-bgevent {
+	/* background events always span full width */
+	left: 0;
+	right: 0;
+}
+/* Generic Vertical Event
+--------------------------------------------------------------------------------------------------*/
+.fc-v-event.fc-not-start { /* events that are continuing from another day */
+	/* replace space made by the top border with padding */
+	border-top-width: 0;
+	padding-top: 1px;
+	/* remove top rounded corners */
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.fc-v-event.fc-not-end {
+	/* replace space made by the top border with padding */
+	border-bottom-width: 0;
+	padding-bottom: 1px;
+	/* remove bottom rounded corners */
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+/* TimeGrid Event Styling
+----------------------------------------------------------------------------------------------------
+We use the full "fc-time-grid-event" class instead of using descendants because the event won't
+be a descendant of the grid when it is being dragged.
+*/
+.fc-time-grid-event {
+	overflow: hidden; /* don't let the bg flow over rounded corners */
+}
+.fc-time-grid-event .fc-time,
+.fc-time-grid-event .fc-title {
+	padding: 0 1px;
+}
+.fc-time-grid-event .fc-time {
+	font-size: .85em;
+	white-space: nowrap;
+}
+/* short mode, where time and title are on the same line */
+.fc-time-grid-event.fc-short .fc-content {
+	/* don't wrap to second line (now that contents will be inline) */
+	white-space: nowrap;
+}
+.fc-time-grid-event.fc-short .fc-time,
+.fc-time-grid-event.fc-short .fc-title {
+	/* put the time and title on the same line */
+	display: inline-block;
+	vertical-align: top;
+}
+.fc-time-grid-event.fc-short .fc-time span {
+	display: none; /* don't display the full time text... */
+}
+.fc-time-grid-event.fc-short .fc-time:before {
+	content: attr(data-start); /* ...instead, display only the start time */
+}
+.fc-time-grid-event.fc-short .fc-time:after {
+	content: "\000A0-\000A0"; /* seperate with a dash, wrapped in nbsp's */
+}
+.fc-time-grid-event.fc-short .fc-title {
+	font-size: .85em; /* make the title text the same size as the time */
+	padding: 0; /* undo padding from above */
+}
+/* resizer */
+.fc-time-grid-event .fc-resizer {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 8px;
+	overflow: hidden;
+	line-height: 8px;
+	font-size: 11px;
+	font-family: monospace;
+	text-align: center;
+	cursor: s-resize;
+}
+.fc-time-grid-event .fc-resizer:after {
+	content: "=";
+}
+
+/* CRM Styles temp*/
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+  background-color: lighten(@fos-theme-color, 40%);
+  color: lighten(@fos-base-font-color, 100%);
+}
+ul.crm-sortable-section-wrapper li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ul.crm-sortable-section-wrapper li.placeholder:before {
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  font-size: @fos-basefont-size + 0.2em;
+  font-family: FontAwesome;
+  content: '\f04b';
+  color: @fos-move-color;
+}
+.crm-sortable-section-wrapper{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.crm-sort-handle-column{
+	color: lighten(@fos-base-font-color, 50%);
+}
+.crm-sort-handle-column:hover{
+	cursor: move;
+	color: @fos-theme-color;
+}
+
+
+/*jquery sortable overwrites*/
+.col-placeholder:before{
+	position: absolute;
+	top:0;
+	font-size: @fos-basefont-size + 0.2em;
+  	font-family: FontAwesome;
+  	content: '\f103';
+  	color: darken(@fos-move-color, 10%);
+}
+.row-placeholder:before{
+	position: absolute;
+	left:0;
+	font-size: @fos-basefont-size + 0.2em;
+  	font-family: FontAwesome;
+  	content: '\f101';
+  	color: darken(@fos-move-color, 10%);
+}
+/*CRM Form table customization*/
+.crm_sortable_row{
+	width: 100%;
+	padding: 15px;
+}
+.crm-form-table{
+	width: 80%;
+	margin: 0 auto 50px auto;
+}
+.crm-form-table tr{
+	padding: 30px;
+	margin: 15px 0;
+	vertical-align: top;
+}
+.crm-form-table tr:hover{
+	background-color: lighten(@fos-theme-color, 50%);
+}
+.crm-form-table tr:hover .crm-field-handler{
+	display: inline;
+}
+.crm-form-table tr:hover .crm-form-table-action{
+	opacity: 1;
+}
+.crm-form-table-label{
+	text-align: right;
+	width: 300px;
+	padding-right: 15px;
+}
+.crm-form-table-field{
+	width: 40%;
+	padding: 10px;
+}
+.crm-form-table-action{
+	padding: 10px 20px;
+	opacity: 0;
+}
+/*.crm-form-table-action span{
+	padding: 0 10px 5px 10px;
+	text-align: center;
+}*/
+
+.crm-form-table-action a{
+	color: lighten(@fos-base-font-color, 55%); 
+	padding: 10px 5px;
+	font-size: @fos-basefont-size + 0.175em;
+}
+.crm-form-table-action a:hover{
+	color: darken(@fos-theme-color, 25%); 
+}
+.crm-views-handler{
+	position: absolute;
+	left: -20px !important;
+}
+.crm-field-handler{
+	position: absolute;
+	left: 45px;
+	width: 30px;
+	height: 30px;
+	padding-right: 15px;
+	font-size: @fos-basefont-size + 0.2em;
+	color: lighten(@fos-base-font-color, 55%);
+	display: none;
+}
+.crm-field-handler:hover{
+	color: lighten(@fos-theme-color, 35%);
+	cursor: move;
+}
+.crm-form-label{
+	color: lighten(@fos-base-font-color, 40%);
+	font-weight: 500;
+	padding: 10px 0;
+	font-size: @fos-basefont-size + 0.1em;
+}
+.crm-form-label:after{
+	content: ':';
+	padding: 5px 10px;
+}
+.crm-form-table-field .crm-dynamic-links{
+	/*border-bottom: 1px dashed @fos-link-colors;*/
+	font-size: @fos-basefont-size - 0.005em;
+}
+.crm-quick-links{
+	color: @fos-link-colors;
+	text-decoration: underline;
+}
+.crm-form-table-field .crm-dynamic-links a.disabled{
+	color: lighten(@fos-base-font-color, 75%);
+}
+.crm-calendar-field{
+	position: absolute !important;
+	right: -1px !important;
+	margin-right: 0px !important;
+	border: none !important;
+}
+.crm-calendar-field .crm-group-btn{
+	height: 35px !important;
+}
+.crm-editable-field{
+	height: 30px;
+	padding: 5px;
+	margin: 12px 0;
+	width: 180px;
+	text-align: right;
+	border: 1px solid lighten(@fos-theme-color, 40%);
+}
+.crm-editable-section{
+	height: 30px;
+	padding: 0 5px;
+	width: 250px;
+	border: 1px solid lighten(@fos-theme-color, 40%);
+}
+.datepicker-dropdown{
+	overflow: hidden;
+}
+#fieldDynamic div:first-child .crm-dynamic-action{
+	opacity: 0;
+}
+#fieldDynamic .crm-dynamic-action a{
+	color: lighten(@fos-base-font-color, 40%) !important;
+}
+.crm-add-more-field-btn{
+	color: lighten(@fos-base-font-color, 40%) !important;
+	font-weight: 100;
+	font-size: @fos-basefont-size + 0.1em;
+	border-bottom: 1px dashed lighten(@fos-base-font-color, 40%) !important;
+	margin-top: 5px;
+}
+.crm-add-shortcut{
+	position: absolute;
+	bottom: 0;
+	left: 10%;
+	z-index: 2;
+}
+
+.crm-progress-bar{
+	padding: 5px 5px 5px 0;
+	height: 23px;
+	overflow: hidden;
+}
+.crm-right-dropdown{
+	float: right;
+	background: transparent;
+
+}
+.crm-well-header{
+	padding: 10px;
+}
+
+.crm-dropdown-nav li a{
+	border-left: 3px solid lighten(@fos-theme-color, 100%);
+	padding: 2px 5px;
+}
+.crm-dropdown-nav li a:hover{
+	border-left: 3px solid @fos-theme-color;
+}
+.crm-table-head-dropdown{
+	width: 65px !important;
+}
+.crm-table-head-dropdown .crm-btn-dropdown{
+	padding: 0;
+	background-color: transparent;
+}
+.crm-progress-column{
+	width: 250px;
+}
+.crm-filter-tabs{
+	border: 1px solid lighten(@fos-shadow-border, 90%);
+	padding-bottom: 1px;
+}
+.crm-filter-tabs button{
+	border-radius: 0 !important;
+	margin: 5px;
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+}
+.crm-filter-tabs .nav-tabs .btn-default{
+	margin-right: 5px;
+	color: lighten(@fos-base-font-color, 40%);
+}
+.crm-filter-bg{
+	background-color: lighten(@fos-theme-color, 50%);
+	padding-left: 10px;
+	overflow: hidden;
+	border-top: 1px solid lighten(@fos-shadow-border, 100%);
+}
+.crm-filter-tabs .nav-tabs .active, .crm-filter-tabs .tab-content .active
+ {
+	background-color: lighten(@fos-theme-color, 50%);
+}
+.crm-filter-tabs .nav-tabs .active a, .crm-filter-tabs .nav-tabs .active a:active, .crm-filter-tabs .nav-tabs .active a:focus{
+	background: transparent;
+	border: none;
+}
+.crm-filter-tabs .nav-tabs{
+	border-bottom: none !important;
+}
+.crm-filter-tabs .tab-content{
+	border-left: 1px solid lighten(@fos-shadow-border, 90%);
+	border-right: 1px solid lighten(@fos-shadow-border, 90%);
+	border-bottom: 1px solid lighten(@fos-shadow-border, 90%);
+}
+.crm-list-table-container{
+	overflow: auto;
+	margin: 5px 0;
+}
+.crm-table-link{
+	font-size: @fos-basefont-size - 0.1em;
+	font-weight: 100;
+}
+.crm-table-info{
+	font-size: @fos-basefont-size - 0.1em;
+	font-weight: 100;
+	color: lighten(@fos-base-font-color, 50%);
+}
+.crm-add-filter-field{
+	border-left: 3px solid lighten(@fos-theme-color, 100%);
+	padding: 2px 5px;
+}
+.crm-table-row-action{
+	font-size: @fos-basefont-size + 0.2em;
+	margin: 0 15px;
+}
+.crm-table-row-action a{
+	color: lighten(@fos-base-font-color, 40%);
+	padding: 0 5px;
+}
+.crm-table-footer-options{
+	padding: 5px 0;
+}
+.crm-lead-view-status-header{
+	position: absolute;
+	top: -8px;
+	font-size: @fos-basefont-size - 0.1em;
+}
+.crm-lead-view-header-icon{
+	width: 40px;
+	height: 40px;
+	padding: 5px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	border-radius: 40px;
+	background-color: lighten(@fos-shadow-border, 100%);
+	box-shadow: 0 0 5px lighten(@fos-shadow-border, 80%);
+}
+.crm-btn-transparent{
+	background-color: transparent;
+}
+
+.crm-sortable-col:hover{
+	cursor: move;
+}
+.crm_123{
+	min-width: 20px;
+}
+.crm-form-group{
+	margin-bottom: 5px;
+}
+.crm-btn-dynamin-remove{
+	color: lighten(@fos-base-font-color, 100%) !important;
+	padding: 0 5px;
+	width: 2em;
+	height: 2em;
+	background-color: lighten(@fos-shadow-border, 50%);
+}
+.crm-filter-tabs .tab-content .tab-pane{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.crm-shortcuts{
+	color: lighten(@fos-base-font-color, 55%);
+}
+.crm-vews-header{
+	background-color: lighten(@fos-theme-color, 48%);
+	padding: 15px 0 10px 15px;
+	border-bottom: 2px solid lighten(@fos-shadow-border, 100%);
+}
+.crm-views-h1{
+	font-size: @fos-basefont-size + 0.3em;
+	font-weight: 100;
+	line-height: 2;
+	color: lighten(@fos-base-font-color, 50%);
+}
+.crm-views-icon{
+	width: 30px;
+	height: 40px;
+	background-color: lighten(@fos-shadow-border, 100%);
+	padding: 5px 10px;
+	border-radius: 50%;
+}
+.crm-views-status-footer{
+	position: absolute;
+	bottom: -15px;
+	right: 5px;
+	color: lighten(@fos-base-font-color, 55%);
+	font-size: @fos-basefont-size - 0.1em;
+}
+.crm-views-status-header{
+	position: absolute;
+	top: -10px;
+	left: 0;
+	color: lighten(@fos-base-font-color, 55%);
+	font-size: @fos-basefont-size - 0.1em;
+}
+.crm-vews-header-content{
+	background-color: lighten(@fos-theme-color, 51%);
+	padding: 15px;
+}
+.crm-user-list-container{
+	width: 100%;
+	padding: 5px;
+}
+.crm-user-list-container .crm-user-list-avtar{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: lighten(@fos-shadow-border, 50%);
+	color: lighten(@fos-base-font-color, 100%);
+	padding: 5px 11px;
+	float: left;
+	margin-right: 15px;
+}
+.crm-user-list-container .crm-user-list-details{
+	float: left;
+}
+.crm-user-list-link{
+	position: absolute;
+	top: 5px;
+	padding: 0;
+	background-color: transparent;
+	font-size: @fos-basefont-size - 0.18em;
+	right: 5px;
+}
+.crm-fixed-width-display{
+	width: 500px;
+}
+.crm-dropdown-dialog{
+	width: 450px;
+	height: 300px;
+	padding: 15px;
+}
+.crm-user-role{
+	text-transform: uppercase;
+	color: lighten(@fos-base-font-color, 65%);
+	line-height: 1.5;
+	padding: 0;
+}
+.crm-stream-view{
+	margin-left: 50px;
+}
+.crm-stream-view-links{
+	margin-left: 35px;
+	margin-top: 110px;
+	padding: 15px;
+	font-size: @fos-basefont-size - 0.17em;
+}
+.crm-stream-status{
+	position: absolute;
+	left: 165px;
+	top: 20px;
+	color: lighten(@fos-base-font-color, 65%);
+	font-size: @fos-basefont-size - 0.15em;
+}
+.crm-stream-view-links-container{
+	padding: 0 15px;
+}
+.crm-stream-view-links-dropup{
+	color: @fos-link-colors;
+	font-size: @fos-basefont-size;
+}
+.crm-stream-likes{
+	color: lighten(@fos-base-font-color, 65%);
+	font-size: @fos-basefont-size - 0.15em;
+}
+.crm-message-address-label{
+	color: lighten(@fos-base-font-color, 40%);
+	line-height: 2.5;
+}
+.crm-message-address-field{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	padding: 15px;
+}
+.crm-line-height-2x{
+	line-height: 4;
+}
+.crm-vertical-align{
+	vertical-align: middle !important;
+}
+.crm-layer-up{
+	z-index: 1;
+}
+//========================================================================
+.fos-crm-action{
+	font-size: @fos-basefont-size;
+	font-weight: 100;
+	color: @fos-link-colors;
+	padding: 5px;
+}
+.fos-crm-header-search{
+	width: 100%;
+	padding: 15px 30px 15px 15px;
+}
+.fos-crm-header-search input{
+	border-radius: 15px 0 0 15px;
+	padding-left: 15px;
+}
+.crm-search-button{
+	padding: 5px 20px 15px 0;
+}
+.crm-search-button button{
+	height: 35px;
+	color: lighten(@fos-base-font-color, 50%);
+	border-radius: 0 15px 15px 0;
+	padding: 5px 15px;
+}
+.fos-crm-fixed-menu{
+	position: absolute;
+	right: 0;
+	top: 0;
+}

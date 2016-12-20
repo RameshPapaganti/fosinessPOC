@@ -1,0 +1,6754 @@
+/*custom style
+	Author			: MIVIM 
+	Date Created	: 15-01-2015 10:00 AM
+	Project			: Foosiness 
+===================================================================================
+*/
+
+// Importing required configuration files
+
+	//@import (reference) "mivim-theme-config.less";
+
+//=================================================================================
+body{
+	font-size: 1.2em;  
+	font-size-adjust: .6;
+	font-family: @fos-basefont-content !important;
+}
+*{
+	box-sizing: border-box;
+}
+select::-ms-expand {
+    display: none;
+}
+.container{
+	width: @container-width;
+	margin: 60px auto 0 auto; 
+	clear: both;
+}
+/* Main Navigation menu*/
+.fos-container-nav{
+	width: @container-width;
+	height: 40px; 
+	margin: 10px auto; 
+	padding: 0;
+}
+.fos-container-nav a{
+	outline: none;
+}
+.navbar-fixed-top{
+	z-index: 1000;
+}
+.navbar-brand{
+	padding-top: 20px;
+	width: 115px;
+	height: 50px;
+}
+.navbar-brand img{
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+}
+.navbar-nav li.active{
+	font-weight: 600;
+}
+.has-error .form-control{
+	border-color: @fos-theme-color;
+}
+//-------------------------------------------------------------------------
+#fos-navbar form{
+	position: relative;
+}
+#fos-navbar input{
+	border-radius: 0;
+	width: 300px;
+}
+#fos-navbar button{
+	position: absolute;
+	top: 0;
+	right: -24px;
+	border-radius: 0;
+	width: 40px;
+	height: 35px;
+}
+.btn[disabled]{
+	background: rgba(146, 140, 139, 1) !important;
+	border-color: rgba(146, 140, 139, 1) !important;
+}
+.fos-logo{
+	background: url('@{fos-images}fos-svg-icons/fos-logo.svg') no-repeat;
+	width: 140px;
+	height: 65px;
+	margin-top: -30px; 
+	padding: 0;
+	z-index: 2000;
+}
+.btn-fosiness{
+	background: @fos-theme-color;
+	border: 1px solid @fos-theme-color;
+	color: lighten(@fos-shadow-border, 100%) !important;
+}
+.btn-top-spacing{
+	padding: 3%;
+	margin-top: 5%;
+	font-size: @fos-basefont-size + 0.5em;
+}
+.btn-top-spacing:hover{
+	padding: 3%;
+	margin-top: 5%;
+	background: lighten(@fos-theme-color, 10%)
+}
+.btn-fosiness a i{
+	color: lighten(@fos-shadow-border, 100%) !important;
+}
+.btn-fosiness:hover a i{
+	color: lighten(@fos-shadow-border, 50%) !important;
+}
+//Bootstrap carousel
+/* Images feeds for carousel*/
+.fos-carousel-image-1{
+	width: 100%;
+	height: 600px;
+	background: url('@{fos-images}1.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.fos-carousel-image-2{
+	width: 100%;
+	height: 600px;
+	background: url('@{fos-images}2.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.fos-carousel-image-3{
+	width: 100%;
+	height: 600px;
+	background: url('@{fos-images}3.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.fos-carousel-image-4{
+	width: 100%;
+	height: 600px;
+	background: url('@{fos-images}4.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.fos-carousel-image-5{
+	width: 100%;
+	height: 600px;
+	background: url('@{fos-images}5.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.fos-carousel-image-6{
+	width: 100%;
+	height: 600px;
+	background: url('@{fos-images}6.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.bootstrap-carousel{
+	position: relative;
+	height: 600px;
+	overflow: hidden;
+	z-index: 99;
+}
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 20%;
+  left: 58%;
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+}
+.carousel-caption p {
+  font-size: @fos-basefont-size + .65em;
+  text-align: left !important;
+  color: lighten(@fos-base-font-color, 20%) !important;
+  text-shadow: 2px 2px 3px lighten(@fos-base-font-color, 90%) !important;
+  font-weight: 600;
+}
+.carousel-caption p i{
+  font-weight: 900 !important;
+}
+.carousel-caption p b{
+  color: @fos-theme-color !important;
+}
+.carousel-indicators {
+  position: absolute;
+  top: 48%;
+  left: 58%;
+  z-index: 500;
+  margin: 0;
+  list-style: none;
+}
+.carousel-indicators li {
+  display: block;
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin-left: 2%;
+  text-indent: -999px;
+  background-color: rgba(255, 255, 255, 0.54);
+  border-radius: 25px;
+  border: 1px solid @fos-theme-color;
+}
+.carousel-indicators .active {
+  background-color: @fos-theme-color;
+  width: 25px;
+  height: 25px;
+  margin-left: 2%;
+  border-radius: 25px;
+}
+//Button Over the carousel
+.fos-slider_button{
+	position: absolute;
+	top:60%;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: url(@carousel-button-pattern) repeat;
+	background-origin: content-box;
+	z-index: 500;
+}
+.fos-know_more_slider button{
+	position: absolute;
+	width: 35%;
+	height: 60px;
+	top: -5px;
+	right: 0%;
+	font-size: @fos-basefont-size + 1em;
+	color: lighten(@fos-base-font-color, 100%);
+	display:block;
+	margin-right: 12%;
+	float: right;
+	vertical-align: middle;
+    overflow: hidden;
+    background: @fos-theme-color;
+	border: 1px solid @fos-theme-color;
+}
+.fos-know_more_slider button:hover{
+	background-color: darken(@fos-theme-color, 3%) !important;
+	-webkit-transition: background-color 0.8s ease;
+    transition: background-color 0.8s ease;
+}
+//Sliding up navigation menu over the carousel
+.fos-slideup-menu{
+	position: absolute;
+	left: 5%;
+	bottom: 0;
+	width: 90%;
+	height: 125px;
+	background: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid lighten(@fos-basefont-color, 80%);
+	overflow: hidden;
+}
+.fos-slideup-conainer{
+	margin: 50px auto 0 20%;
+	width: 100%;
+}
+.fos-slideup-items{
+	width: 10%;
+	float: left;
+	border-right: 2px solid lighten(@fos-basefont-color, 80%);
+}
+.fos-slideup-items:last-child{
+	width: 10%;
+	float: left;
+	border-right: none;
+}
+.fos-zoom-div{
+	overflow: hidden;
+	font-family: @fos-basefont-heading;
+	font-size: 1em;
+	height: 150px;
+	width: 100%;
+	font-weight: 500;
+	text-align: center;
+	position: relative;
+	display: block;
+}
+.fos-slideup-items a{
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+}
+.fos-zoom-div div{
+	position: absolute;
+	top: 30px;
+	height: 125px;
+	width: 100%;
+}
+.fos-zoom-div  p{
+	font-size: @fos-basefont-size + .2em;
+	text-align: center;
+	overflow: hidden;
+	font-weight: 400;
+	color: lighten(@fos-app-content-color, 30%);
+}
+.fos-zoom-div:hover  p{
+	color: @fos-theme-color !important;
+}
+//Communicate Section content
+.fos-communicate{
+	width: 60%;
+	height: 0;
+	padding-bottom: 50%;
+	background: lighten(@fos-theme-color, 100%);
+	margin: 0 auto;
+	position: relative;
+}
+.fos-communicate-heading{
+	text-align: center;
+	padding: 3%;
+	font-size: 3em;
+	font-weight: 500;
+	font-family: @fos-basefont-content;
+	text-transform: uppercase;
+	color: lighten(@fos-basefont-color, 50%);
+	border-bottom: 1px solid lighten(@fos-basefont-color, 50%);
+}
+// Search Join and Post Thumbs
+.fos-communicate-thumbs{
+	position: absolute;
+	top: 20%;
+	left: -7%;
+	margin: 0 auto;
+}
+.fos-business-tabs{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 400px;
+	width: 800px;
+}
+.fos-business-join{
+	position: absolute;
+	top: 0;
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	padding: 5%;
+	border-radius: 150px;
+	border: 2px solid @fos-theme-color;
+}
+.fos-business-icons-wrapper:hover .fos-business-icons-action{
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+.fos-business-post{
+	position: absolute;
+	top: 60%;
+	right: 10%;
+	width: 150px;
+	height: 150px;
+	padding: 5%;
+	border-radius: 150px;
+	border: 2px solid @fos-theme-color;
+}
+.fos-business-search{
+	position: absolute;
+	top: 60%;
+	left: 10%;
+	width: 150px;
+	height: 150px;
+	padding: 5%;
+	border-radius: 150px;
+	border: 2px solid @fos-theme-color;
+	clear: both;
+}
+.fos-icon-post{
+	background: url('@{fos-images}fos-svg-icons/post.svg') no-repeat;
+	width: 100%;
+	height: 100%;
+}
+.fos-icon-join{
+	background: url('@{fos-images}fos-svg-icons/join.svg') no-repeat;
+	width: 100%;
+	height: 100%;
+}
+.fos-icon-search{
+	background: url('@{fos-images}fos-svg-icons/search.svg') no-repeat;
+	width: 100%;
+	height: 100%;
+}
+.fos-business-thumb-heading{
+	font-size: @fos-basefont-size + 1em;
+	color: lighten(@fos-basefont-color, 40%);
+	text-align: center;
+}
+.fos-business-tabs button{
+	position: absolute;
+	bottom: -10%;
+	left: 38%;
+	width: 200px;
+	height: 50px;
+	padding: 16px;
+	border-radius: 50px;
+	background: lighten(@fos-basefont-color, 30%);
+	color: lighten(@fos-basefont-color, 100%);
+	border: none;
+	font-size: @fos-basefont-size + .2em;
+	text-align: center;
+}
+.fos-business-tabs button:hover{
+	background-color: lighten(@fos-basefont-color, 50%) !important;
+	-webkit-transition: background-color 0.8s ease;
+    transition: background-color 0.8s ease;
+}
+.fos-business-left{
+	background: url('@{fos-images}fos-svg-icons/left.svg') no-repeat;
+	background-size: 100% 100%;
+	height: 80px;
+	width: 150px;
+	position: absolute;
+	bottom: 10px;
+	right: -120px;
+}
+.fos-business-right{
+	background: url('@{fos-images}fos-svg-icons/right.svg') no-repeat;
+	background-size: 100% 100%;
+	height: 80px;
+	width: 70px;
+	position: absolute;
+	bottom: 10px;
+	left: -75px;
+}
+.fos-business-tabs a{
+	color: lighten(@fos-basefont-color, 40%); 
+	text-align: center;
+}
+.fos-business-tabs a h2{
+	position: absolute;
+	top: 140px;
+	left: 25%;
+}
+.fos-business-desc{
+	position: absolute;
+	bottom: 25%;
+	left: 26%;
+	background: transparent;
+	text-align: center;
+	font-size: @fos-basefont-size + 1em;
+	width: 300px;
+	height: 150px;
+	overflow: hidden;
+}
+.fos-business-desc h3{
+	font-size: @fos-basefont-size + .1em;
+}
+.fos-business-desc h3 b{
+	color: @fos-theme-color;
+}
+.fos-business-desc p{
+	color: lighten(@fos-basefont-color, 40%); 
+	font-size: @fos-basefont-size - .5em;
+	line-height: 20px;
+}
+//Video Demonstration
+#fos-video-demo{
+	height: 550px;
+	padding-bottom: 50%;
+	margin: 0 auto;
+	background: url('@{fos-images}video-tab-bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    margin: 0 auto;
+}
+.fos-video-wrapper{
+	height: 665px;
+	padding: 2%;
+}
+.fos-video-content{
+	margin: 50% 5% 2% 10%;
+	color: lighten(@fos-basefont-color, 100%); 
+	text-shadow: 0 0 3px lighten(@fos-basefont-color, 10%); 
+	font-family: @fos-basefont-content;
+	line-height: 2em;
+	width: 80%;
+}
+.fos-video-content h1{
+	font-weight: 900;
+	font-size: @fos-basefont-size + 2em;
+}
+.fos-video-content p{
+	color: lighten(@fos-basefont-color, 0%); 
+	text-shadow: 0 0 3px lighten(@fos-basefont-color, 100%); 
+	font-size: @fos-basefont-size + .2em;
+}
+.fos-video-wrapper{
+	width:100%;
+	height: 665px;
+	padding: 2%;
+}
+.fos-video-player{
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 70%;
+	margin: 5%;
+}
+.fos-video-tabs{
+	position: absolute;
+	bottom:0;
+	left: 6%;
+	height: 20%;
+}
+.fos-video-tab-items{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	float: left;
+	margin: 0 20px;
+	background: rgba(0, 0, 0, 0.8);
+	overflow: hidden;
+	position: relative;
+}
+.fos-video-tab-items span{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+	height: 80px;
+	
+}
+.fos-video-tab-items span.video-tab-1{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -400px 0;
+}
+.fos-video-tab-items span.video-tab-2{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -320px -160px;
+}
+.fos-video-tab-items span.video-tab-3{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -320px -240px;
+}
+.fos-video-tab-items span.video-tab-4{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -320px -320px;
+}
+.fos-video-tab-items span.video-tab-5{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -320px -400px;
+}
+/*Video tab hover*/
+.fos-video-tab-items:hover{
+	cursor: pointer;
+}
+.fos-video-tab-items:hover span.video-tab-1, .fos-video-tab-items.active span.video-tab-1{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -240px -160px;
+}
+.fos-video-tab-items:hover span.video-tab-2, .fos-video-tab-items.active span.video-tab-2{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -400px -160px;
+}
+.fos-video-tab-items:hover span.video-tab-3, .fos-video-tab-items.active span.video-tab-3{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -400px -240px;
+}
+.fos-video-tab-items:hover span.video-tab-4, .fos-video-tab-items.active span.video-tab-4{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -400px -320px;
+}
+.fos-video-tab-items:hover span.video-tab-5, .fos-video-tab-items.active span.video-tab-5{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -400px -400px;
+}
+//Products tab
+.fos-product{
+	width: @container-width;
+	height: 0;
+	padding-bottom: 50%;
+	background: url('@{fos-images}thumb-bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	clear: both;
+	position: relative;
+	margin: 0 auto;
+}
+.fos-product-tabs-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.fos-product-tabs{
+	position: absolute;
+	top: 35%;
+	left: 0px;
+	width: 100%;
+	padding: 3% 5% 0% 5%;
+	height: 65%;
+}
+.fos-tab-row{
+	width: 80%;
+	height: 50%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+.fos-thumb{
+	width: 20%;
+	height: 100%;
+	float: left;
+	padding: 0;
+	text-align: center;
+	color: lighten(@fos-basefont-color, 100%);
+	cursor: pointer;
+	position: relative;
+	display: block;
+	font-family: @fos-basefont-heading;
+	font-size: @fos-basefont-size + .2em;
+}
+.fos-thumb-link{
+	width: 20%;
+	height: 100%;
+	float: left;
+	padding: 2%;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-family: @fos-basefont-heading;
+	font-size: @fos-basefont-size + .8em;
+}
+.fos-thumb img{
+	width: 78%;
+	height: 78%;
+	padding: 2% 2%;
+	clear: both;
+}
+.fos-odd-thumb{
+	background: darken(@fos-basefont-color, 10%);
+	opacity:0.7;
+	height: 100%;
+	width: 100%;
+}
+.fos-even-thumb{
+	background: transparent;
+	height: 100%;
+	width: 100%;
+}
+.fos-odd-thumb p{
+	height: 18%;
+	width: 100%;
+	margin: 1% auto;
+}
+.fos-even-thumb p{
+	height: 18%;
+	width: 100%;
+	margin: 1% auto;
+}
+.fos-flipper div p{
+	text-shadow: 0 0 3px #000 !important;
+}
+.fos-current{
+	background: lighten(@fos-basefont-color, 100%);
+	opacity: 1!important;
+	height: 120%;
+	width: 100%;
+	padding: 4% 0%;
+	vertical-align: middle;
+	color: lighten(@fos-basefont-color, 100%);
+	font-family: @fos-basefont-button;
+	font-size: @fos-basefont-size + .2em;
+	font-weight: 700;
+	margin-top: -120%;
+}
+.fos-current div.fos-button-wrapper{
+	width: 100%;
+	height: 70%;
+	padding-bottom: 10%;
+	padding-top: 10%;
+}
+.fos-current div.fos-button-wrapper button{
+	margin-top: 15%;
+	background: @fos-theme-color;
+	padding: 10px;
+	width: 80%;
+	height: 50%;
+	border: none !important;
+	font-family: @fos-basefont-button;
+	color: lighten(@fos-basefont-color, 100%);
+	font-size: @fos-basefont-size - .4em;
+	-webkit-transition: background-color 0.8s ease;
+    transition: background-color 0.8s ease;
+}
+.fos-current div.fos-button-wrapper button:hover{
+	background: lighten(@fos-theme-color, 10%);
+}
+.fos-current {
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
+}
+/*Flipper*/
+.fos-flip-container {
+	-webkit-perspective: 1000;
+	        perspective: 1000;
+}
+.fos-flip-container:hover .fos-flipper, .fos-flip-container.hover .fos-flipper {
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
+}
+.fos-flipper {
+	-webkit-transition: 0.6s;
+	        transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	height: 100%;
+}
+.fos-odd-thumb,.fos-even-thumb, .fos-current {
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	top: 0%;
+	left: 0;
+}
+.fos-odd-thumb, .fos-even-thumb {
+	z-index: 2;
+	-webkit-transform: rotateY(0deg);
+	        transform: rotateY(0deg);
+}
+.fos-thumb-carousel{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+.fos-thumb-carousel-wrapper{
+	margin: 0 auto;
+	width: @container-width;
+	height: 80%;
+}
+.fos-social-copy ul li:hover{
+	box-shadow: 0 0 5px #fff;
+	border: 1px solid #fff;
+}
+.fos-facebook{
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -650px -460px;
+}
+.fos-google{
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -690px -460px;
+}
+.fos-linkedin{
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -730px -460px;
+}
+.fos-pintrest{
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -770px -460px;
+}
+.fos-tweeter{
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -810px -460px;
+}
+.fos-copyright{
+	margin: 2% 2% 5% 2%;
+	text-align: center;
+	color: lighten(@fos-basefont-color, 50%);
+	font-size: 85%;
+	font-family: @fos-basefont-content;
+}
+.fos-webmaster{
+	margin: 0 2%;
+	text-align: center;
+	color: lighten(@fos-basefont-color, 50%);
+	font-size: 90%;
+	font-family: @fos-basefont-content;
+}
+.fos-app-footer{
+	background: lighten(@fos-basefont-color, 100%);
+	color: lighten(@fos-basefont-color, 30%);
+	min-height: 200px;
+	padding: 20px 0;
+	clear: both;
+	margin: 0 auto;
+}
+.fos-app-footer ul{
+	list-style: none;
+	font-weight: 600;
+	padding-left: 0px;
+	vertical-align: middle;
+	text-align: left;
+}
+.fos-app-footer ul li{
+	padding-left: 0px;
+}
+.fos-app-social{
+	width: 100%;
+	height: 0;
+	padding-bottom: 2%;
+	text-align: right;
+	vertical-align: middle;
+}
+.fos-app-social ul{
+	list-style: none;
+	margin: 2%;
+	padding: 0;
+	text-align: center;
+}
+.fos-app-social ul li{
+	display: inline-block;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	padding: 10px !important;
+	cursor: pointer;
+}
+.fos-app-social ul li:hover{
+	box-shadow: 0 0 10px @fos-shadow-border;
+	border: 2px solid #fff;
+}
+
+.fos-app-footer-links{
+	min-height: 250px;
+	width: 100%;
+	padding: 2% 0;
+	background: lighten(@fos-basefont-color, 90%);
+	border-top: 5px solid lighten(@fos-basefont-color, 80%);
+	border-bottom: 5px solid lighten(@fos-basefont-color, 80%);
+}
+.fos-footer-brand{
+	background: lighten(@fos-basefont-color, 100%);
+	height: 60px;
+	width: 140px;
+	margin-top: 30px;
+	padding: 10px;
+}
+.fos-partner-container{
+	width: @container-width + 30px;
+	height: 0;
+	padding-bottom: 50%;
+	margin: 0 auto;
+	position: relative;
+}
+.fos-partner-image{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 40%;
+	width: 100%;
+	background: url('@{fos-images}partner.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.fos-partner-content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60%;
+	width: 100%;
+	font-family: @fos-basefont-content;
+	background: lighten(@fos-basefont-color, 100%);
+}
+.fos-partner-content h1{
+	margin: 20px auto 5px auto;
+	text-align: center;
+	padding: 10px 0 10px 0;
+	font-size: @fos-basefont-size + 1em;
+	font-weight: 900;
+	border-bottom: 2px solid lighten(@fos-basefont-color, 70%);
+	width: 20%;
+}
+.fos-partner-content p{
+	margin: 0 auto 5px auto;
+	text-align: center;
+	padding: 10px;
+	font-size: @fos-basefont-size + .1em;
+	font-weight: 100;
+	width: 50%;
+}
+.fos-partners-carousel{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 130px;
+}
+.fos-partner-list{
+	width: 1080px;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.fos-partner-list div.fos-partner-items{
+	height: 100%;
+	padding: 10px;
+	width: 200px;
+	float: left;
+	margin: 0 auto;
+}
+.fos-partner-list div:nth-child(1){
+	background: url('@{fos-images}partner-list.png') no-repeat;
+	background-position: 0 0;
+}
+.fos-partner-list div:nth-child(2){
+	background: url('@{fos-images}partner-list.png') no-repeat;
+	background-position: -200px 0;
+}
+.fos-partner-list div:nth-child(3){
+	background: url('@{fos-images}partner-list.png') no-repeat;
+	background-position: -400px 0;
+}
+.fos-partner-list div:nth-child(4){
+	background: url('@{fos-images}partner-list.png') no-repeat;
+	background-position: -600px 0;
+}
+.fos-partner-list div:nth-child(5){
+	background: url('@{fos-images}partner-list.png') no-repeat;
+	background-position: -800px 0;
+}
+// Thumbnail and partner carousel section
+#fos-thumb-desc{
+	width: 60%;
+	margin: 20px auto;
+	color: lighten(@fos-theme-color, 100%);
+	text-align: center;
+	position: relative;
+	font-family: @fos-basefont-content;
+}
+#fos-thumb-desc h2{
+	font-size: @fos-basefont-size + 3em;
+	text-transform: uppercase;
+	padding-bottom: 25px;
+	font-weight: 700;
+}
+#fos-thumb-desc p{
+	padding: 25px 0 25px 0;
+	font-size: @fos-basefont-size + .7em;
+}
+#fos-thumb-desc .carousel-indicators {
+	padding: 0px;
+	margin: 0 auto;
+	z-index: 90;
+}
+#fos-thumb-desc ol{
+	position: absolute;
+	top: 35%;
+	left: 25%;
+}
+#fos-thumb-desc .carousel-indicators li {
+width:30px;
+height:30px;
+border-color:#fff;
+}
+#fos-thumb-desc .carousel-indicators .active {
+width:30px;
+height:30px;
+background:#fff;
+border-color:#fff;
+}
+#fos-partner-carousel{
+	margin: 0 auto;
+	width: 90%;
+	overflow: none;
+}
+#myCarousel .thumbnail {
+margin-bottom: 0;
+}
+#fos-partner-carousel .carousel-control.left, .carousel-control.right {
+background-image:none !important;
+}
+#fos-partner-carousel .carousel-control {
+color:#fff;
+top:40%;
+color:#428BCA;
+bottom:auto;
+padding-top:4px;
+width:30px;
+height:30px;
+text-shadow:none;
+opacity:1;
+}
+#fos-partner-carousel .carousel-control.left, .carousel-control.right {
+background-image:none !important;
+}
+#fos-partner-carousel .carousel-control.right {
+left:auto;
+right:-8px;
+}
+#fos-partner-carousel .carousel-control.left {
+right:auto;
+left:-16px;
+}
+#fos-partner-carousel .carousel-indicators {
+bottom:-30px;
+}
+#fos-partner-carousel .carousel-inner{
+	margin: 0 auto;
+	width: 95%;
+}
+#fos-partner-carousel .carousel-control i{
+	font-size: @fos-basefont-size + 1em;
+	color: rgba(0, 0, 0, 0.3)
+}
+#fos-partner-carousel .carousel-control i:hover{
+	color: rgba(181, 73, 39, 0.7);
+	cursor: pointer;
+}
+#fos-partner-carousel .thumbnail{
+	margin: 0 auto;
+}
+
+#demo-videos{
+	background: rgba(0, 0, 0, 0.5);
+	border: 5px solid rgba(0, 0, 0, 0.7);
+}
+
+.fos-news-wrapper{
+	background: rgba(0, 0, 0, 0.7);
+	height: 700px;
+	padding: 2% 10px;
+	color: lighten(@fos-app-content-color, 100%)
+}
+.fos-news-wrapper .fos-news-container{
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 10px 5px;
+}
+.fos-news-wrapper .fos-news-container h1{
+	font-size: @fos-basefont-size + .3em;
+	font-weight: 600;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items{
+	width: 100%;
+	min-height: 300px;
+	padding-right: 10px;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items img{
+	width: 100%;
+	height: 200px;
+	padding: 0;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items video{
+	width: 100%;
+	height: 200px;
+	padding: 0;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items footer{
+	padding: 2px 0;
+	position: relative;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items footer h2{
+	font-size: @fos-basefont-size + .1em;
+	font-weight: 600;
+	color: lighten(@fos-app-content-color, 80%);
+	float: left;
+	line-height: 1.5;
+	width: 60%;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items footer h4{
+	font-size: @fos-basefont-size + .1em;
+	color: lighten(@fos-app-content-color, 80%);
+	float: right;
+	width: 40%;
+	text-align: right;
+	line-height: 2;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items div.fos-news-rating{
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 40%;
+	text-align: left;
+}
+.starRating:not(old){
+  display        : inline-block;
+  width          : 100%;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('@{fos-images}fos-svg-icons/star-off.svg');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('@{fos-images}fos-svg-icons/star-on.svg');
+  background-size : contain;
+  opacity         : 0;
+  -webkit-transition      : opacity 0.2s linear;
+          transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items article{
+	padding: 10px 20px;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items article h3{
+	font-weight: 700;
+}
+.fos-news-wrapper .fos-news-container .fos-news-items h3, .fos-news-wrapper .fos-news-container .fos-news-items article h3 {
+	font-size: @fos-basefont-size + .4em;
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-news-wrapper .fos-news-container .fos-news-items p, .fos-news-wrapper .fos-news-container .fos-news-items article p{
+	font-size: @fos-basefont-size + .2em;
+	color: lighten(@fos-app-content-color, 80%);
+	text-align: justify;
+}
+.fos-news-video{
+	background: rgba(0, 0, 0, 0.8);
+}
+/*==========================Home Page styling ends =============================*/
+
+/* GLOBAL RULES */
+a{
+	text-decoration: none !important;
+	font-weight: 600;
+	color: @fos-link-colors;
+	outline: none !important;
+	cursor: pointer !important;
+}
+a:hover {
+	color: lighten(@fos-theme-color, 10%);
+}
+button:hover{
+	-webkit-transition: background-color .25s ease !important;
+    transition: background-color .25s ease !important;
+}
+/*Required field marker*/
+.required .control-label:after {
+  font-family: FontAwesome;
+  content: '\f069';
+  color: @fos-theme-color;
+  font-weight: 100;
+  font-size: @fos-basefont-size - .3em;
+}
+.required-field:before {
+  font-family: FontAwesome;
+  content: '\f069';
+  color: @fos-theme-color;
+  font-weight: 100;
+  font-size: @fos-basefont-size - .3em;
+}
+
+/* Putting 15px space above a element*/
+.fos-top-spacer{
+	padding-top: 15px;
+}
+.fos-text-centered{
+	text-align: center !important;
+}
+.fos-no-left-right-spacing{
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.fos-no-around-spacing{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.fos-spacing-left-20p{
+	padding-left: 25px !important;
+}
+/* Form fillup progress hint*/
+.fos-hint-container{
+	width: 100%;
+	padding: 10px 20px;
+	clear: both;
+	font-family: @fos-basefont-content;
+	position: absolute;
+	top: -200px;
+	left: 0;
+	z-index: 100;
+}
+.fos-hint-container-header{
+	background: url('@{fos-images}fos-svg-icons/help-marker.svg') no-repeat;
+	background-size: 100% 100%;
+	color: lighten(@fos-app-content-color, 100%);
+	font-size: @fos-basefont-size + 0.1em;
+	font-weight: 700;
+	width: 60%;
+	height: 85px;
+	line-height: 6;
+	text-align: center;
+	text-transform: uppercase;
+}
+.fos-hint-steps{
+	padding: 15px 10px 0 30px;
+}
+.fos-hint-step-counter{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 2px solid @fos-theme-color;
+	float: left;
+	position: relative;
+	font-size: @fos-basefont-size + 1.5em;
+	font-weight: 800;
+	text-align: center;
+	line-height: 2;
+	color: darken(@fos-theme-color, 20%);
+	background: lighten(@fos-shadow-border, 100%);
+	z-index: 10;
+}
+.fos-hint-items{
+	position: relative;
+	text-align: justify;
+	color: lighten(@fos-shadow-border, 30%);
+	font-size: @fos-basefont-size + .1em;
+}
+.fos-hint-items .fos-hint-step-heading{
+	text-align: left;
+	padding: 0;
+	margin: 10px 0 0 20px;
+	background: @fos-theme-color; /* Old browsers */ /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@fos-theme-color), color-stop(100%,@fos-theme-color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @fos-theme-color 0%,@fos-theme-color 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+	background: -webkit-linear-gradient(top, @fos-theme-color 0%, @fos-theme-color 100%);
+	background: linear-gradient(to bottom,  @fos-theme-color 0%,@fos-theme-color 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@fos-theme-color', endColorstr='@fos-theme-color',GradientType=0 ); /* IE6-9 */
+	color: lighten(@fos-shadow-border, 30%);
+	font-weight: 500;
+	color: lighten(@fos-app-content-color, 100%);
+	font-size: @fos-basefont-size + .3em;
+	border-radius: 0 50px 50px 0;
+	width: 50%;
+	height: 40px;
+	z-index: -10;
+	line-height: 2.5;
+	text-indent: 20px;
+}
+.fos-hint-items .fos-hint-step-info{
+	text-align: justify;
+	padding: 0;
+	margin: 10px 0 0 80px;
+	width: 50%;
+	font-size: @fos-basefont-size + 0.1em;
+	line-height: 1.5;
+}
+/*UI Help block formating*/
+.help-block{
+	color: lighten(@fos-shadow-border, 100%) !important;
+	background: @fos-theme-color;
+	padding: 5px;
+	margin-top: 10px;
+	border-radius: 0;
+	width: 100%;
+	position: relative;
+}
+.top-arrow{
+	position: absolute;
+	top: -10px;
+	left: 30px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent @fos-theme-color transparent;
+}
+.fos-big-header{
+	color: lighten(@fos-base-font-color, 40%);
+	font-size: @fos-basefont-size + 0.5em;
+	text-align: center;
+	padding: 8% 0 10% 0;
+}
+.fos-selected-item-list{
+	float: left;
+	width: 50%;
+	color: @fos-theme-color !important;
+	padding: 0.5% 15px 0 15px;
+}
+.fos-selected-item-btn{
+	color: lighten(@fos-shadow-border, 100%);
+	width: auto;
+	border: none;
+	padding: 5px 30px 5px 10px !important;
+	font-size: @fos-basefont-size;
+	position: relative;
+	background: lighten(@fos-shadow-border, 70%);
+}
+.fos-selected-item-btn:hover{
+	background: lighten(@fos-shadow-border, 50%);
+	color: lighten(@fos-shadow-border, 100%);
+}
+.fos-selected-item-btn-remove{
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	color: lighten(@fos-shadow-border, 100%);
+}
+.fos-progress-position-left{
+	position: absolute;
+	left: 0;
+	bottom: 10%;
+}
+/* Common UI Classes*/
+//==================================================================================
+.fos-align-left{
+	text-align: left !important;
+}
+.fos-margin-bottom-2x{
+	margin-bottom: 30px;
+}
+.fos-margin-top-2x{
+	margin-top: 30px;
+}
+.fos-report-spam{
+	position: absolute;
+	bottom: 0;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border-radius: 50%;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	left:10px;
+	font-size: @fos-basefont-size + .5em;
+	cursor: pointer;
+}
+.fos-btn-report{
+	background: transparent !important;
+	border: none !important;
+	width: 20px !important;
+	height: 20px !important;
+	color: lighten(@fos-base-font-color, 40%) !important;
+}
+.fos-btn-report:hover{
+	color: lighten(@fos-base-font-color, 100%) !important;
+	background: transparent !important;
+}
+.fos-report-search{
+	position: absolute;
+	bottom: 0;
+	right: 200px;
+}
+.fos-report-spam:hover{
+	color: lighten(@fos-app-content-color, 100%);
+	background: @fos-theme-color;
+	border: 1px solid @fos-theme-color;
+}
+.fos-br-items-compact{
+	min-height: 115px !important;
+}
+.fos-2x-btm-padding{
+	padding-bottom: 110px !important;
+}
+.fos-compact-bottom-padding{
+	padding-bottom: 5px !important;
+}
+.fos-sr-label{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	height: 35px;
+	padding: 8px;
+	text-align: center;
+	color: lighten(@fos-app-content-color, 50%);
+	font-size: @fos-basefont-size + 0.1em;
+}
+.fos-padding-10{
+	padding-left: 10px;
+}
+.fos-right-padding{
+	padding-right: 5px !important;
+}
+.fos-content-read-more{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.fos-content-read-less{
+	white-space: normal;
+}
+.fos-text-center{
+	text-align: center !important;
+}
+.fos-full-width{
+	width: 100% !important;
+}
+.fos-read-more{
+	min-width: 50px;
+	background: transparent;
+	border: none;
+	padding: 0;
+	float: right;
+	color: @fos-link-colors;
+}
+.dropdown [title]{
+	position:absolute;
+	top: 0;
+	right: 0;
+}
+.fos-managejob-check{
+	position: absolute;
+	top: 20px;
+	left: 10px;
+}
+.fos-spaced-paragraph{
+	line-height: 2;
+	font-size: @fos-basefont-size;
+}
+
+.fos-sector-display{
+	list-style: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.fos-sector-display .fos-sector-listing{
+	padding: 10px 0;
+	height: 30px;
+	margin-top: 5px;
+	min-width: 100px;
+	display: block;
+}
+.fos-profile-item-container{
+	width: 100%;
+	min-height: 40px;
+	padding: 5px 0 10px 0;
+	font-size: @fos-basefont-size + 0.1em;
+	color: lighten(@fos-app-content-color, 30%); 
+	text-transform: capitalize;
+
+}
+.fos-profile-info-label{
+	color: lighten(@fos-app-content-color, 70%);
+	display: block;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: @fos-basefont-size - 0.1em;
+	line-height: 0.75;
+	padding-top: 10px;
+	//border-bottom: 1px solid lighten(@fos-app-content-color, 85%);
+}
+.fos-profile-master-label{
+	color: lighten(@fos-app-content-color, 70%);
+	display: block;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: @fos-basefont-size - 0.1em;
+	line-height: 0.75;
+	padding-top: 10px;
+	padding-left: 15px;
+	font-weight: 700;
+}
+.fos-profile-item-container .fos-profile-logo{
+	width: 140px;
+	height: 100px;
+	background: lighten(@fos-shadow-border, 85%);
+	overflow: hidden;
+}
+.fos-profile-item-container .fos-profile-logo img{
+	width: 100%;
+	height: 100%;
+}
+.fos-nopadding-top{
+	padding-top: 0px !important;
+}
+.fos-clear-both{
+	clear: both;
+}
+.fos-shrink-rl{
+	padding-left: -15px !important;
+	padding-right: -15px !important;
+	margin-left: -15px !important;
+	margin-right: -15px !important;
+}
+.fos-margin-left-n10{
+	margin-left: -10px !important;
+}
+.fos-margin-left-15p{
+	margin-left: 15px !important;
+}
+.fos-margin-right-15p{
+	margin-right: 15px !important;
+}
+.disabled {
+    color: lighten(@fos-app-content-color, 70%);
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+}
+.fos-disabled{
+	text-align: center;
+	color: red;
+	font-size: @fos-basefont-size + 0.2em;
+}
+.disabled:hover {
+	content: "\f000";
+    font-family: FontAwesome;
+}
+.fos-select-msg{
+	position: absolute;
+	top: 10px;
+	left: -5px;
+}
+.fos-select-msg-job{
+	position: absolute;
+	top: 20px;
+	left: 5px;
+}
+.fos-border-right{
+	border-right: 1px solid lighten(@fos-shadow-border, 80%) !important;
+}
+.fos-left-border{
+	border-left: 1px solid lighten(@fos-shadow-border, 80%) !important;
+}
+.fos-right-border{
+	border-right: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-bottom-border{
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-msg-reading hr{
+	width: 100%;
+	border-top: 2px dashed lighten(@fos-shadow-border, 70%);
+}
+.fos-subscription-type{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.fos-reply-to{
+	padding: 5px;
+	font-size: @fos-basefont-size + 0.2em;
+}
+.fos-reply-to b{
+	padding: 0 10px 0 0;
+}
+.fos-reply-to span{
+	padding: 0 10px;
+	border-left: 2px solid lighten(@fos-shadow-border, 80%);
+}
+.input-group span{
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+.fos-page-loader {
+	z-index: 1800;
+	background: rgba(0, 0, 0, 0.6);
+}
+.fos-active-panel{
+	background: @fos-theme-color !important;
+}
+.fos-active-job{
+	color: #117a0b !important;
+}
+.fos-inactive-job{
+	color: #d60505 !important;
+}
+.fos-tiny-font{
+	font-size: @fos-basefont-size - .2em !important;
+}
+.thumbnail img{
+	height : 100%; 
+	width : 100%;
+}
+.fos-favourite-heading-h3{
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + 0.5em;
+}
+.fos-favourite-heading-h4{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size + 0.2em;
+}
+.fos-favourite-heading-h5{
+	color: lighten(@fos-app-content-color, 55%);
+	font-size: @fos-basefont-size;
+}
+.fos-file-type{
+	background: lighten(@fos-shadow-border, 80%);
+	color: lighten(@fos-shadow-border, 60%);
+	font-size: @fos-basefont-size - .25em;
+	padding: 10px 4px;
+	margin-top: 10px;
+	border-radius: 0;
+	display: block;
+	position: relative;
+}
+.fos-dashboard-action-options{
+	padding-top: 2px;
+}
+.fos-no-result{
+	font-size: @fos-basefont-size + 0.3em;
+	text-align: center;
+	padding-top: 5%;
+	display: block;
+	color: lighten(@fos-app-content-color, 40%)
+}
+.fos-thick-font {
+    font-weight: bold;
+      font-family: fantasy;
+}
+.fos-10x-width{
+	width: 500% !important;
+}
+.fos-dashboard-container-broad-header{
+	border: 1px solid red;
+	width: 100%;
+}
+#fos-stick.fos-stick-container{
+	position: fixed;
+	top: 300px;
+	left: 200px;
+	margin-top: 10%;
+}
+.fos-dashboard-inner-content-header{
+	height: 35px;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	margin: 0;
+	padding: 0;
+	background: @fos-tab-menu-bg;
+}
+.fos-search-action-header{
+	padding: 0;
+	color: lighten(@fos-app-content-color, 70%) !important;
+}
+.fos-search-action-header label{
+	padding-right: 10px;
+}
+.fos-fields-min-width{
+	width: 80px !important;
+}
+.fos-registration-fs-heading{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size + .6em;
+	margin-left: -15px;
+	padding-bottom: 5px;
+	border-bottom: 1px dashed lighten(@fos-shadow-border, 60%);
+}
+.fos-registration-fs-sub-heading{
+	color: lighten(@fos-app-content-color, 30%);
+	font-size: @fos-basefont-size + .2em;
+	padding-top: 10px;
+}
+.fos-btn-selected-item{
+	background: lighten(@fos-app-content-color, 80%);
+	color: lighten(@fos-app-content-color, 100%);
+	border-radius: 0;
+	font-size: @fos-basefont-size - .1em;
+	margin: 0 10px 10px 0;
+}
+.fos-btn-selected-item:hover{
+	background: lighten(@fos-app-content-color, 70%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-selected-items-pos button{
+	margin: 5px;
+	clear: both;
+	display: inline;
+}
+.fos-wide-registration-wrapper{
+	width: 100% !important;
+	padding: 2% !important;
+}
+.fos-more-link{
+	display: block;
+	padding: 10px 0;
+	text-align: right;
+	cursor: pointer;
+}
+.fos-minimized-text{
+	font-size: @fos-basefont-size - 0.15em !important;
+}
+.fos-individual-label{
+	font-family: @fos-basefont-content;
+	font-size: @fos-basefont-size + 0.3em;
+	color: lighten(@fos-app-content-color, 40%);
+	padding-left: 35px;
+}
+.fos-light-black-label-clr{
+	font-family: @fos-basefont-content;
+	font-size: @fos-basefont-size + 0.1em;
+	color: lighten(@fos-app-content-color, 40%);
+}
+.fos-unread-msg{
+	font-weight: 600 !important;
+	color: darken(@fos-theme-color, 15%);
+}
+.fos-uppercase {
+	text-transform: uppercase;
+}
+.fos-form-type-heading{
+	padding: 10px 15px 30px 15px;
+	font-size: @fos-basefont-size + 0.5em;
+	color: darken(@fos-theme-color, 10%);
+	font-weight: 600;
+}
+.fos-no-boxshadow{
+	box-shadow: none !important;
+}
+.fos-busy-icon{
+	text-align: center !important;
+	font-size: @fos-basefont-size + 1em !important;
+	color: darken(@fos-theme-color, 10%) !important;
+	display: block;
+}
+.fos-no-lr-padding{
+	padding-left: 0 !important;
+	padding-right:  0 !important;
+}
+.fos-arrow-top{
+	position: absolute;
+	top: -12px;
+	left: 45%;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid @fos-theme-color;
+}
+.fos-arrow-top-notification{
+	position: absolute;
+	top: -12px;
+	left: 56%;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid @fos-theme-color;
+}
+.fos-arrow-top-gray{
+	position: absolute;
+	top: -10px;
+	left: 15px;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid lighten(@fos-app-content-color, 80%);
+}
+/* If no result found*/
+.fos-no-data-found{
+	font-size: @fos-basefont-size + 0.25em;
+	color: lighten(@fos-app-content-color, 60%);
+	text-align: center;
+	padding: 20px 0;
+}
+.fos-no-data-found:after{
+	content: ' . . .';
+	font-size: @fos-basefont-size + 0.5em;
+}
+.fos-result-heading{
+	font-size: @fos-basefont-size + 0.2em;
+	color: lighten(@fos-app-content-color, 50%);
+	text-align: center;
+	font-weight: 600;
+}
+/* Failure alert customization*/
+.fos-alert{
+	border-radius: 0 !important;
+	background: lighten(@fos-theme-color, 40%);
+	color: darken(@fos-theme-color, 5%);
+	font-weight: 800;
+}
+/* Floating links with lable to right/left*/
+.fos-right-floated-link{
+	padding: 15px;
+	float: right;
+	text-align: right;
+	color: lighten(@fos-base-font-color, 40%);
+}
+.fos-left-floated-link{
+	padding: 15px;
+	float: left;
+	text-align: left;
+	color: lighten(@fos-base-font-color, 40%);
+}
+/* Label inside the form */
+.fos-form-block-label{
+	color: lighten(@fos-base-font-color, 40%) !important;
+	display: block !important;
+	font-size: @fos-basefont-size + 0.1em !important;
+}
+/*Not choosen select items*/
+.fos-select .fos-not-chosen {
+  color: lighten(@fos-app-content-color, 60%) !important;
+}
+/* Theme background color */
+.fos-theme-bg{
+	background: @fos-theme-color !important;
+}
+/* Spacing riht*/
+.fos-spacing-right{
+	padding-right: 5% !important;
+}
+/* Padding top and bottom */
+.fos-spacing-top-bottom{
+	padding: 5%  0!important;
+}
+.fos-spacing-top{
+	padding-top: 5% !important;
+}
+.fos-spacing-bottom{
+	padding-bottom: 5% !important;
+}
+.fos-bottom-margin, .fos-btm-margin{
+	margin-bottom: 10px !important;
+}
+.fos-top-margin{
+	margin-top: 10px !important;
+}
+.fos-top-2x-margin{
+	margin-top: 20px !important;
+}
+.fos-top-padding{
+	padding-top: 10px !important;
+}
+.fos-top-bottom-margin{
+	margin: 10px 0!important;
+}
+/*Relative position*/
+.fos-relative{
+	position: relative;
+}
+.fos-input-field-icon{
+	position: absolute;
+	right: 15px;
+	padding: 5px;
+	text-align: center;
+	top: 0;
+	color: lighten(@fos-base-font-color, 70%);
+	height: 35px;
+	width: 35px;
+}
+.fos-main-header{
+	color: lighten(@fos-base-font-color, 100%);
+	display: block;
+	font-size: @fos-basefont-size + 2em;
+	font-weight: 900;
+	text-shadow: 0 0 5px @fos-shadow-border;
+}
+.fos-main-sub-header{
+	color: lighten(@fos-base-font-color, 100%);
+	display: block;
+	font-size: @fos-basefont-size + 1.2em;
+	font-weight: 700;
+	text-shadow: 0 0 5px @fos-shadow-border;
+}
+.fos-reg-form-info{
+	color: @fos-theme-color;
+	display: block;
+	font-size: @fos-basefont-size - 0.008em;
+	font-weight: 900;
+	font-style: italic;
+	text-shadow: 0 0 5px lighten(@fos-shadow-border, 100%);
+}
+.fos-form-heading{
+	position: absolute;
+	top: -10%;
+	left: 0;
+}
+.fos-form-inner-heading{
+	display: block;
+	position: absolute;
+	top: 8.5%;
+	line-height: 1.5;
+	left: 45px;
+	text-decoration: underline;
+	width: 100%;
+	font-size: @fos-basefont-size + 0.3em !important;
+	font-weight: 600;
+	padding: 5px 0 10px 30px !import;
+	color: @fos-theme-color !important;
+}
+.fos-image-upload-min-width{
+	width: 300px;
+	padding-left: 15px;
+}
+/* 30 % Light Conetent color of base font color*/
+.fos-30p-light{
+	color: lighten(@fos-app-content-color, 30%);
+}
+/* Theme color h2 heading*/
+.fos-header-theme-h2{
+	color: @fos-theme-color;
+	text-shadow: 0 0 1px @fos-shadow-border;
+	font-size: @fos-basefont-size +.2em;
+}
+/*Dashboard hint section*/
+.fos-dashboard-hint-items{
+	position: relative;
+	text-align: justify;
+	color: lighten(@fos-shadow-border, 30%);
+	font-size: @fos-basefont-size + .1em;
+}
+.fos-dashboard-hint-items .fos-dashboard-hint-step-heading{
+	text-align: center;
+	padding: 10px;
+	background: @fos-theme-color; /* Old browsers */ /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@fos-theme-color), color-stop(44%,@fos-theme-color), color-stop(100%,@fos-theme-color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @fos-theme-color 0%,@fos-theme-color 44%,@fos-theme-color 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+	background: -webkit-linear-gradient(top, @fos-theme-color 0%, @fos-theme-color 44%, @fos-theme-color 100%);
+	background: linear-gradient(to bottom,  @fos-theme-color 0%,@fos-theme-color 44%,@fos-theme-color 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@fos-theme-color', endColorstr='@fos-theme-color',GradientType=0 ); /* IE6-9 */
+	color: lighten(@fos-shadow-border, 30%);
+	font-weight: 600;
+	color: lighten(@fos-app-content-color, 100%);
+	font-size: @fos-basefont-size + .1em;
+	border-radius: 50px;
+	width: 100%;
+	height: 40px;
+	line-height: 1.2;
+	text-transform: capitalize;
+}
+.fos-dashboard-hint-items .fos-dashboard-hint-step-info{
+	text-align: justify;
+	padding: 5px 15px;
+	width: 100%;
+	font-size: @fos-basefont-size - 0.001em;
+	font-weight: 600;
+	line-height: 1.5;
+}
+.thumbnail{
+	background: lighten(@fos-shadow-border, 80%);
+	padding: 10px;
+	margin: 15px 0;
+	border : none; 
+	height : 180px; 
+	width : 250px;
+}
+/*  COMMON CUSTOMIZATION RULES ENDS HERE*/
+/* FORM UI RULES =================================================================*/
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked),
+.fos-form-ui-checkbox [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked) + label,
+.fos-form-ui-checkbox [type="checkbox"]:checked + label {
+  position: relative;
+  padding: 4px 0 0 25px;
+  cursor: pointer;
+}
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked) + label a,
+.fos-form-ui-checkbox [type="checkbox"]:checked + label a {
+  color: @fos-theme-color !important;
+}
+/* checkbox aspect */
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked) + label:before,
+.fos-form-ui-checkbox [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; 
+  top: 2px;
+  width: 20px; 
+  height: 20px;
+  border: 1px solid lighten(@fos-shadow-border, 50%);
+  background: lighten(@fos-shadow-border, 90%);
+  border-radius: 0;
+  box-shadow: inset 0 1px 3px rgba(@fos-flip-red,@fos-flip-green,@fos-flip-blue,@fos-flip-alpha - 0.2)
+}
+/* checked mark aspect */
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked) + label:after,
+.fos-form-ui-checkbox [type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: '\f00c';
+  position: absolute;
+  top: 4px; 
+  left: 4px;
+  font-size: 12px;
+  color: @fos-theme-color;
+  -webkit-transition: all .2s;
+          transition: all .2s;
+}
+/* checked mark aspect changes */
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+.fos-form-ui-checkbox [type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+/* disabled checkbox */
+.fos-form-ui-checkbox [type="checkbox"]:disabled:not(:checked) + label:before,
+.fos-form-ui-checkbox [type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: lighten(@fos-app-content-color, 80%);
+  background-color: lighten(@fos-app-content-color, 75%);
+}
+.fos-form-ui-checkbox [type="checkbox"]:disabled:checked + label:after {
+  color: lighten(@fos-app-content-color, 60%);
+}
+.fos-form-ui-checkbox [type="checkbox"]:disabled + label {
+  color: lighten(@fos-app-content-color, 30%);
+}
+/* accessibility */
+.fos-form-ui-checkbox [type="checkbox"]:checked:focus + label:before,
+.fos-form-ui-checkbox [type="checkbox"]:not(:checked):focus + label:before {
+  border: 1px dotted lighten(@fos-theme-color, 30%);
+}
+/* Radio Button*/
+.fos-radio-btn {
+	margin: 0 0 0 -12px;
+}
+.fos-radio-btn .fos-individual-label{
+	font-family: @fos-basefont-content;
+	font-size: @fos-basefont-size;
+	color: lighten(@fos-app-content-color, 60%);
+}
+.fos-radio-btn input[type=radio   ]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+.fos-radio-btn input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
+}
+.fos-radio-btn input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 1.5em;
+  height           : 1.5em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 1px solid lighten(@fos-shadow-border, 75%);
+  border-radius    : 1.5em;
+  background       : lighten(@fos-shadow-border, 100%);
+  vertical-align   : bottom;
+}
+.fos-radio-btn input[type=radio]:not(old):checked +  label > span > span{
+  display          : block;
+  width            : 0.8em;
+  height           : 0.8em;
+  margin           : 0.255em;
+  border           : 1px solid @fos-theme-color;;
+  border-radius    : 0.8em;
+  background       : @fos-theme-color;
+}
+/* Select elements */
+.fos-form-field-narrow{
+	border-radius: 0;
+	height: 2em;
+	padding: 2px;
+}
+.fos-form-field-narrow:focus, .fos-form-textarea-narrow:focus {
+	border: 1px solid @fos-theme-color;
+	box-shadow: none;
+}
+.fos-select-narrow {
+    padding: 0;
+    margin: 0;
+    border: 1px solid lighten(@fos-shadow-border, 80%);
+    min-width: 100%;
+    border-radius: 0;
+    font-size: @fos-basefont-size;
+    overflow: hidden;
+    position: relative;
+    height: 30px;
+    background-color: lighten(@fos-shadow-border, 100%);
+}
+.fos-select-narrow:before {
+	font-family: FontAwesome;
+  	content: '\f0dc';
+	position: absolute;
+	top: 2px;
+	color: @fos-theme-color;
+	right: 0;
+	background: lighten(@fos-shadow-border, 100%);
+	padding: 5px;
+	cursor: default;
+	//border-left: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-select-narrow select {
+    padding: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.fos-select-narrow:focus {
+    outline: @fos-theme-color;
+}
+
+.fos-select {
+    padding: 0;
+    margin: 0;
+    border: 1px solid lighten(@fos-shadow-border, 80%);
+    min-width: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: lighten(@fos-shadow-border, 100%);
+}
+.fos-select:before {
+	font-family: FontAwesome;
+  	content: '\f0dc';
+	position: absolute;
+	top: 0;
+	color: @fos-theme-color;
+	right: 0;
+	background: lighten(@fos-shadow-border, 100%);
+	padding: 10px 5px;
+	cursor: default;
+	//border-left: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-select select {
+    padding: 5px 3px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.fos-select:focus {
+    outline: @fos-theme-color;
+}
+.fos-select-multi select[multiple] {
+	height: 80px;
+	font-family: inherit;
+	border-radius: 0;
+}
+.fos-select-multi select[multiple]:focus {
+	border: 1px solid @fos-theme-color;
+}
+.fos-form-textarea{
+	border-radius: 0;
+	height: 6em;
+	padding: 5px;
+	resize: none;
+}
+.fos-form-field{
+	border-radius: 0;
+	height: 2.5em;
+	padding: 5px;
+}
+.fos-form-field:focus, .fos-form-textarea:focus {
+	border: 1px solid @fos-theme-color;
+	box-shadow: none;
+}
+.fos-form-field-search{
+	border-radius: 0;
+	height: 2.5em;
+	padding: 5px 20px 5px 5px;
+	height: 30px !important;
+}
+.fos-form-field-search:focus {
+	border: 1px solid @fos-theme-color;
+	box-shadow: none;
+}
+.fos-btn{
+	background: @fos-theme-color;
+	color: lighten(@fos-black, 100%) !important;
+	border-radius: 0;
+	border: none;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.fos-btn-cancel{
+	background: lighten(@fos-black, 50%) !important;
+	color: lighten(@fos-black, 100%);
+	border-radius: 0;
+	border: none;
+	padding: 10px;
+	margin: 10px 0;
+}
+.fos-btn-cancel:hover, .fos-btn-cancel:active{
+	color: lighten(@fos-black, 100%) !important;
+	background: lighten(@fos-black, 30%) !important;
+}
+.fos-btn:hover, .fos-btn:active{
+	color: lighten(@fos-black, 100%) !important;
+	background: darken(@fos-theme-color, 10%) !important;
+}
+.fos-btn-1x{
+	min-width: 90px;
+	height: 30px;
+	padding: 0 5px;
+	margin: 0 5px;
+}
+.fos-btn-1x-cancel{
+	min-width: 90px;
+	height: 30px;
+	padding: 0 5px;
+	margin: 0 5px;
+	background-color: lighten(@fos-base-font-color, 60%);
+}
+.fos-btn-search{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: -12px;
+	top: -10px;
+	padding: 0;
+}
+.fos-btn-close{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: -45px;
+	top: -10px;
+	padding: 0;
+}
+.fos-inner-btn{
+	position: absolute; 
+	top: 5px; 
+	right: 5px; 
+	z-index: 10; 
+	cursor: pointer;
+}
+.fos-error-btn{
+	padding: 15px;
+	width: 80%;
+	font-weight: 700;
+	border-radius: 50px;
+	margin-top: 10%;
+}
+.fos-btn-2x{
+	min-width: 120px;
+	height: 40px;
+}
+.fos-btn-default-crm{
+	height: 30px;
+	min-width: 30px;
+	border-radius: 0;
+	margin-top: 10px;
+}
+
+/*add icon at begining*/
+.fos-btn-add-field{
+	color: lighten(@fos-app-content-color, 50%);
+	border: 1px solid lighten(@fos-app-content-color, 85%);
+}
+.fos-btn-add-field:active, .fos-btn-add-field:link, .fos-btn-add-field:visited {
+	background: transparent;
+	outline: none;
+}
+.fos-btn-add-field:hover, .fos-btn-add-field:active{
+	color: darken(@fos-theme-color, 5%);
+}
+.fos-btn-add-field:before{
+	color: @fos-premium-color;
+	font-family: FontAwesome;
+	content: '\f067';
+	padding-right: 10px;
+}
+/*book icon at begning*/
+.fos-btn-list-field{
+	color: lighten(@fos-app-content-color, 50%);
+}
+.fos-btn-list-field:active, .fos-btn-list-field:link, .fos-btn-list-field:visited {
+	background: transparent;
+	outline: none;
+}
+.fos-btn-list-field:hover, .fos-btn-list-field:active{
+	color: darken(@fos-theme-color, 5%);
+}
+.fos-btn-list-field:before{
+	color: @fos-theme-color;
+	font-family: FontAwesome;
+	content: '\f03a';
+	padding-right: 10px;
+}
+/*edit icon at begning*/
+.fos-btn-edit-field{
+	color: lighten(@fos-app-content-color, 50%);
+}
+.fos-btn-edit-field:active, .fos-btn-edit-field:link, .fos-btn-edit-field:visited {
+	background: transparent;
+	outline: none;
+}
+.fos-btn-edit-field:hover, .fos-btn-edit-field:active{
+	color: darken(@fos-theme-color, 5%);
+}
+.fos-btn-edit-field:before{
+	color: @fos-theme-color;
+	font-family: FontAwesome;
+	content: '\f044';
+	padding-right: 10px;
+}
+/*delete icon at begning*/
+.fos-btn-delete-field{
+	color: lighten(@fos-app-content-color, 50%);
+}
+.fos-btn-delete-field:active, .fos-btn-delete-field:link, .fos-btn-delete-field:visited {
+	background: transparent;
+	outline: none;
+}
+.fos-btn-delete-field:hover, .fos-btn-delete-field:active{
+	color: darken(@fos-theme-color, 5%);
+}
+.fos-btn-delete-field:before{
+	color: @fos-theme-color;
+	font-family: FontAwesome;
+	content: '\f014';
+	padding-right: 10px;
+}
+
+.btn-no-rounded{
+	border-radius: 0 !important;
+}
+.fos-btn-primary{
+	margin-left: 50px;
+	height: 40px;
+	background: lighten(@fos-theme-color, 0%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-default{
+	background: lighten(@fos-shadow-border, 75%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-btn-default{
+	margin-left: 50px;
+	height: 40px;
+	border-radius: 0;
+	background: lighten(@fos-shadow-border, 75%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-btn-mini{
+	min-width: 40px;
+	padding: 5px 10px;
+	height: 35px;
+}
+.btn-basic{
+	color: lighten(@fos-app-content-color, 100%);
+}
+.btn-package{
+	height: 25px;
+	font-weight: initial;
+	font-size: @fos-basefont-size - 0.1em;
+	border-radius: 0 !important;
+	box-shadow: 2px 2px 4px lighten(@fos-shadow-border, 50%)
+}
+.btn-custom{
+	background: @fos-theme-color;
+	border: 1px solid @fos-theme-color;
+	color: lighten(@fos-app-content-color, 100%);
+	font-weight: normal;
+	padding: 15px;
+	border-radius: 30px;
+	box-shadow: 2px 2px 3px lighten(@fos-shadow-border, 50%);
+}
+.fos-btn-topup{
+	background: @fos-premium-color;
+	border: 1px solid @fos-premium-color;
+	color: lighten(@fos-app-content-color, 100%);
+	min-width: 100px;
+	padding: 5px 15px;
+}
+.btn-premium{
+	background: @fos-premium-color;
+	border: 1px solid @fos-premium-color;
+	color: lighten(@fos-app-content-color, 100%);
+	font-weight: normal;
+	padding: 10px;
+	border-radius: 30px;
+	box-shadow: 2px 2px 5px lighten(@fos-shadow-border, 50%);
+}
+.btn-premium:hover{
+	background: darken(@fos-premium-color, 10%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.btn-custom:hover{
+	background: darken(@fos-theme-color, 10%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-btn-4x{
+	width: 300px;
+	height: 45px;
+}
+.fos-btn-50p{
+	width: 49%;
+	height: 35px;
+	float: left;
+	line-height: 1.2;
+}
+.fos-btn-block{
+	display: block;
+	width: 100%;
+	font-size: @fos-basefont-size + 0.5em;
+	clear: both;
+}
+.fos-no-top-btm-spacing{
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.fos-btn-top-right{
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	min-width: 50px !important;
+	height: 30px !important;
+	padding: 5px !important;
+}
+.fos-rounded-btn{
+	border-radius: 3px !important;
+}
+.fos-rounded-btn:before{
+	font-family: FontAwesome;
+	content: '\f055';
+	padding-right: 10px;
+}
+.fos-btn-block-search{
+	display: block;
+	width: 100%;
+	font-size: @fos-basefont-size + 0.2em;
+	clear: both;
+	height: 35px;
+}
+.fos-btn-block:hover{
+	color: lighten(@fos-base-font-color, 100%);
+}
+.fos-round-reset{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 50px !important;
+	height: 50px !important;
+	font-size: @fos-basefont-size + 1em !important;
+	padding: 0;
+	border-radius: 50px;
+	background: lighten(@fos-shadow-border, 80%);
+	color: lighten(@fos-shadow-border, 100%);
+}
+.fos-round-reset:hover{
+	background: @fos-theme-color;
+	color: lighten(@fos-shadow-border, 100%);
+}
+.fos-btn-dynamic-field{
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 40px !important;
+	border: none !important;
+	background: none !important;
+	color: @fos-theme-color !important;
+	font-size: @fos-basefont-size + 0.8em !important;
+	position: absolute;
+	top: 2px;
+	right: 60px;
+	padding: 0;
+}
+.btn-fos-dynamic-field:hover{
+	color: @fos-app-content-color !important;
+}
+.fos-btn-add-nationality{
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 40px !important;
+	border: none !important;
+	background: none !important;
+	color: @fos-theme-color !important;
+	font-size: @fos-basefont-size + 0.8em !important;
+	position: absolute;
+	top: 0;
+	right: -50px;
+	padding: 0;
+}
+.fos-btn-add-nationality:hover{
+	color: @fos-app-content-color !important;
+}
+.fos-list-btn-position{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+	border-radius: 0;
+	background: @fos-tab-menu-bg;
+	width: 100%;
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+}
+
+.fos-compaign-btn{
+	background: lighten(@fos-shadow-border, 80%) !important;
+	border: none;
+	height: 30px;
+	border-radius: 0;
+	color: lighten(@fos-app-content-color, 100%)
+} 
+.fos-compaign-btn:hover, .fos-compaign-btn:active, .fos-compaign-btn:focus{
+	color: lighten(@fos-app-content-color, 100%) !important;
+	background: @fos-theme-color !important; 
+} 
+.fos-list-btn:first-child{
+	margin-left: 0;
+}
+.fos-list-btn{
+	background: lighten(@fos-shadow-border, 80%) !important;
+	border: none;
+	height: 30px;
+	border-radius: 0;
+	margin-left: 1px;
+	min-width: 30px;
+	color: lighten(@fos-app-content-color, 100%);
+} 
+.fos-list-btn:hover, .fos-list-btn:active, .fos-list-btn:focus{
+	color: lighten(@fos-app-content-color, 100%);
+	background: darken(@fos-theme-color, 30%);
+} 
+.fos-list-btn-left{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.fos-list-btn-right{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+/* Animated button styling*/
+.foosiness-btn{
+    background:@fos-theme-color;
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(@fos-theme-color,0),color-stop(darken(@fos-theme-color, 10%),1));
+    background:-webkit-linear-gradient(top, @fos-theme-color 0%, darken(@fos-theme-color, 10%) 100%);
+    background:linear-gradient(top, @fos-theme-color 0%, darken(@fos-theme-color, 10%) 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='@fos-theme-color', endColorstr='darken(@fos-theme-color, 10%) 100%);',GradientType=0 );
+    padding-left:20px;
+    padding-right:80px;
+    height:50px;
+    display:inline-block;
+    position:relative;
+    border:1px solid @fos-theme-color;
+    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
+    border-radius:5px;
+    float:left;
+    clear:both;
+    margin:10px 0px;
+    overflow:hidden;
+    -webkit-transition:all 0.3s linear;
+    transition:all 0.3s linear;
+}
+.foosiness-btn-text{
+    padding-top:2px;
+    display:block;
+    font-size:16px;
+    white-space:nowrap;
+    text-shadow:0px 1px 1px rgba(255,255,255,0.3);
+    color:#fff !important;
+    -webkit-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+}
+.foosiness-btn-slide-text{
+    position:absolute;
+    height:95%;
+    top:2px;
+    right:52px;
+    width:0;
+    background: url('@{fos-images}fos-svg-icons/fos-logo.svg') no-repeat;
+    background-size: 100% 100%;
+    background-color:lighten(@fos-base-font-color, 20%);
+    text-shadow:0px -1px 1px lighten(@fos-base-font-color, 70%);
+    color:lighten(@fos-base-font-color, 100%) !important;
+    font-size:16px;
+    white-space:nowrap;
+    text-align:left;
+    text-indent:10px;
+    overflow:hidden;
+    line-height:45px;
+    box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
+    -webkit-transition:width 0.3s linear;
+    transition:width 0.3s linear;
+}
+.foosiness-btn-icon-right{
+    position:absolute;
+    right:0px;
+    top:0px;
+    height:100%;
+    width:52px;
+    border-left:1px solid #5d81ab;
+    box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
+}
+.foosiness-btn-icon-right span{
+    width:38px;
+    height:38px;
+    opacity:0.7;
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-size: @fos-basefont-size + .6em !important;
+    margin:-20px 0px 0px -20px;
+    -webkit-transition:all 0.3s linear;
+    transition:all 0.3s linear;
+}
+.foosiness-btn-icon-cancel span{
+    width:38px;
+    height:38px;
+    opacity:0.7;
+    position:absolute;
+    left:50%;
+    font-size: @fos-basefont-size + .6em;
+    top:50%;
+    margin:-20px 0px 0px -20px;
+    -webkit-transition:all 0.3s linear;
+    transition:all 0.3s linear;
+}
+.foosiness-btn:hover{
+    padding-right:180px;
+    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+}
+.foosiness-btn:hover .foosiness-btn-text{
+    text-shadow:0px 1px 1px #5d81ab !important;
+    color:#fff !important;
+}
+.foosiness-btn:hover .foosiness-btn-slide-text{
+    width:100px;
+}
+.foosiness-btn:hover .foosiness-btn-icon-right span{
+    opacity:1;
+    text-shadow: 0 0 3px lighten(@fos-theme-color, 100%);
+}
+.foosiness-btn:active{
+    position:relative;
+    top:1px;
+    background:#5d81ab !important;
+    box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+    border-color:#80a9da !important;
+}
+//Image Uploading
+#fos-image-upload{
+	margin-bottom: 20px;
+}
+#fos-image-upload h3{
+	margin: 0;
+	padding: 0;
+	font-size: @fos-basefont-size + .3em;
+	font-weight: 600;
+}
+#fos-image-upload span.btn{
+	height: 50px;
+	width: 50px;
+	border: none;
+	padding-top: 10px;
+	border-radius: 50px !important;
+	background: lighten(@fos-shadow-border, 80%) !important;
+}
+#fos-image-upload span.btn:hover{
+	background: @fos-theme-color !important;
+	-webkit-transition: background-color 1s ease !important;
+    transition: background-color 1s ease !important;
+}
+#fos-image-upload span.btn i{
+	color: lighten(@fos-shadow-border, 100%) !important;
+	font-size: @fos-basefont-size + .8em;
+	text-align: center;
+}
+/* Left right rounded pills buttons */
+.fos-reg-verified-pills-btn{
+	width: 42% !important;
+	height: 35px;
+	border: 0;
+	font-size: @fos-basefont-size - 0.3em;
+	position: absolute;
+	bottom: 50px;
+	font-weight: 600;
+	background: @fos-theme-color;
+	color: lighten(@fos-shadow-border, 100%);
+}
+.fos-reg-verified-pills-btn-left{
+	left: 10px;
+	border-radius: 35px 0 0 35px !important;
+}
+.fos-reg-verified-pills-btn-right{
+	right: 10px;
+	border-radius: 0 35px 35px 0 !important;
+}
+/*---------------- Dashboard switching buttons -------------- */
+.fos-dashbaord-switcher{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.fos-header-switcher{
+	position: absolute;
+	bottom: -15px;
+	right: 0;
+	background: @fos-theme-color;
+	width: 30px;
+	height: 35px;
+	padding: -20px 5px;
+	outline: none;
+	margin: 0 0 0 0;
+	color: lighten(@fos-base-font-color, 100%);
+	font-weight: 500;
+	border-radius: 0 0 10px 10px;
+	font-size: @fos-basefont-size + 1.4em;
+	border: none;
+}
+.fos-btn-db-switcher{
+	width: 40px;
+	height: 40px;
+	background: lighten(@fos-shadow-border, 75%);
+	color: lighten(@fos-shadow-border, 20%);
+	border: 0;
+	border-radius: 40px;
+	outline: none;
+	font-size: @fos-basefont-size + 0.5em;
+}
+.fos-btn-db-switcher:hover{
+	background: @fos-theme-color;
+	box-shadow: none;
+	color: lighten(@fos-shadow-border, 100%);
+}
+.fos-dashboard-image-upload{
+	position: absolute;
+	top: 20px;
+	left: -275px;
+	padding: 10px !important;
+}
+//--------------LIST ITEMS FORM ELEMENT---------------------
+.fos-list-element{
+	width: 100%;
+	border-radius: 0;
+	height: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin-top: 0;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	border-top: none;
+}
+.fos-list-element .fos-list-items{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.fos-list-element .fos-list-items li{
+	display: block;
+	padding: 5px;
+}
+.fos-list-element .fos-list-items li:hover, .fos-list-element .fos-list-items li:active {
+	background: @fos-list-item-active;
+	cursor: pointer;
+}
+.fos-datepicker-element .datepicker{
+	position: absolute !important;
+	top:7px !important;
+	right: 3px !important;
+	width: 40px !important;
+	height: 40px !important;
+	color: lighten(@fos-shadow-border, 40%);
+	border: none;
+}
+.fos-datepicker-element .datepicker:hover{
+	color: @fos-theme-color;
+	cursor: pointer;
+}
+.fos-datepicker-element .fos-datepicker-icon{
+	font-size: @fos-basefont-size + 0.5em !important;
+}
+/* FORM UI RULES ENDS*/
+/* ================ BOOTSTRAP OVER-WRITES ==================*/
+.btn-default{
+	border-radius: 0;
+	color: lighten(@fos-base-font-color, 40%);
+}
+.navbar-default .navbar-nav > li > a{
+	font-weight: 100;
+}
+.fos-datepicker-element ul.dropdown-menu{
+	min-height: 280px;
+}
+.dropdown ul.dropdown-menu{
+	min-width: 200px;
+	min-height: 100px;
+	padding: 5px;
+}
+.dropdown ul.dropdown-menu li{
+	padding: 5px;
+}
+.dropdown ul.dropdown-menu li:hover{
+	background: @fos-theme-color;
+	color: lighten(@fos-app-content-color, 100%);
+}
+.btn:active{
+	background: @fos-theme-color !important;
+}
+/*Overriden class of bootstarp to bring the modal window to center*/
+.modal{
+	background: rgba(@fos-flip-red+255, @fos-flip-green+255, @fos-flip-blue+255, @fos-flip-alpha+0.3);
+	position: fixed;
+}
+.modal-lg{
+	margin-top: -14.40%;
+}
+.modal-content{
+	top: 150px;
+	border-radius: 0;
+	padding: 5px;
+	min-height: 100px;
+	border: 1px solid @fos-theme-color !important;
+}
+.modal-header{
+	font-weight: 900;
+	color: @fos-theme-color !important;
+	text-shadow: 0 0 1px lighten(@fos-shadow-border, 40%);
+}
+.modal-body{
+	text-align: left;
+	font-size: @fos-basefont-size + 0.1em !important;
+	color: lighten(@fos-shadow-border, 40%);
+	overflow: hidden;
+}
+.modal-body a{
+	color: lighten(@fos-base-font-color, 75%);
+}
+.modal-footer{
+	width: 100%;
+	padding: 15px;
+}
+.fos-modal-header{
+	font-size: 1.4em !important;
+	font-weight: 100 !important;
+}
+.list-group-item-success{
+	background-color: lighten(@fos-theme-color, 50%);
+	
+}
+a.list-group-item-success{
+	color: @fos-theme-color;
+}
+a.list-group-item-success:hover, a.list-group-item-success:focus{
+	color: lighten(@fos-base-font-color, 100%);
+	background-color: lighten(@fos-theme-color, 20%);
+}
+.fos-popover-add-field{
+	min-width: 120px;
+	padding: 5px;
+	margin: 0;
+	list-style: none;
+}
+.fos-popover-add-field li{
+	padding: 5px 15px;
+	border-radius: 15px;
+}
+.fos-popover-add-field li a{
+	font-weight: 100;
+	color: lighten(@fos-base-font-color, 40%);
+}
+.fos-popover-add-field li:hover{
+	background-color: @fos-theme-color;
+
+}
+.fos-popover-add-field li:hover a{
+	color: lighten(@fos-base-font-color, 100%);
+	
+}
+.fos-popover-items-calendar{
+	list-style: none;
+	padding: 10px 10px 0 10px;
+	position: relative;
+	margin-bottom: 0;
+}
+.fos-popover-items-calendar li{
+	padding: 5px;
+}
+.fos-popover-items-calendar li span{
+	width: 30px;
+	height: 30px;
+	float: left;
+	color: lighten(@fos-base-font-color, 50%);
+}
+.fos-popover-items-calendar li a{
+	color: lighten(@fos-base-font-color, 50%);
+}
+
+.fos-popover-items-calendar li a:hover{
+	color: @fos-theme-color !important;
+}
+.dropdown-menu{
+	overflow: none !important;
+}
+.dropdown-menu>li
+{	position:relative;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+	cursor:pointer;
+}
+.right-caret:after,.left-caret:after
+ {	content:"";
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+	margin-left:5px;
+}
+.right-caret:after
+{	border-left: 5px solid lighten(@fos-base-font-color, 60%);
+}
+.left-caret:after
+{	border-right: 5px solid lighten(@fos-base-font-color, 60%);
+}
+/*Bootstrap well overwrite*/
+.well{
+	padding: 5px 0;
+	min-height: 45px;
+}
+.well-sm{
+	background-color: lighten(@fos-theme-color, 50%);
+	border-color: lighten(@fos-theme-color, 46%);
+	font-size: @fos-basefont-size + 0.4em;
+	color: lighten(@fos-base-font-color, 48%);
+	margin-bottom: 5px;
+	text-shadow: 1px 1px 2px lighten(@fos-shadow-border, 100%);
+}
+/*Customized Progress bar*/
+.progress{
+	border-radius:0;
+	height: 13px;
+	border: 1px solid lighten(@fos-shadow-border, 85%);
+}
+.fos-progress-bar{
+	background-color: darken(@fos-theme-color, 1%);
+}
+.fos-progress-bar:hover{
+	background-color: darken(@fos-theme-color, 10%);
+	cursor: pointer;
+}
+.progress div{
+	border-right: 1px solid #fff;
+}
+.progress div:last-child{
+	border: none;
+}
+// Dashboard horizontal tabbed navigation
+.nav-pills{
+	margin-left: 18.9%;
+}
+.nav-pills li{
+	min-width: 200px;
+	background: @fos-tab-menu-bg;
+	font-size: @fos-basefont-size + .25em;
+	text-align: center;
+	line-height: 30px;
+	height: 45px;
+	padding: 0px;
+	border-radius: 0;
+	border: 0.001em solid lighten(@fos-shadow-border, 85%);
+}
+.nav-pills li a{
+	color: lighten(@fos-app-content-color, 30%);
+	line-height: 1.4;
+}
+.nav-pills li.active{
+	min-width: 200px;
+	background: @fos-theme-color;
+	height: 45px;
+	font-weight: 700;
+	border-radius: 0;
+	border: 1px solid lighten(@fos-theme-color, 85%);
+}
+.nav-pills li.active a:focus, .nav-pills li.active a, .nav-pills li.active a:hover{
+	background: none;
+	outline: none;
+	height: 45px;
+}
+.panel{
+	border-radius: 0 !important;
+}
+.panel-heading{
+	border: none;
+	border-radius: 0 !important;
+	font-weight: 700 !important;
+}
+.panel-heading:hover{
+	cursor: pointer;
+}
+.panel-body{
+	padding: 0;
+	margin: 0;
+}
+.panel-default{
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+}
+.panel-group{
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+}
+.panel-title{
+	color: lighten(@fos-app-content-color, 100%);
+}
+//Date picker buttons Buttons
+.btn-success{
+	background: darken(@fos-theme-color, 40%);
+	border: none;
+	border-radius: 0;
+}
+.btn-info{
+	background: @fos-theme-color;
+	border: none;
+	margin-right: 5px;
+	border-radius: 0;
+}
+.btn-danger{
+	background: darken(@fos-theme-color, 15%);
+	border: none;
+	border-radius: 0;
+}
+.alert{
+	border-radius: 0;
+}
+
+.dropdown-menu{
+	border-radius: 0;
+	min-width: 100px;
+	padding: 2px;
+	list-style: none;
+	max-height: 250px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.dropdown-menu li{
+	display: block;
+	border-radius: 0;
+	padding: 1px;
+	cursor: pointer;
+}
+.dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: lighten(@fos-app-content-color, 100%);
+    text-decoration: none;
+    outline: 0;
+    background-color: @fos-theme-color;
+  }
+}
+.fos-ribbon-header-item .caret{
+	position: absolute;
+	top: 8px;
+	left: 100%;
+} 
+.tabbable .nav-tabs{
+	background: @fos-tab-menu-bg;
+}
+.tabbable .nav-tabs .fos-tab-items{
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size + 0.1em;
+	font-weight: normal;
+	background: transparent;
+	height: 35px;
+	border: none;
+}
+.tabbable .nav-tabs .active .fos-tab-items{
+	font-weight: 600;
+	color: @fos-theme-color;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 3px solid @fos-theme-color;
+	background: transparent;
+}
+.tabbable .nav-tabs .fos-tab-items:hover{
+	border-bottom: 3px solid @fos-theme-color;
+	background: transparent;
+}
+.fos-dashboard-tabbable-info-container{
+	margin: 10px 0;
+	min-height: 100px;
+	padding: 30px 10px 10px 10px;
+	border: 1px solid lighten(@fos-shadow-border, 85%);
+	position: relative;
+	clear: both;
+}
+.fos-dashboard-tabbable-info-container .fos-form-toggle{
+	text-transform: capitalize;
+	float: right;
+	color: lighten(@fos-shadow-border, 50%);
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-weight: normal;
+}
+.fos-dashboard-tabbable-info-container .fos-form-toggle:hover{
+	text-decoration: underline !important;
+}
+.fos-tabbable-heading{
+	color: lighten(@fos-shadow-border, 70%);
+	font-size: @fos-basefont-size;
+	text-transform: uppercase;
+}
+.tabbable{
+	padding: 0 5px 0 5px;
+}
+.tabbable .tab-content{
+	padding: 10px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+/* BOOTSTRAP OVER-WRITES ENDS */
+/*===============CK Editor Overwittings==============================*/
+.cke_chrome{
+	border-color: lighten(@fos-shadow-border, 80%) !important;
+}
+.cke_bottom{
+	background: lighten(@fos-theme-color, 100%) !important;
+}
+.cke_dialog_body{
+	border-color: @fos-theme-color !important;
+}
+/*================================= UI ICONS ======================= */
+/*Slide up navigation icons*/
+.fos-user-type-business-card{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	border: 1px solid @fos-theme-color;
+	z-index: 500;
+}
+.fos-user-type-search{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	border: 1px solid @fos-theme-color;
+	z-index: 500;
+}
+
+.fos-corporate-user-bc{
+	position: absolute;
+	top: 3px;
+	left: 5px;
+	width: 35px;
+	height: 35px;
+	background: url('@{fos-images}fos-svg-icons/active-corp-user.svg') no-repeat;
+	background-size: 80% 80%;
+}
+.fos-individual-user-bc{
+	position: absolute;
+	top: 3px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	background: url('@{fos-images}fos-svg-icons/active-indiv-user.svg') no-repeat;
+	background-size: 80% 80%;
+}
+.fos-corporate-user-search{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 2px 3px;
+	width: 25px;
+	height: 25px;
+	background: url('@{fos-images}fos-svg-icons/active-corp-user.svg') no-repeat;
+	background-size: 90% 90%;
+}
+.fos-individual-user-search{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 2px 3px;
+	width: 25px;
+	height: 25px;
+	background: url('@{fos-images}fos-svg-icons/active-indiv-user.svg') no-repeat;
+	background-size: 90% 90%;
+}
+.fos-corporate-user{
+	position: absolute;
+	top: 5px;
+	left: 7px;
+	width: 40px;
+	height: 40px;
+	background: url('@{fos-images}fos-svg-icons/inactive-corp-user.svg') no-repeat;
+	background-size: 80% 80%;
+}
+.fos-individual-user{
+	position: absolute;
+	top: 5px;
+	left: 7px;
+	width: 40px;
+	height: 40px;
+	background: url('@{fos-images}fos-svg-icons/inactive-indiv-user.svg') no-repeat;
+	background-size: 80% 80%;
+}
+.fos-seller{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: 0 0;
+}
+.fos-slideup-items:hover .fos-seller {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: 0 -120px;
+}
+
+.fos-buyer{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -120px 0;
+}
+.fos-slideup-items:hover .fos-buyer {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -120px -120px;
+}
+
+.fos-service-provider{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -240px 0;
+}
+.fos-slideup-items:hover .fos-service-provider {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -240px -120px;
+}
+
+.fos-service-seeker{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -360px 0;
+}
+.fos-slideup-items:hover .fos-service-seeker {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -360px -120px;
+}
+
+.fos-employer{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -480px 0;
+}
+.fos-slideup-items:hover .fos-employer {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -480px -120px;
+}
+
+.fos-employee{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -600px 0;
+}
+.fos-slideup-items:hover .fos-employee {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -600px -120px;
+}
+
+.fos-franchisors{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -720px 0;
+}
+.fos-slideup-items:hover .fos-franchisors {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -720px -120px;
+}
+
+.fos-franchisees{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -840px 0;
+}
+.fos-slideup-items:hover .fos-franchisees {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -840px -120px;
+}
+
+.fos-entrepreneurs{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -960px 0;
+}
+.fos-slideup-items:hover .fos-entrepreneurs {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -960px -120px;
+}
+
+.fos-investors{
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -1080px 0;
+}
+.fos-slideup-items:hover .fos-investors {
+	background: url('@{fos-images}homePageIcons.png') no-repeat center center;
+	background-position: -1080px -120px;
+}
+
+
+//Flipper Div icons
+.fos-services{
+	width: 65%;
+	height: 65%;
+	margin: 0 auto;
+}
+.fos-services .fos-seller-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: 0 -240px;
+}
+.fos-services .fos-buyer-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -130px -240px;
+}
+.fos-services .fos-employer-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -260px -240px;
+}
+.fos-services .fos-employee-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -390px -240px;
+}
+.fos-services .fos-service-provider-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -520px -240px;
+}
+.fos-services .fos-service-seeker-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: 0 -370px;
+}
+.fos-services .fos-franchisor-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -130px -370px;
+}
+.fos-services .fos-franchisee-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -260px -370px;
+}
+.fos-services .fos-entrepreneurs-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -390px -370px;
+}
+.fos-services .fos-investor-icon{
+	width: 100%;
+	height: 100%;
+	background: url('@{fos-images}homePageIcons.png') no-repeat;
+	background-position: -520px -370px;
+}
+.fos-form-ui-logo{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 20px;
+	left: 25px;
+}
+.fos-indiv-user{
+	position: absolute;
+	top:10px;
+	left: 10px;
+	width: 120px;
+	height: 120px;
+	background: url(@fos-indiv-user) no-repeat;
+}
+.fos-corp-user{
+	position: absolute;
+	top:20px;
+	left: 22px;
+	width: 100px;
+	height: 100px;
+	background: url(@fos-corp-user) no-repeat;
+}
+.fos-form-ui-logo .fos-icon-buyer{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: 0 -250px;
+	height: 100px;
+}
+.fos-form-ui-logo .fos-icon-seller{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -100px -250px;
+	height: 100px;
+}
+.fos-form-ui-logo .fos-icon-jobSeeker{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -200px -250px;
+	height: 100px;
+}
+.fos-form-ui-logo .fos-icon-service-provider{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: 0 -350px;
+	height: 100px;
+}
+.fos-form-ui-logo .fos-icon-service-seeker{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -100px -350px;
+	height: 100px;
+}
+.fos-form-ui-logo .fos-icon-employer{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -200px -350px;
+	height: 100px;
+}
+.fos-service-1{
+	background: url('@{fos-images}fos-svg-icons/service-1.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-2{
+	background: url('@{fos-images}fos-svg-icons/service-2.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-3{
+	background: url('@{fos-images}fos-svg-icons/service-3.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-4{
+	background: url('@{fos-images}fos-svg-icons/service-4.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-5{
+	background: url('@{fos-images}fos-svg-icons/service-5.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-6{
+	background: url('@{fos-images}fos-svg-icons/service-6.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-7{
+	background: url('@{fos-images}fos-svg-icons/service-7.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-8{
+	background: url('@{fos-images}fos-svg-icons/service-8.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-9{
+	background: url('@{fos-images}fos-svg-icons/service-9.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-10{
+	background: url('@{fos-images}fos-svg-icons/service-10.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-11{
+	background: url('@{fos-images}fos-svg-icons/service-11.svg') no-repeat;
+	background-size: 60% 60%;
+}
+.fos-service-12{
+	background: url('@{fos-images}fos-svg-icons/service-12.svg') no-repeat;
+	background-size: 60% 60%;
+}
+//Dashboard accordion menu icon set
+.fos-collapse-btn-icon{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+}
+.fos-collapse-menu .fos-collapse-btn .seller{
+	background-position: 0 0;
+}
+.fos-collapse-menu .fos-collapse-btn .buyer{
+	background-position: -40px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .serv-pro{
+	background-position: -80px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .serv-sek{
+	background-position: -120px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .franchiser{
+	background-position: -160px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .franchisee{
+	background-position: -200px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .enterepreneur{
+	background-position: -240px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .investor{
+	background-position: -280px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .employer{
+	background-position: -320px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .job-seeker{
+	background-position: -360px 0;
+}
+.fos-collapse-menu .fos-collapse-btn .message{
+	background-position: 0 -160px;
+}
+.fos-collapse-menu .fos-collapse-btn .contact{
+	background-position: -40px -160px;
+}
+.fos-collapse-menu .fos-collapse-btn .notification{
+	background-position: -80px -160px;
+}
+.fos-collapse-menu .fos-collapse-btn .manage-user{
+	background-position: -120px -160px;
+}
+.fos-collapse-menu .fos-collapse-btn .manage-profile{
+	background-position: -160px -160px;
+}
+.fos-collapse-menu .fos-collapse-btn .manage-password{
+	background-position: -200px -160px;
+}
+.fos-collapse-menu .fos-collapse-btn .manage-seller-opt{
+	background-position: -200px -442px;
+}
+.fos-collapse-menu .fos-collapse-btn .manage-crm-opt{
+	background-position: -120px -442px;
+}
+/*Active menu*/
+.fos-collapse-menu .active .seller{
+	background-position: 0 -40px;
+}
+.fos-collapse-menu .active .buyer{
+	background-position: -40px -40px;
+}
+.fos-collapse-menu .active .serv-pro{
+	background-position: -80px -40px;
+}
+.fos-collapse-menu .active .serv-sek{
+	background-position: -120px -40px;
+}
+.fos-collapse-menu .active .franchiser{
+	background-position: -160px -40px;
+}
+.fos-collapse-menu .active .franchisee{
+	background-position: -200px -40px;
+}
+.fos-collapse-menu .active .enterepreneur{
+	background-position: -240px -40px;
+}
+.fos-collapse-menu .active .investor{
+	background-position: -280px -40px;
+}
+.fos-collapse-menu .active .employer{
+	background-position: -320px -40px;
+}
+.fos-collapse-menu .active .job-seeker{
+	background-position: -360px -40px;
+}
+.fos-collapse-menu .active .message{
+	background-position: 0 -200px;
+}
+.fos-collapse-menu .active .contact{
+	background-position: -40px -200px;
+}
+.fos-collapse-menu .active .notification{
+	background-position: -80px -200px;
+}
+.fos-collapse-menu .active .manage-user{
+	background-position: -120px -200px;
+}
+.fos-collapse-menu .active .manage-profile{
+	background-position: -160px -200px;
+}
+.fos-collapse-menu .active .manage-password{
+	background-position: -200px -200px;
+}
+.fos-collapse-menu .active .manage-seller-opt{
+	background-position: -240px -442px;
+}
+.fos-collapse-menu .active .manage-crm-opt{
+	background-position: -160px -442px;
+}
+/* Accordion sub-menu */
+.fos-collapse-submenu-icon{
+	width: 31px !important;
+	height: 40px !important;
+	float: left;
+	margin: 0 20px 0 0;
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+}
+.manage-product{
+	background-position: 0 -80px;
+}
+.search-buyer{
+	background-position: -40px -80px;
+}
+.search-buying-req{
+	background-position: -80px -80px;
+}
+.compose{
+	background-position: -120px -80px;
+}
+.inbox{
+	position: relative;
+	background-position: -160px -80px;
+}
+.sent{
+	background-position: -200px -80px;
+}
+.trash{
+	background-position: -240px -80px;
+}
+.fos-selected-message{
+	//background: lighten(@fos-shadow-border, 90%);
+	color: darken(@fos-theme-color, 5%);
+	font-weight: 700;
+}
+.contact-seller{
+	background-position: -280px -80px;
+}
+.contact-buyer{
+	background-position: -320px -80px;
+}
+.add-sub-user{
+	background-position: -360px -80px;
+}
+.list-sub-user{
+	background-position: -400px -80px;
+}
+.change-password{
+	background-position: -440px -80px;
+}
+/*Submenu Hover*/
+.fos-sidenav-menu-list li.active .manage-product, .fos-sidenav-menu-list li.active li:hover .manage-product{
+	background-position: 0 -120px;
+}
+.fos-sidenav-menu-list li.active div.search-buyer, .fos-sidenav-menu-list li:hover div.search-buyer{
+	background-position: -40px -120px;
+}
+.fos-sidenav-menu-list li.active div.search-buying-req, .fos-sidenav-menu-list li:hover div.search-buying-req{
+	background-position: -80px -120px;
+}
+.fos-sidenav-menu-list li.active div.compose, .fos-sidenav-menu-list li:hover div.compose {
+	background-position: -120px -120px;
+}
+.fos-sidenav-menu-list li.active div.inbox, .fos-sidenav-menu-list li:hover div.inbox{
+	background-position: -160px -120px;
+}
+.fos-sidenav-menu-list li.active div.sent, .fos-sidenav-menu-list li:hover div.sent {
+	background-position: -200px -120px;
+}
+.fos-sidenav-menu-list li.active div.trash, .fos-sidenav-menu-list li:hover div.trash{
+	background-position: -240px -120px;
+}
+.fos-sidenav-menu-list li.active div.contact-seller, .fos-sidenav-menu-list li:hover div.contact-seller{
+	background-position: -280px -120px;
+}
+.fos-sidenav-menu-list li.active div.contact-buyer, .fos-sidenav-menu-list li:hover div.contact-buyer{
+	background-position: -320px -120px;
+}
+.fos-sidenav-menu-list li.active div.add-sub-user, .fos-sidenav-menu-list li:hover div.add-sub-user{
+	background-position: -360px -120px;
+}
+.fos-sidenav-menu-list li.active div.list-sub-user, .fos-sidenav-menu-list li:hover div.list-sub-user{
+	background-position: -400px -120px;
+}
+.fos-sidenav-menu-list li.active div.change-password, .fos-sidenav-menu-list li:hover div.change-password{
+	background-position: -440px -120px;
+}
+/* UI Icons ends here */
+/*	================================================================
+	Modularized Interface UI Rules
+	================================================================
+*/
+//---------------------TOP HEADER STARTS ---------------------------
+/*Registration forms*/
+.fos-user-registration-container{
+	width: 100%;
+	min-height: 60em;
+	background: url('@{fos-images}registration-bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	font-family: @fos-basefont-content;
+	padding: 2.5% 0 10% 0;
+	margin-bottom: 20px;
+	clear: both;
+	padding: 10% 0 0 0;
+}
+/*Registration forms*/
+/* Loader Starts */
+.fos-page-loader-spinner {
+	background: rgba(255, 255, 255, 0.7);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2000;
+}
+.fos-page-loader-spinner .fos-spiner-image{
+	position: fixed;
+	top: 42%;
+	left: 47%;
+	font-size: @fos-basefont-size + 7em;
+	color: @fos-theme-color;
+}
+/* Loader ends */
+.fos-ribbon-header{
+	position: relative;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: @fos-theme-color;
+	color: #000;
+	position: fixed;
+	z-index: 100
+
+}
+.fos-ribbon-header-option-wrapper{
+	width: @container-width;
+	height: 50px;
+	position: relative;
+	margin: 0 auto;
+	padding: 5px 0;
+}
+.fos-ribbon-header-option-wrapper .fos-user-opt-container{
+	width: @container-width/4;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.fos-ribbon-header-option-wrapper .fos-notification-wrapper{
+	position: absolute;
+	top: 0;
+	right:0;
+	padding: 0 10px;
+}
+.fos-notification-wrapper .fos-ribbon-header-item{
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid lighten(@fos-shadow-border, 100%);
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	margin: 5px 0 5px 15px;
+	position: relative;
+	//right: 155px;
+}
+/*.fos-notification-wrapper .fos-ribbon-header-item:last-child{
+	cursor: pointer;
+	display: inline-block;
+	width: 150px;
+	position: absolute;
+	top: 2px;
+	right: 0;
+	border: none;
+	border-radius: none;
+	height: 30px;
+	padding: 5px 15px 5px 5px;
+}
+.fos-notification-wrapper .fos-ribbon-header-item:last-child:hover {
+	background: darken(@fos-theme-color, 5%);
+	border: none !important;
+	border-radius: 5px !important;
+}
+.fos-notification-wrapper .fos-ribbon-header-item:last-child a{
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: 100;
+	text-align: right;
+	text-overflow: ellipsis;
+}
+.fos-notification-wrapper .fos-ribbon-header-item:last-child:hover{
+	box-shadow: none;
+	border: none;
+}*/
+.fos-ribbon-header-item .dropdown .dropdown-toggle{
+	color: lighten(@fos-app-content-color, 100%);
+	float: left;
+}
+.fos-ribbon-header-item .dropdown-menu{
+	margin-top: 26px;
+	width: 150px !important;
+}
+
+.fos-notification-wrapper .fos-ribbon-header-item:hover{
+	box-shadow: 0 0 5px lighten(@fos-shadow-border, 100%);
+}
+.fos-ribbon-header-item-message{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: 0 -450px;
+}
+.fos-ribbon-header-item-notification{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -30px -450px;
+}
+.fos-ribbon-header-item-logged-user{
+	background: url('@{fos-images}Dashboard_UI_Icons.png') no-repeat;
+	background-position: -60px -450px;
+}
+.fos-notification-counter{
+	position: absolute;
+	top: 0;
+	right: -11px;
+	width: 20px !important;
+	height: 20px !important;
+	border-radius: 20px;
+	color: lighten(@fos-base-font-color, 100%);
+	background: @fos-notification-bg;
+	font-weight: 500;
+	text-align: center;
+}
+.fos-ribbon-header-item  .fos-activity-drop{
+	position: absolute;
+	top: 43px;
+	left: -165px;
+	min-height: 100px;
+	max-height: 450px;
+	width: 300px;
+	background: @fos-dialogs-bg;
+	border: 2px solid @fos-theme-color;
+	padding: 5px 0 5px 0;
+	display: none;
+}
+.fos-ribbon-header-item  .fos-activity-drop-user-info{
+	position: absolute;
+	top: 34px;
+	right: -10px;
+	min-height: 50px;
+	min-width: 250px;
+	background: @fos-dialogs-bg;
+	border: 2px solid @fos-theme-color;
+	padding: 5px 2px 5px 10px;
+	display: none;
+}
+.fos-loggeduser-action-list{
+	padding: 20px 0 0 0;
+	margin: 0 0 0 0;
+	list-style: none;
+}
+.fos-loggeduser-action-list .fos-loggeduser-action-items{
+	display: inline-block;
+	width: 97%;
+	padding: 5px;
+}
+.fos-loggeduser-action-list .fos-loggeduser-action-items:hover{
+	background: lighten(@fos-shadow-border, 90%);
+	color: lighten(@fos-app-content-color, 50%);
+	cursor: pointer;
+}
+.fos-loggeduser-action-list .fos-loggeduser-action-items:nth-child(1):hover{
+	cursor: default;
+}
+.fos-loggeduser-action-list .fos-loggeduser-action-items:nth-child(2):hover{
+	cursor: default;
+}
+/*.fos-loggeduser-action-list .fos-loggeduser-action-items:nth-child(3):hover{
+	cursor: default;
+}*/
+.fos-loggeduser-action-list .fos-loggeduser-action-items .fos-loggeduser-action-items-icon{
+	width: 20px;
+	height: 20px;
+	float: left;
+	font-size: @fos-basefont-size + 0.2em;
+	color: lighten(@fos-app-content-color, 40%);
+	margin-right: 10px;
+}
+.fos-notification-heading{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 30px;
+	width: 100%;
+	margin: 0 -10px 0 0;
+	background: @fos-theme-color;
+	color: lighten(@fos-app-content-color, 100%);
+	font-weight: 600;
+	text-align: left;
+	font-size: @fos-basefont-size;
+	padding: 5px;
+}
+.fos-activity-container{
+	overflow-x: hidden;
+	max-height: 400px;
+	width: 100%;
+	padding: 10px 5px;
+	overflow-y: auto;
+	margin-top: 30px;
+}
+.fos-activity-items{
+	width: 100%;
+	min-height: 40px;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	border-width: 60%;
+	padding: 5px 0;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+.fos-search-items-product{
+	width: 150px;
+	height: 130px;
+	margin-right: 10px;
+	background: lighten(@fos-shadow-border, 90%);
+	float: left;
+	padding: 10px;
+}
+.fos-search-items-product img{
+	width: 100%;
+	height: 100%;
+}
+.fos-activity-items:last-child{
+	border-bottom: 0px !important;
+}
+.fos-activity-items:hover {
+	background: lighten(@fos-app-content-color, 90%);
+}
+.fos-activity-items:hover .fos-user-avtar{
+	background: @fos-theme-color;
+}
+.fos-activity-items .fos-user-avtar{
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	background: lighten(@fos-shadow-border, 80%);
+	float: left;
+	padding: 10px;
+}
+.fos-user-avtar-userinfo{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	background: lighten(@fos-shadow-border, 80%);
+	border: 3px solid lighten(@fos-shadow-border, 100%);
+	float: right;
+	padding: 10px;
+}
+.fos-user-seetings{
+	float: left;
+	padding: 10px;
+	width: 70%;
+	min-height: 80px;
+}
+.fos-activity-items .fos-mail-info{
+	width: 100%;
+	min-height: 40px;
+	margin-top: -5px;
+	z-index: 500;
+}
+.fos-activity-items .fos-mail-from{
+	font-size: @fos-basefont-size - 0.1em;
+	padding: 15px 0 0 0;
+	font-weight: 600;
+	line-height: 1.5;
+	color: lighten(@fos-app-content-color, 20%);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.fos-activity-items .fos-mail-content{
+	font-size: @fos-basefont-size - 0.1em;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.fos-logged-user-heading{
+	font-size: @fos-basefont-size - .1em;;
+	color: darken(@fos-theme-color, 10%);
+}
+.fos-user-heading{
+	font-size: @fos-basefont-size + .2em;
+	color: darken(@fos-theme-color, 10%);
+}
+.fos-user-sub-heading{
+	font-size: @fos-basefont-size + .2em;
+	color: darken(@fos-theme-color, 10%);
+}
+.fos-activity-items .fos-message-date{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	color: lighten(@fos-app-content-color, 50%);
+	font-size: @fos-basefont-size - 0.2em;
+	font-weight: 100;
+}
+.fos-notification-msg-unread{
+	color: @fos-theme-color;
+	font-weight: 600;
+}
+.fos-notification-msg-read{
+	color: lighten(@fos-app-content-color, 40%);
+}
+//---------------------TOP HEADER ENDS---------------------------
+//--------------user authentication and signup starts------------
+.fos-user-authentication-container{
+	width: 100%;
+	min-height: 60em;
+	background: url('@{fos-images}reg_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	font-family: @fos-basefont-content;
+	padding: 2.5% 0 10% 0;
+	margin-bottom: 20px;
+	clear: both;
+}
+.fos-user-authentication-header{
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: @fos-basefont-size + .5em !important;
+	padding: 20px;
+	font-weight: 600;
+	color: lighten(@fos-app-content-color, 100%);
+	background: rgba(@fos-flip-red, @fos-flip-green, @fos-flip-blue, @fos-flip-alpha);
+}
+.fos-user-authentication-header-large{
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: @fos-basefont-size + 2.5em !important;
+	padding: 20px;
+	font-weight: 800;
+	color: lighten(@fos-app-content-color, 100%);
+	text-transform: uppercase;
+}
+.fos-user-authentication-login-container{
+	width: 50%;
+	position: relative;
+	min-height: 350px;
+	background: #fff;
+	float: left;
+	margin:5% 0 0 25%;
+	border: 3px solid lighten(@fos-shadow-border, 80%);
+	padding: 3% 5% 5% 7%;
+}
+.fos-user-authentication-icons{
+	margin: 1% auto 1% auto;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: -80px;
+	top: 80px;
+	padding: 3% 0 0 6%;
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + 5em;
+	border-radius: 50%;
+	background: lighten(@fos-shadow-border, 100%);
+	border: 3px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-user-authentication-icons-top{
+	margin: 1.5% auto 1% auto;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: 38%;
+	top: -80px;
+	padding: 2% 0 0 0;
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + 5em;
+	border-radius: 50%;
+	background: lighten(@fos-shadow-border, 100%);
+	border: 3px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-user-authentication-icons-container{
+	margin: 1.5% auto 1% auto;
+	width: 150px;
+	padding-top: 5%;
+	height: 150px;
+	position: relative;
+	color: lighten(@fos-shadow-border, 100%);
+	border-radius: 150px;
+	border: 3px solid lighten(@fos-shadow-border, 100%);
+}
+.fos-user-authentication-icons-container:hover{
+	background: @fos-theme-color; 
+	color: @fos-theme-color !important;
+	cursor: pointer;
+	-webkit-transition: background-color 1s ease;
+    transition: background-color 1s ease;
+}
+.fos-user-authentication-icons-container i{
+	font-size: @fos-basefont-size + 5em !important;
+	margin: 0 20%;
+}
+.fos-user-type-header{
+	font-size: @fos-basefont-size + 0.8em;
+	font-weight: 600;
+	text-align: center;
+	color: lighten(@fos-app-content-color, 100%);
+	text-transform: capitalize;
+}
+.fos-user-type-details{
+	font-size: @fos-basefont-size + 0.2em;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	color: lighten(@fos-app-content-color, 100%);
+	text-shadow: 0 0 2px lighten(@fos-app-content-color, 0%);
+}
+.fos-reg-form-container{
+	width: 90%;
+	padding: 5% 5% 0 5%;
+	position: absolute;
+	top: -250px;
+	background: lighten(@fos-shadow-border, 100%);
+	margin: 80px auto 100px auto !important;
+	border: 1px solid rgba(0,0,0,0.3);
+	box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.75);
+	clear: both;
+}
+.fos-col-6-form-container{
+	top: 30px !important;
+	z-index: 90;
+}
+.fos-reg-form-container .fos-reg-form-wrapper{
+	width: 100;
+	padding: 5%;
+	margin-top: 70px;
+}
+.fos-reg-form-container .fos-user-container-form{
+	position: absolute;
+	top: -60px;
+	left: 35%;
+	margin: 1% auto 10% auto;
+	width: 150px;
+	padding-top: 5%;
+	height: 150px;
+	color: #fff;
+	border-radius: 150px;
+	background: lighten(@fos-theme-color, 100%);
+	border: 1px solid rgba(0,0,0,0.3);
+	clear: both;
+}
+//--------------user authentication and signup ends--------------
+/* Activation success noifications */
+.fos-activation-success-wrapper{
+	text-align: center;
+	width: 100%;
+}
+.fos-activation-success-footer-link{
+	margin-top: 40px;
+}
+.fos-activation-success-footer-link a:first-child{
+	padding: 10px 50px;
+	text-align: center;
+	background: @fos-theme-color;
+	font-weight: 600;
+	color: lighten(@fos-app-content-color, 100%);
+	clear: both;
+}
+.fos-activation-success-footer-link a:first-child:hover{
+	background: lighten(@fos-app-content-color, 40%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-activation-success-footer-link a:last-child{
+	font-weight: 600;
+	margin-top: 20px;
+	text-decoration: underline;
+}
+.fos-services-item-wrapper{
+	border: 1px solid lighten(@fos-shadow-border, 85%);
+	height: 200px;
+	background: lighten(@fos-shadow-border, 80%);
+	position: relative;
+}
+
+.fos-services-item-wrapper .fos-service-h3{
+	text-align: center;
+	font-size: @fos-basefont-size + 0.5em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.fos-services-item-wrapper .fos-service-h4{
+	text-align: center;
+	font-size: @fos-basefont-size + 0.6em;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 20% 10px;
+	color: lighten(@fos-app-content-color, 50%);
+	line-height: 1.5;
+}
+/* Activation success service icon wrapper */
+.fos-services-item-wrapper .fos-success-services-icon{
+	z-index: 500;
+	position: absolute;
+	bottom: -40px;
+	left: 28%;
+	width: 80px;
+	height: 80px;
+	background: @fos-theme-color;
+	border: 2px solid lighten(@fos-shadow-border, 100%);
+	border-radius: 80px;
+	color: lighten(@fos-shadow-border, 100%);
+	font-size: @fos-basefont-size + 3em;
+}
+.fos-services-item-wrapper:hover .fos-success-services-icon{
+	background: lighten(@fos-shadow-border, 30%);
+	cursor: pointer;
+}
+.fos-services-item-wrapper .fos-success-services-icon .fos-success-services-icon-wrapper{
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	width: 80px;
+	height: 80px;
+}
+/* Registration Verification email format */
+.fos-verification-mail-container{ 
+	width: 60%; 
+	height: 300px;
+	margin: 200px auto 100px auto; 
+}
+.fos-verification-mail-container hr{
+	width: 100%; 
+	height: 4px; 
+	color: rgb(205, 71, 39); 
+	background: rgb(205, 71, 39); 
+	border: none;
+}
+.fos-verification-mail-content{
+	width: 100%; 
+	min-height: 200px; 
+	text-align: center; 
+	font-size: @fos-basefont-size - .2em;
+	color: lighten(@fos-base-font-color, 70%);
+}
+.fos-verification-mail-content .fos-verification-header{
+	font-size: @fos-basefont-size + 1em;
+	margin: 10px 0;
+} 
+.fos-verification-mail-content .fos-verification-sub-header{
+	font-size: @fos-basefont-size + .8em;
+}
+.fos-verification-mail-content .fos-verification-message{
+	color: lighten(@fos-base-font-color, 70%);  
+	font-size: @fos-basefont-size + .2em;
+	margin: 20px auto; 
+	width: 50%;
+}
+.fos-verification-mail-content .fos-verification-footer-link{
+	font-size: @fos-basefont-size + 0.4em;
+}
+.fos-reg-success-icon{
+	position: absolute;
+	right: -100px;
+	top:10px;
+	font-size: @fos-basefont-size + 4em !important;
+	color: @fos-theme-color;
+	text-shadow: 2px 2px 5px lighten(@fos-base-font-color, 10%);
+}
+/* Dashboard elements css properties 
+================================================================*/
+.fos-dashboard-container{
+	margin: 45px auto 0 auto;
+	position: relative;
+}
+.fos-dashboard-tab-content-wrapper{
+	border: 1px solid lighten(@fos-shadow-border, 70%);
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+}
+.fos-dashboard-sidenav{
+	width: 18.7% !important;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	float: left;
+	background: lighten(@fos-shadow-border, 70%);
+}
+/*Sidenav menu starts*/
+.fos-collapse-menu{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+.fos-collapse-menu .fos-collapse-btn{
+	width: 100%;
+	border-radius: 0;
+	position: relative;
+	height: 50px;
+	box-shadow: none;
+	background: @fos-tab-menu-bg;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-collapse-menu .fos-collapse-btn-text{
+	position: absolute;
+	top: 0;
+	text-transform: uppercase;
+	left: 50px;
+	width: 150px;
+	height: 50px;
+	line-height: 4.6;
+	margin: 0;
+	text-align: left;
+	padding: 0 5px;
+	color: lighten(@fos-app-content-color, 30%);
+	font-weight: 650;
+	font-size: @fos-basefont-size - 0.3em;
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-collapse-menu .fos-collapse-btn-arrow{
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size + .1em;
+}
+.fos-collapse-menu .active .fos-collapse-btn-icon{
+	background-color: @fos-theme-color;
+}
+.fos-collapse-menu .collapse{
+	background: lighten(@fos-shadow-border, 100%);
+	min-height: 40px;
+	border-right: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+}
+.fos-collapse-menu .collapse .fos-sidenav-menu-list{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.fos-collapse-menu .collapse .fos-sidenav-menu-list li{
+	display: inline-block;
+	height: 40px;
+	width: 100%;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-collapse-menu .collapse .fos-sidenav-menu-list li:last-child{
+	border-bottom: none;
+}
+.fos-collapse-menu .collapse .fos-sidenav-menu-list li a{
+	height: 40px;
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+	line-height: 4.5;
+	color: lighten(@fos-app-content-color, 40%);
+	font-weight: 700;
+	float: left;
+	padding-left: 10px;
+	font-size: @fos-basefont-size - 0.19em;
+}
+.fos-collapse-menu .collapse .fos-sidenav-menu-list li:hover a, .fos-collapse-menu .collapse .fos-sidenav-menu-list li.active a {
+	color: @fos-theme-color;
+	text-decoration: none;
+}
+.fos-sidenav-notification-counter{
+	position: absolute;
+	top: 4px;
+	right: 2px;
+	width: 20px;
+	height: 20px;
+	padding: 4px 0;
+	border-radius: 20px;
+	color: lighten(@fos-app-content-color, 100%);
+	text-align: center;
+	font-style: normal !important;
+	font-weight: 600;
+	font-size: @fos-basefont-size - 0.4em;
+	background: @fos-theme-color !important;
+}
+.fos-collapse-menu .active span.message .fos-sidenav-notification-counter{
+	background: lighten(@fos-base-font-color, 30%) !important;
+}
+.fos-collapse-menu .collapse .fos-collapse-notification-counter{
+	position: relative;
+	top: 25%;
+	right: 10px;
+	float: right;
+	color: lighten(@fos-base-font-color, 50%) !important;
+	font-weight: 600;
+}
+/*Sidenav menu ends*/
+/*======================================================================
+	Contents of the sidenav
+*/
+.fos-dashboard-content-wrapper{
+	width: 81.3%;
+	height: 100%;
+	float: right;
+	position: relative;
+	background: lighten(@fos-shadow-border, 100%);
+}
+.fos-dashboard-content-header{
+	height: 50px;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	margin-top: -10px;
+	padding: 5px 0 5px 0;
+	background: @fos-tab-menu-bg;
+	position: relative;
+}
+.fos-dashboard-content-header .fos-dashboard-content-search{
+	position: absolute;
+	left: 80px;
+	top: 10px;
+	width: 70%;
+}
+.fos-dashboard-header-action{
+	min-width: 110px;
+	float: left;
+	text-align: center;
+	font-weight: 600;
+	font-size: @fos-basefont-size + .1em;
+	padding: 13px 10px;
+	min-width: 200px;
+	position: relative;
+	color: lighten(@fos-app-content-color, 0%);
+	border-right: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-dashboard-header-action .fos-dashboard-header-link{
+	color: @fos-app-content-color;
+}
+.fos-dashboard-header-action .fos-dashboard-header-link .fos-dashboard-header-text{
+	padding: 0 25px;
+	text-align: center;
+}
+.fos-dashboard-header-action .fos-dashboard-header-link:hover{
+	color: @fos-theme-color;
+	text-decoration: none;
+}
+.fos-dashboard-header-action .active{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 5px;
+	background: @fos-theme-color;
+}
+.fos-dashboard-aside-right{
+	min-height: 50px;
+	padding: 5px;
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.fos-dashboard-form-container{
+	padding: 10px 10px 20px 10px;
+	overflow-x: hidden;
+	min-height: 300px;
+	overflow-y: auto !important;
+}
+.fos-dashboard-search-forms-header{
+	color: lighten(@fos-shadow-border, 100%);
+	font-weight: 500;
+	padding: 5px;
+	margin: 0;
+	line-height: 1.2;
+	text-align: center;
+	font-size: @fos-basefont-size + .5em;
+	background: @fos-theme-color;
+}
+// Dashboard header action links
+.fos-dashboard-action-links{
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	border: 1px solid lighten(@fos-shadow-border, 78%);
+	color: lighten(@fos-shadow-border, 100%);
+	background: lighten(@fos-shadow-border, 80%);
+	padding: 0 7px;
+	display: inline-block;
+	font-size: @fos-basefont-size + 0.5em;
+	margin: 0 0 0 10px;
+}
+.fos-dashboard-action-links:hover{
+	border: 1px solid lighten(@fos-shadow-border, 100%);
+	color: lighten(@fos-shadow-border, 100%);
+	background: lighten(@fos-theme-color, 10%);
+	cursor: pointer;
+}
+.fos-dashboard-header-action-list{
+	padding: 10px 0;
+	margin: 0;
+}
+.fos-dashboard-header-label{
+	padding: 10px 0;
+	font-size: @fos-basefont-size + 0.1em;
+	font-weight: 600;
+	color: lighten(@fos-app-content-color, 60%);
+	line-height: 4;
+}
+//Message listing and detailed reading pan
+.fos-msg-list-container{
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	border-right: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-msg-list-container .fos-msg-list-wrapper{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size - .1em;
+}
+.fos-msg-list-container .fos-msg-list-wrapper:last-child{
+	border-bottom: none;
+}
+.fos-msg-list-container .fos-msg-list-wrapper:hover .fos-msg-heading-subject, .fos-msg-list-container .fos-msg-list-wrapper:hover .fos-msg-heading{
+	color: @fos-theme-color !important;
+	cursor: pointer;
+}
+.fos-msg-list-container .fos-msg-list-wrapper:hover .fos-credit-n-action .fos-actions{
+	color: @fos-theme-color !important;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.fos-msg-list-container .fos-msg-list-wrapper .fos-msg-heading{
+	font-size: @fos-basefont-size + .3em;
+	font-weight: 500;
+	width: 90%;
+	margin-left: 25px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.fos-msg-list-container .fos-msg-list-wrapper .fos-msg-heading-subject{
+	text-align: justify;
+	width: 85%;
+	margin-left: 25px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.fos-msg-list-container .fos-msg-list-wrapper .fos-credit-n-action{
+	position: absolute;
+	top: -18px;
+	right: 10px;
+	text-align: right;
+}
+.fos-msg-list-container .fos-msg-list-wrapper .fos-credit-n-action .fos-credits{
+	font-size: @fos-basefont-size - .1em;
+	color: lighten(@fos-shadow-border, 75%);
+}
+.fos-msg-list-container .fos-msg-list-wrapper .fos-credit-n-action .fos-actions{
+	color: lighten(@fos-shadow-border, 70%);
+	font-size: @fos-basefont-size + .4em;
+	opacity: 0;
+	text-decoration: none;
+}
+.fos-msg-list-container .fos-msg-list-wrapper .fos-credit-n-action .fos-actions:hover{
+	color: lighten(@fos-theme-color, 0);
+	text-decoration: none;
+	font-weight: 600;
+}
+.fos-msg-list-container input[type="checkbox"]{
+	position: absolute;
+	top: -15px;
+	left: 10px;
+}
+/*Message detailed reading pan*/
+.fos-msg-reading-container{
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	margin: 0 auto;
+	padding: 5px;
+	width: 100%;
+}
+.fos-msg-reading-container .fos-message-subject{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size + .5em;
+	text-align: left;
+	padding-bottom: 5px;
+	line-height: 1.1;
+	border-bottom: 1px dashed lighten(@fos-shadow-border, 80%);
+}
+.fos-msg-reading-container .fos-message-body{
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size + 0.1em;
+	text-align: left;
+	padding: 10px;
+	line-height: 2;
+}
+.fos-message-information{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size - 0.008em;
+	text-align: left;
+	padding: 20px 10px 10px 10px;
+	position: relative;
+	line-height: 2;
+}
+.fos-message-information .fos-time{
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size - 0.2em;
+}
+.fos-message-information .fos-msg-from-to{
+	line-height: 1;
+}
+/* Search Result and product listing */
+.fos-search-list-container{
+	width: 100% !important;
+	padding: 10px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+/* Search Items */
+.fos-search-items{
+	width: 100%;
+	min-height: 100px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+	margin: 5px 0;
+	overflow: hidden;
+	padding: 5px 5px 65px 5px;
+}
+.fos-search-items-logo{
+	width: 100px;
+	height: 100px;
+	margin: 5px 5px 5px 5px;
+	background: lighten(@fos-shadow-border, 90%);
+	float: left;
+	overflow: hidden;
+	padding: 10px;
+}
+.fos-search-items-logo img{
+	width: 100%;
+	height: 100%;
+}
+.fos-search-items .fos-list-heading{
+	margin: 5px 0;
+	font-weight: 500;
+	text-align: left;
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + .5em !important;
+	width: 90%;
+} 
+.fos-search-items p{
+	margin: 10px 0;
+	font-weight: 500;
+	text-align: justify;
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size;
+}
+.fos-search-items:hover{
+	border-color: @fos-theme-color;
+}
+.fos-search-items:hover .fos-list-btn{
+	background: @fos-theme-color !important;
+}
+.fos-search-detail .fos-search-user-detail{
+	width: 100%;
+	min-height: 110px;
+	padding: 0 5px 0 5px;
+	position: absolute;
+	top:0;
+	left: 115px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.fos-search-detail .fos-search-user-detail .fos-list-sector{
+	width: 100%;
+	color: lighten(@fos-app-content-color, 10%);
+	padding: 2px 0;
+}
+.fos-strong-highlight{
+	padding: 5px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	display: block;
+}
+.fos-date-time-highlight{
+	padding: 5px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	display: block;
+	position: absolute;
+	top: -11px;
+	right: -11px;
+}
+.fos-sub-content{
+	padding: 5px;
+	text-indent: 10px;
+	display: inline-block;
+}
+.fos-search-detail .fos-search-req{
+	width: 35%;
+	height: 160px;
+	padding: 0;
+	position: absolute;
+	top:0;
+	right: 0;
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-search-detail .fos-search-req .fos-search-req-key-info{
+	margin: 10px 0;
+}
+.fos-search-detail .fos-search-req .fos-request-information{
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size - .19em;
+	font-weight: 700;
+	padding: 0 5px;
+}
+.fos-search-detail .fos-search-req .fos-search-req-header{
+	padding: 5px;
+	height: 35px;
+	background: @fos-tab-menu-bg;
+	text-align: center;
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size + .2em;
+	font-weight: 600;
+	overflow: hidden;
+	line-height: 1.5;
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-search-detail .fos-search-req .fos-request-counter{
+	font-size: @fos-basefont-size + 2em;
+	text-align: center;
+	width: 100%;
+	line-height: 2;
+	margin: auto auto;
+	color: @fos-theme-color;
+	font-weight: 600;
+	display: block;
+}
+.fos-list-heading-h3{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size - .1em;
+	line-height: 0;
+	padding: 5px 0 0 0;
+	margin: 0;
+}
+.fos-list-heading-h4{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size + .1em;
+	font-weight: 600;
+	line-height: 0;
+	padding: 15px 0 0 0;
+}
+.fos-form-group-heading{
+	color: lighten(@fos-app-content-color, 60%) !important;
+	font-size: @fos-basefont-size + 0.2em !important;
+	padding-left: 15px !important;
+	margin-top: 20px !important;
+}
+.fos-shortlist-heading{
+	font-size: @fos-basefont-size + 0.4em;
+	color: lighten(@fos-app-content-color, 40%);
+	padding: 10px 0; 
+	margin: 10px 0;
+	border-bottom: 1px dotted lighten(@fos-app-content-color, 40%);	
+}
+.panel-fossiness .panel-heading{
+	background: lighten(@fos-app-content-color, 80%);	
+}
+.panel-fossiness .panel-heading a:hover{
+	text-decoration: none;
+	outline: none;	
+}
+#fos-accordion .panel-body{
+	height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.fos-label-heading{
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size + 0.2em;
+}
+.fos-user-profiles{
+	min-height: 60px;
+}
+.fos-user-profiles .nav{
+	background: lighten(@fos-shadow-border, 100%);
+	clear: both;
+}
+.fos-user-profiles .nav-pills{
+	margin-left: 0px;
+}
+.fos-user-profiles .nav-pills a:hover{
+	background: none;
+	color: @fos-theme-color;
+}
+.fos-user-profiles .nav-pills li{
+	min-width: 150px;
+	background: @fos-tab-menu-bg;
+	color: lighten(@fos-shadow-border, 20%);
+	font-size: @fos-basefont-size + .25em;
+	text-align: center;
+	line-height: 30px;
+	height: 40px;
+	border-radius: 0;
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+	border-right: 1px solid lighten(@fos-shadow-border, 80%);
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+	border-bottom: none;
+}
+.fos-user-profiles .nav-pills li.active{
+	font-weight: 700;
+	background: @fos-theme-color;
+	color: lighten(@fos-app-content-color, 100%);
+	border-radius: 0;
+	border: none;
+}
+.fos-user-profiles .nav-pills li.active a{
+	color: lighten(@fos-app-content-color, 100%);
+}
+
+.fos-hoz-spacing{
+	margin-right: 2% !important;
+}
+.fos-hoz-spacing-search{
+	margin-right: 0 !important;
+}
+.fos-btn-group-right{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	margin-top: 10px;
+}
+.fos-description-display{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 5px 0;
+}
+.fos-job-result-container{
+	padding-bottom: 40px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.fos-jobs-result{
+	padding: 0 -15px 0 -15px;
+	text-align: left;
+	width: 100%;
+	min-height: 20px;
+	font-size: @fos-basefont-size + 0.1em;
+}
+.fos-jobs-result .fos-jd-label{
+	width: 20%;
+	float: left;
+	font-size: @fos-basefont-size;
+	color: lighten(@fos-app-content-color, 60%);
+}
+.fos-jobs-result .fos-jd-data{
+	width: 80%;
+	float: left;
+}
+.fos-listing-table-candidate-info-label{
+	width: 15%;
+	color: lighten(@fos-app-content-color, 60%);
+	font-weight: 600;
+}
+.fos-listing-table-candidate-info-data{
+	width: 85%;
+}
+.fos-jd-heading{
+	font-size: @fos-basefont-size + 0.4em;
+	color: lighten(@fos-app-content-color, 40%);
+	padding: 10px 0; 
+	border-bottom: 1px dotted lighten(@fos-app-content-color, 40%);
+}
+.fos-jd-compnay-name{
+	font-size: @fos-basefont-size + 0.3em;
+	color: lighten(@fos-app-content-color, 60%);
+	font-weight: 700;
+}
+.fos-jd-heading-title{
+	font-size: @fos-basefont-size + 0.6em;
+	color: @fos-theme-color;
+	font-weight: 700;
+}
+.fos-seperator{
+	border-bottom: 1px dotted lighten(@fos-app-content-color, 40%);
+	padding: -10px 0 10px 0; 
+	margin-bottom: 30px !important;
+	margin-top: 10px !important;
+}
+.fos-result-list-header{
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	top:0;
+	left: 0;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	border-radius: 0 4px 0 0;
+	background: @fos-tab-menu-bg;
+	color: @fos-app-content-color;
+	text-align: center;
+	line-height: 2.5;
+	font-size: @fos-basefont-size + .3em;
+	font-weight: 500;
+} 
+.fos-result-product-list{
+	width: 100%;
+	height: 75%;
+	padding: 5px;
+	margin-top: 40px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.fos-result-product-list ul{
+	padding: 5px;
+}
+.fos-result-product-list ul li{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	list-style: armenian;
+	font-weight: 500;
+	line-height: 1.2;
+	color: @fos-app-content-color;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 85%);
+}
+.fos-result-product-list ul li:last-child{
+	border-bottom: none;
+}
+
+.fos-search-req-list-pos{
+	position: absolute;
+	top: 40px;
+	left: 10px;
+}
+.fos-result-table{
+	width: 100%;
+	display: table;
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size;
+	font-weight: 600;
+}
+.fos-result-table-row{
+	display: table-row;
+	padding: 5px;
+}
+.fos-result-table-cell{
+	display: table-row;
+	padding: 5px;
+	display: table-cell;
+	border-width: thin;
+}
+.fos-result-table-label{
+	font-weight: 700 !important;
+	color: lighten(@fos-app-content-color, 40%);
+	font-style: italic;
+}
+.fos-cell-spacing{
+	margin: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.fos-search-req .fos-country-name{
+	position: absolute;
+	top: -5px;
+	font-weight: 700;
+	left: 55px;
+	font-size: @fos-basefont-size;
+	color: @fos-theme-color; 
+}
+/* Country Flag class*/
+.fos-search-req .fos-country-flag{
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	width: 35px;
+	height: 25px;
+	background: url('@{fos-images}country-flag.jpg') no-repeat;
+}
+.fos-search-req span.DEFAULT{
+	background-position: 0 0;
+}
+.fos-search-req span.IN{
+	background-position: -35px 0;
+}
+
+/* Country flag class ends*/
+/* Contact List, Favourite list*/
+.fos-contact-list-container{
+	position: relative;
+	margin: 5px 0;
+	width: 100%;
+	padding: 10px;
+	background: transparent;
+}
+.fos-contact-list-container .fos-contact-list-wrapper{
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+	height: 125px;
+	color: lighten(@fos-shadow-border, 30%) !important;
+	text-decoration: none;
+	width: 100%;
+	padding: 0px;
+	margin: 5px 0;
+}
+.fos-contact-list-container .fos-contact-list-wrapper:hover{
+	border: 1px solid  @fos-theme-color;
+	cursor: pointer;
+}
+.fos-contact-list-container .fos-contact-list-wrapper .fos-contact-list-footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+	padding: 5px;
+	width: 100%;
+	border-radius: 0 0 5px 5px;
+	background: @fos-tab-menu-bg;
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-contact-list-container .fos-contact-list-wrapper:hover .fos-business-card-action{
+	background: @fos-theme-color !important;
+	color: lighten(@fos-shadow-border, 100%) !important;
+}
+.fos-contact-list-container .fos-business-card-action{
+	width: auto;
+	position: absolute;
+	bottom: 0;
+	height: 30px;
+	right: 0;
+	padding: 2px;
+	text-align: center;
+	background: lighten(@fos-shadow-border, 80%) !important;
+}
+.fos-contact-list-container .fos-business-card-action .fos-contact-action-list{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.fos-contact-list-container .fos-business-card-action .fos-contact-action-list li{
+	display: inline-block;
+	text-align: center;
+	font-size: @fos-basefont-size + .3em;
+	padding: 2px 15px;
+	border-left: 1px solid lighten(@fos-shadow-border, 95%) !important;
+}
+.fos-contact-list-container .fos-business-card-action .fos-contact-action-list li:first-child{
+	border-left: none !important;
+}
+.fos-contact-list-container .fos-business-card-action .fos-contact-action-list li a{
+	color: lighten(@fos-shadow-border, 95%) !important;
+	text-decoration: none;
+}
+.fos-contact-list-container .fos-business-card-action .fos-contact-action-list li:hover a{
+	color: lighten(@fos-shadow-border, 90%) !important;
+	text-decoration: none;
+}
+.fos-contact-list-container .fos-contact-list-wrapper .fos-user-icon{
+	height: 100px;
+	width: 100px;
+	float: left;
+	margin-right: 10px;
+	background: lighten(@fos-shadow-border, 80%);
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-contact-list-container .fos-contact-list-wrapper .fos-user-information{
+	font-size: @fos-basefont-size + .4em; 
+	line-height: 1;
+}
+.fos-contact-list-container .fos-contact-list-wrapper .fos-user-information .fos-subuser-title{
+	padding-left: 10px;
+}
+.fos-contact-list-container .fos-contact-list-wrapper .fos-user-information .fos-subuser-title:before{
+	content:'|';
+	padding-right: 10px;
+}
+.fos-contact-list-container .fos-contact-list-wrapper .fos-user-sub-information{
+	font-size: @fos-basefont-size + .3em; 
+	font-weight: 600;
+	line-height: 1;
+}
+.fos-contact-list-container .fos-contact-list-wrapper span{
+	position: absolute;
+	top:15px;
+	right: 5px;
+}
+.fos-contact-list-container .fos-contact-list-wrapper span.available{
+	color: @fos-available !important;
+}
+.fos-contact-list-container .fos-contact-list-wrapper span.busy{
+	color: @fos-busy !important;
+}
+.fos-contact-list-container .fos-contact-list-wrapper span.offline{
+	color: @fos-offline !important;
+}
+.fos-contact-list-container .fos-contact-list-wrapper span .fos-contact-status{
+	font-style: italic !important;
+	font-weight: normal !important;
+	font-size: @fos-basefont-size - .4em !important;
+	line-height: 30px;
+	color: @fos-app-content-color;
+}
+.fos-card-header{
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-business-card-container .fos-card-display{
+	position: relative;
+}
+.fos-business-card-container .fos-card-display .fos-business-card-header{
+	min-width: 200px;
+	width: 45%;
+	text-transform: uppercase;
+	font-size: @fos-basefont-size + .3em;
+	color: @fos-app-content-color;
+	padding: 0 5px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	text-align: center;
+	line-height: 2;
+	margin: 10px auto 0 auto;
+	font-weight: 700;
+}
+.fos-business-card-container .fos-card-display a:hover{
+	background: -webkit-linear-gradient(@fos-theme-color, darken(@fos-theme-color , 10%)) !important;
+	background: linear-gradient(@fos-theme-color , darken(@fos-theme-color , 10%)) !important;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+
+.fos-business-card-container .fos-card-display .fos-card-display-sub-heading{
+	padding: 0 0 20px 0;
+	margin: 0;
+	color: lighten(@fos-shadow-border, 40%);
+	font-size: @fos-basefont-size + .2em;
+	font-weight: 600;
+}
+.fos-business-card-container .fos-card-display .fos-user-info{
+	width: 100%;
+	min-height: 200px;
+	clear: both;
+	position: relative;
+}
+.fos-listing-table
+{
+	display: table;
+	margin: 0 0 10px 0;
+	width: 100%;
+}
+.fos-listing-table-title
+{
+	display: table-caption;
+	text-align: left;
+	font-weight: bold;
+	font-size: larger;
+}
+.fos-listing-table-heading
+{
+	display: table-row;
+	font-weight: bold;
+	text-align: left;
+	background: lighten(@fos-app-content-color, 90%);
+	line-height: 2.8;
+	border-bottom: 1px solid @fos-theme-color;
+}
+.fos-listing-table-title-heading
+{
+	display: table-row;
+	font-weight: bold;
+	text-align: left;
+	color: lighten(@fos-app-content-color, 40%);
+	line-height: 3;
+	padding: 10px 0;
+	font-size: @fos-basefont-size + 0.3em;
+	text-decoration: underline;
+}
+.fos-inner-listing-table-wide{
+	width: 33.333%;
+}
+.fos-inner-listing-table-50p{
+	width: 50%;
+}
+.fos-listing-table-row
+{
+	display: table-row;
+	position: relative;
+	line-height: 2.5;
+	font-size: @fos-basefont-size + 0.1em;
+}
+.fos-listing-table-cell p{
+	padding: 10px 0;
+}
+.fos-listing-table-row-narrow{
+	line-height: 1.8 !important;
+}
+.fos-listing-table-row:nth-child(even){
+	background: lighten(@fos-app-content-color, 100%);
+}
+.fos-listing-table-row:nth-child(odd){
+
+	background: lighten(@fos-app-content-color, 90%);
+}
+.fos-listing-table-cell
+{
+	display: table-cell;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.fos-listing-table-cell-medium{
+	width: 20%;
+}
+.fos-listing-table-wide{
+	width: 25%;
+}
+.fos-listing-table-action-right{
+	padding-left: 15% !important;
+}
+.fos-listing-table-narrow{
+	width: 16.66666%;
+}
+.fos-listing-table-narrow-vacancy{
+	width: 15.66666%;
+}
+
+.fos-listing-table-narrow-action{
+	width: 15%;
+}
+.fos-listing-table-check{
+	width: 3%;
+}
+.fos-top-date{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.fos-listing-table-midium-data{
+	width: 60%;
+}
+.fos-listing-table-cell span a{
+	padding: 0 5px;
+	color: lighten(@fos-app-content-color, 60%);
+}
+.fos-listing-table-cell span a:hover{
+	text-decoration: none;
+	color: lighten(@fos-app-content-color, 30%) !important;
+}
+.fos-listing-table-cell a:hover{
+	color: @fos-theme-color;
+	font-weight: 600;
+}
+.fos-listing-table-row:hover .fos-listing-table-cell a{
+	color: @fos-theme-color;
+}
+
+.fos-search-items .fos-resume-heading-link{
+	font-size: @fos-basefont-size + 0.3em;
+	line-height: 2;
+	padding: 0;
+	margin: 0 0 10px -15px;
+}
+.fos-listing-table-cell p.fos-cell-label{
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size - 0.1em;
+}
+.fos-result-label{
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size - 0.1em;
+}
+.fos-listing-table-cell p.fos-cell-information{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size - 0.3em;
+	font-weight: 100;
+}
+.fos-listing-table-cell p{
+ 	margin: 0;
+ 	padding: 0;
+}
+.fos-listing-table-cell p.fos-cell-label i{
+	padding-right: 10px;
+	font-size: @fos-basefont-size + 0.3em; 
+}
+.fos-user-team .fos-team-list-container{
+	width: 100%;
+	height: auto;
+	position: relative;
+	padding: 0;
+}
+.fos-user-team .fos-team-list-container .fos-team-list{
+	width: 100%;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	height: 40px;
+	margin: 10px 0;
+	position: relative;
+}
+.fos-user-team .fos-team-list-container .fos-team-list .fos-team-icon{
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	float: left;
+	background: lighten(@fos-shadow-border, 87%)
+}
+.fos-user-team .fos-team-list-container .fos-team-list .fos-team-list-name{
+	width: 80%;
+	float: left;
+	line-height: 3;
+}
+.fos-team-action{
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 90px;
+	overflow: hidden;
+}
+.fos-team-action span{
+	height: 50px;
+	width: 42px;
+	padding: 21px 10px;
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+	line-height: 2.5;
+	font-size: @fos-basefont-size + 0.2em !important;
+	cursor: pointer;
+}
+.fos-team-action span:hover, #fos-team-action span a:hover{
+	background: @fos-theme-color;
+	color: lighten(@fos-shadow-border, 100%) !important;
+	text-decoration: none;
+	background: @fos-theme-color;
+}
+.fos-team-action a{
+	color: lighten(@fos-app-content-color, 40%) !important;
+	text-decoration: none;
+}
+.fos-card-contact-name{
+	color: @fos-theme-color !important;
+	font-size: @fos-basefont-size + 1em;
+	font-weight: 700;
+	margin: 0;
+}
+.fos-businesscard-basic-info{
+	height: 100%;
+	padding: 0;
+	margin: 50px 0px 0 0px;
+	border: 1px solid lighten(@fos-shadow-border, 85%);
+	position: relative !important;
+	z-index: 0 !important;
+}
+.fos-business-card-container{
+	height: 100%;
+}
+.fos-business-card-container .fos-card-display .fos-card-display-info-wrapper{
+	width: 100%;
+	padding: 5px 0 0 0;
+	margin: 10px 0 0 0;
+}
+.fos-business-card-container .fos-card-display .fos-card-display-info-wrapper .fos-card-user-icon{
+	width: 160px;
+	height: 170px;
+	float: left;
+	margin: 10px 0;
+	padding: 10px;
+	background: lighten(@fos-shadow-border, 87%);
+}
+.fos-business-card-container .fos-card-display .fos-card-display-info-wrapper .fos-card-information-wrapper{
+	float: left;
+	width: 65%;
+	padding: 2.5%;
+	color: @fos-app-content-color;
+	text-align: justify;
+}
+.fos-list-items-action{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.fos-list-items-action .fos-list-items-anchor{
+	padding-left: 10px;
+	color: lighten(@fos-app-content-color, 70%)
+}
+.fos-list-items-action .fos-list-items-anchor:hover{
+	padding-left: 10px;
+	color: lighten(@fos-app-content-color, 30%)
+}
+.fos-list-items-info{
+	margin-left: 10px;
+}
+.fos-list-items-info .fos-product-heading{
+	color: @fos-theme-color;
+	font-weight: 700;
+	font-size: @fos-basefont-size + 0.5em;
+	margin-top: 0;
+}
+.fos-list-items-info .fos-product-sub-heading{
+	color: lighten(@fos-app-content-color, 30%);
+	font-weight: 700;
+	font-size: @fos-basefont-size + 0.17em;
+}
+.fos-list-product-details-less{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size + 0.1em;
+}
+.fos-list-product-details-more{
+	color: lighten(@fos-app-content-color, 30%);
+	font-size: @fos-basefont-size + 0.1em;
+}
+.fos-product-details-switcher{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: lighten(@fos-app-content-color, 60%);
+	font-size: @fos-basefont-size - 0.2em;
+	font-style: italic;
+}
+.fos-more-details-link{
+	color: lighten(@fos-app-content-color, 70%);
+	float: right;
+}
+.fos-more-details-content{
+	position: absolute;
+	right: 5px;
+	bottom: 30px;
+	font-weight: 100;
+	font-size: @fos-basefont-size - 0.3em;
+}
+.fos-more-details-link:hover{
+	color: @fos-theme-color;
+	font-weight: 600;
+	cursor: pointer;
+}
+.fos-more-details-link:before {
+    content: '(';
+}
+.fos-more-details-link:after {
+    content: ')';
+}
+.information{
+	font-size: @fos-basefont-size + .5em;
+}
+.sub-information{
+	font-size: @fos-basefont-size;
+	color: lighten(@fos-app-content-color, 50%); 
+	line-height: 0.5;
+	font-weight: 700;
+	font-style: italic;
+}
+.card-information{
+	font-size: @fos-basefont-size;
+	color: lighten(@fos-app-content-color, 30%); 
+}
+.fos-result-product-listing{
+	width: 100%;
+	margin: 10px 0;
+}
+.fos-bordered-header{
+	width: 300px;
+	height: 100%;
+	text-transform: uppercase;
+	font-size: @fos-basefont-size + .3em;
+	color: @fos-app-content-color;
+	padding: 0 5px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	text-align: center;
+	line-height: 2;
+	margin: 0 auto;
+	font-weight: 700;
+}
+.fos-result-product-listing .fos-br-listing{
+	width: 100%;
+	margin: 5px -15px 5px 0;
+	padding: 5px 10px 5px -15px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 500px;
+}
+.fos-product-icon-bc{
+	width: 113px;
+	height: 80px;
+	float: left;
+	padding: 0 0 0 5px;
+	margin: 3.5% 5px 0 0;
+	position: relative;
+}
+.fos-product-icon-bc .fos-zoom-icon{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	color: lighten(@fos-app-content-color, 100%);
+	text-align: center;
+}
+.fos-product-icon-bc:hover{
+	cursor: -webkit-zoom-in;
+	cursor: zoom-in;
+}
+.fos-product-icon-bc:hover .fos-zoom-icon{
+	width: 40px;
+	height: 40px;
+	font-size: @fos-basefont-size + 1em;
+}
+.fos-product-icon-bc img{
+	width: 100%;
+	height: 100%;
+}
+.fos-product-info-bc{
+	float: left;
+	width: 80%;
+	min-height: 80px;
+	margin-top: 15px;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items{
+	width: 100%;
+	min-height: 155px;
+	margin: 10px 0;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+	border-radius: 0 0 4px 4px;
+	background: @fos-tab-menu-bg;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-footer a{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 30px;
+	border-left: 1px solid lighten(@fos-shadow-border, 80%);
+	border-radius: 0 0 4px 0;
+	color: lighten(@fos-app-content-color, 60%);
+	text-decoration: none;
+	text-align: center;
+	line-height: 2.5;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-footer a:hover{
+	background: @fos-theme-color;
+	color: lighten(@fos-app-content-color, 100%);
+	text-decoration: none;
+	cursor: pointer;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-product-qty{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	text-align: right;
+	color: @fos-app-content-color;
+	font-weight: 600;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-h2{
+	text-align: left;
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + 0.3em !important;
+	font-weight: 600;
+	padding: 10px;
+	margin: 0;
+	width: 85%;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-product-info{
+	text-align: justify;
+	color: lighten(@fos-app-content-color, 30%);
+	font-size: @fos-basefont-size + 0.1em !important;
+	padding: 0 0 50px 10px;
+	margin: 0;
+	width: 100%;
+}
+.fos-result-product-listing .fos-br-listing .fos-br-items .fos-br-items-product-origion{
+	text-align: left;
+	color: @fos-app-content-color;
+	font-size: @fos-basefont-size;
+	font-weight: 600;
+	padding: 0 10px 5px 10px;
+	margin: 0;
+	width: 100%;
+}
+.fos-header-action{
+	color: lighten(@fos-shadow-border, 70%) !important;
+	padding: 8px 0;
+	font-size: @fos-basefont-size;
+	float: left;
+	font-weight: 100;
+}
+.fos-header-action a i {
+	color: lighten(@fos-shadow-border, 70%) !important;
+	padding: 0 5px;
+	font-size: @fos-basefont-size + .4em;
+	text-decoration: none;
+}
+.fos-header-action a span {
+	color: lighten(@fos-shadow-border, 70%) !important;
+	padding: 0 5px;
+	text-decoration: none;
+	font-weight: 100;
+}
+.fos-header-action:hover a span, .fos-header-action:hover a span i{
+	color: @fos-theme-color !important;
+	text-decoration: none;
+}
+.fos-header-action a:hover {
+	color: @fos-theme-color !important;
+	text-decoration: none;
+}
+.fos-search-items .fos-search-items-footer{
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: lighten(@fos-shadow-border, 90%) !important;
+	padding: 5px;
+	width: 100%;
+}
+.fos-job-response{
+	height: 210px;
+	border: 1px solid lighten(@fos-app-content-color, 80%);
+	padding: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+}
+.fos-job-response .fos-job-response-header{
+	font-size: @fos-basefont-size + 0.3em;
+	text-decoration: underline;
+	font-weight: 600;
+	line-height: 1;
+	padding: 0;
+	margin: 0 0 10px 15px;
+}
+.fos-job-response:hover{
+	border: 1px solid @fos-theme-color;
+}
+.fos-job-response .fos-search-items-footer{
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: lighten(@fos-shadow-border, 90%) !important;
+	padding: 5px;
+	width: 100%;
+}
+.fos-product-date-info{
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	font-size: @fos-basefont-size - 0.1em;
+	font-weight: 600;
+}
+.fos-businesscard-user-profile{
+	width: 100%;
+	padding: 5px 5px 0 5px;
+}
+.fos-businesscard-user-profile .fos-card-company-name{
+	font-size: @fos-basefont-size + 0.4em;
+	color: lighten(@fos-app-content-color, 40%);
+	font-weight: 600;
+	font-style: italic;
+	line-height: 1;
+}
+.fos-businesscard-user-profile .fos-card-sub-heading{
+	font-size: @fos-basefont-size + 0.2em;
+	color: lighten(@fos-app-content-color, 40%);
+	font-weight: 600;
+	line-height: 1;
+	padding: 0 0 5px 0;
+	margin: 0;
+}
+.fos-businesscard-user-profile .fos-card-sub-heading-3{
+	font-size: @fos-basefont-size + 0.1em;
+	color: lighten(@fos-app-content-color, 50%);
+	font-weight: 400;
+	line-height: .7;
+	padding: 0 0 5px 0;
+	margin: 0;
+}
+.fos-businesscard-user-profile .fos-card-sub-heading-4{
+	font-size: @fos-basefont-size + 0.1em;
+	color: lighten(@fos-app-content-color, 50%);
+	font-weight: 600;
+	font-style: italic;
+	line-height: 1;
+	padding: 0;
+}
+.fos-sector-counter{
+	width: 30px !important;
+	height: 30px !important;
+	color: lighten(@fos-app-content-color, 100%) !important;
+	background: @fos-theme-color;
+	padding: 5px;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 30px !important;
+}
+.fos-businesscard-sector-list{
+	font-weight: 500;
+	font-size: @fos-basefont-size + 0.2em;
+}
+.fos-businesscard-tabs{
+	border: 0 !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+}
+/*=================================================================*/
+//Customized CSS for Plugins Used*/
+//-----------------------Form Progress steps -----------------------------
+.wizard, .tabcontrol
+{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.wizard a, .tabcontrol a
+{
+    outline: 0;
+}
+.wizard ul, .tabcontrol ul
+{
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
+.wizard ul > li, .tabcontrol ul > li
+{
+    display: block;
+    padding: 0;
+}
+.wizard > .steps .current-info, .tabcontrol > .steps .current-info
+{
+    position: absolute;
+    left: -999em;
+}
+.wizard > .content > .title, .tabcontrol > .content > .title
+{
+    position: absolute;
+    left: -999em;
+}
+.wizard > .steps
+{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.wizard.vertical > .steps
+{
+    display: inline;
+    float: left;
+    width: 30%;
+}
+.wizard > .steps .number
+{
+    font-size: 2em;
+    padding: 5px;
+    background: lighten(@fos-theme-color, 35%);
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+.wizard > .steps > ul > li
+{
+    width: 25%;
+}
+.wizard > .steps > ul > li, .wizard > .actions > ul > li
+{
+    float: left;
+}
+.wizard.vertical > .steps > ul > li
+{
+    float: none;
+    width: 100%;
+}
+.wizard > .steps a, .wizard > .steps a:hover, .wizard > .steps a:active
+{
+    display: block;
+    width: auto;
+    margin: 0 0.5em 0.5em;
+    padding: 1em 1em;
+    text-decoration: none;
+    background: lighten(@fos-app-content-color, 90%);
+    color: @fos-theme-color;
+    border-radius: 0;
+}
+.wizard > .steps .disabled a, .wizard > .steps .disabled a:hover, .wizard > .steps .disabled a:active
+{
+    background: lighten(@fos-app-content-color, 90%);
+    color: @fos-theme-color !important;
+    cursor: default;
+}
+.wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active
+{
+    background: @fos-theme-color;
+    color: lighten(@fos-app-content-color, 100%);
+    cursor: default;
+}
+.wizard > .steps .done a, .wizard > .steps .done a:hover, .wizard > .steps .done a:active
+{
+    background: lighten(@fos-theme-color, 40%);
+    color: lighten(@fos-app-content-color, 100%);
+}
+.wizard > .steps .error a, .wizard > .steps .error a:hover, .wizard > .steps .error a:active
+{
+    background: darken(@fos-theme-color, 20%);
+    color: lighten(@fos-app-content-color, 100%);
+}
+.wizard > .content
+{
+    background: lighten(@fos-shadow-border, 100%);
+    display: block;
+    margin: 0.5em;
+    min-height: 35em;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    border-radius: 0;
+}
+.wizard.vertical > .content
+{
+    display: inline;
+    float: left;
+    margin: 0 2.5% 0.5em 2.5%;
+    width: 65%;
+}
+.wizard > .content > .body
+{
+    float: left;
+    width: 100%;
+    padding: 2.5%;
+}
+.wizard > .content > .body ul
+{
+    list-style: disc !important;
+}
+.wizard > .content > .body ul > li
+{
+    display: list-item;
+}
+.wizard > .content > .body > iframe
+{
+    border: 0 none;
+    width: 100%;
+    height: 100%;
+}
+.wizard > .content > .body input
+{
+    display: block;
+    border: 1px solid #ccc;
+}
+.wizard > .content > .body input[type="checkbox"]
+{
+    display: inline-block;
+}
+.wizard > .content > .body input.error
+{
+    background: rgb(251, 227, 228);
+    border: 1px solid #fbc2c4;
+    color: #8a1f11;
+}
+.wizard > .content > .body label
+{
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+.wizard > .content > .body label.error
+{
+    color: #8a1f11;
+    display: inline-block;
+    margin-left: 1.5em;
+}
+.wizard > .actions
+{
+    position: relative;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+.wizard.vertical > .actions
+{
+    display: inline;
+    float: right;
+    margin: 0 2.5%;
+    width: 95%;
+}
+.wizard > .actions > ul
+{
+    display: inline-block;
+    text-align: right;
+}
+.wizard > .actions > ul > li
+{
+    margin: 0 0.5em;
+}
+.wizard.vertical > .actions > ul > li
+{
+    margin: 0 0 0 1em;
+}
+.wizard > .actions a, .wizard > .actions a:hover, .wizard > .actions a:active
+{
+    background: @fos-theme-color;
+    color: lighten(@fos-app-content-color, 90%);
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+.wizard > .actions .disabled a, .wizard > .actions .disabled a:hover, .wizard > .actions .disabled a:active
+{
+    background: lighten(@fos-theme-color, 30%);
+    color: lighten(@fos-app-content-color, 100%);
+}
+.tabcontrol > .steps
+{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.tabcontrol > .steps > ul
+{
+    position: relative;
+    margin: 6px 0 0 0;
+    top: 1px;
+    z-index: 1;
+}
+.tabcontrol > .steps > ul > li
+{
+    float: left;
+    margin: 5px 2px 0 0;
+    padding: 1px;
+    background: lighten(@fos-app-content-color, 90%); 
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.tabcontrol > .steps > ul > li:hover
+{
+    background: lighten(@fos-app-content-color, 100%);
+    border: 1px solid lighten(@fos-app-content-color, 80%);
+    padding: 0;
+}
+.tabcontrol > .steps > ul > li.current
+{
+    background: @fos-theme-color;
+    border: 1px solid #bbb;
+    border-bottom: 0 none;
+    padding: 0 0 1px 0;
+    margin-top: 0;
+}
+.tabcontrol > .steps > ul > li > a
+{
+    color: @fos-theme-color !important;
+    display: inline-block;
+    border: 0 none;
+    margin: 0;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+.tabcontrol > .steps > ul > li > a:hover
+{
+    text-decoration: none;
+}
+.tabcontrol > .steps > ul > li.current > a
+{
+    padding: 15px 30px 10px 30px;
+}
+.tabcontrol > .content
+{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+    border-top: 1px solid #bbb;
+    padding-top: 20px;
+}
+.tabcontrol > .content > .body
+{
+    float: left;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+}
+.tabcontrol > .content > .body ul
+{
+    list-style: disc !important;
+}
+.tabcontrol > .content > .body ul > li
+{
+    display: list-item;
+}
+/* Error pages*/
+.fos-error-header{
+	font-size: @fos-basefont-size + 8em;
+    color: @fos-theme-color;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 5px 5px 5px @fos-shadow-border;
+}
+.fos-error-heading{
+	font-size: @fos-basefont-size + 2em;
+    color: lighten(@fos-app-content-color, 50%);
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+.fos-error-sub-heading{
+	font-size: @fos-basefont-size + 1em;
+    color: lighten(@fos-app-content-color, 60%);
+    font-weight: 600;
+    width: 80%;
+    line-height: 1.5;
+    text-align: center;
+}
+.fos-error-desc{
+	font-size: @fos-basefont-size - 0.1 em;
+    color: lighten(@fos-app-content-color, 60%);
+    width: 80%;
+    line-height: 1.5;
+    text-align: center;
+}
+.fos-error-container{
+	width: 300px;
+	height: 300px;
+	border-radius: 300px;
+	background:  @fos-theme-color;
+	margin: 0 auto;
+	padding: 10px;
+}
+.fos-error-image-wrapper{
+	position: relative;
+	width: 280px;
+	height: 280px;
+	border-radius: 280px;
+	background:  lighten(@fos-theme-color, 100%);
+	padding: 15%; 
+}
+.top-arrow-error{
+	position: absolute;
+	top: -30px;
+	left: 44%;
+	width: 0;
+	height: 0;
+	z-index: -10;
+	border-style: solid;
+	border-width: 0 50px 50px 50px;
+	border-color: transparent transparent @fos-theme-color transparent;
+}
+.fos-error-400{
+	width: 180px;
+	height: 180px;
+	margin: 0 auto;
+	background: url('@{fos-images}fos-svg-icons/400.svg') no-repeat;
+}
+.fos-error-401{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background: url('@{fos-images}fos-svg-icons/401.svg') no-repeat;
+}
+.fos-error-403{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background: url('@{fos-images}fos-svg-icons/401.svg') no-repeat;
+}
+.fos-error-404{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background: url('@{fos-images}fos-svg-icons/404.svg') no-repeat;
+}
+.fos-error-500{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background: url('@{fos-images}fos-svg-icons/500.svg') no-repeat;
+}
+.fos-error-502{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background: url('@{fos-images}fos-svg-icons/502.svg') no-repeat;
+}
+/* Notification listing and image zoomer */
+.fos-btn-position-ep{
+	position: absolute;
+	top: 30px;
+	left: 0;
+}
+.fos-left-arrow{
+	position: absolute;
+	top: 5%;
+	right: -20px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 0 20px 20px;
+	border-color: transparent transparent transparent lighten(@fos-shadow-border, 80%);
+}
+.fos-product-zoom-icon-bc{
+	z-index: 500;
+	position: absolute;
+	right: 0;
+	top: 5px;
+	width: 500px;
+	height: 350px;
+	border: 5px solid lighten(@fos-shadow-border, 80%);
+	border-radius: 10px;
+	background: lighten(@fos-shadow-border, 100%);
+	display: none;
+	box-shadow: -5px 5px 8px lighten(@fos-shadow-border, 40%);
+}
+.fos-product-zoom-icon-bc img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+.fos-campaign-container{
+	padding: 5px;
+}
+.fos-campaign-wrapper{
+	width: 100%;
+	min-height: 150px;
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+	padding: 5px 5px 35px 5px;
+}
+.fos-campaign-wrapper .fos-campaign-footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+	border-radius: 0;
+	background: @fos-tab-menu-bg;
+	width: 100%;
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-compaign-heading-1{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size + .5em;
+	text-align: left;
+	padding-bottom: 10px;
+	line-height: 1.5;
+	border-bottom: 1px dashed lighten(@fos-shadow-border, 80%);
+}
+.fos-campaign-wrapper .fos-compaign-heading-2{
+	color: @fos-theme-color;
+	font-size: @fos-basefont-size + .4em;
+	text-align: left;
+	margin: 0;
+	padding: 10px 0;
+}
+.fos-campaign-wrapper .fos-campaign-note{
+	color: lighten(@fos-app-content-color, 40%);
+	font-size: @fos-basefont-size;
+	text-align: center;
+	padding-bottom: 10px;
+}
+.fos-campaign-wrapper .fos-campaign-note:before{
+	content: '(';
+	padding-right: 5px;
+}
+
+.fos-campaign-wrapper .fos-campaign-note:after{
+	content: ')';
+	padding-left: 5px;
+}
+.fos-campaign-wrapper .fos-cell-information{
+	font-size: @fos-basefont-size;
+}
+.fos-compaign-footer-info{
+	font-size: @fos-basefont-size - 0.1em;
+	color: lighten(@fos-app-content-color, 40%);
+	text-align: left;
+}
+.fos-notification-items{
+	min-height: 20px;
+	width: 100%;
+	padding: 0 10px 0 10px;
+	border-bottom: 1px solid lighten(@fos-shadow-border, 80%);
+	position: relative;
+	margin: 5px 0;
+	overflow: hidden;
+}
+.fos-notification-listing-heading{
+	/*white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;*/
+	width: 75%;
+	float: left;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	color: lighten(@fos-app-content-color, 45%);
+	margin-bottom: 5px;
+}
+.fos-notification-items:first-child{
+	border-top: 1px solid lighten(@fos-shadow-border, 80%);
+}
+.fos-notification-item-footer{
+	width: 75%;
+	float: left;
+	padding: 5px 0;
+	font-size: @fos-basefont-size - 0.1em;
+	font-weight: 700;
+}
+.fos-notification-item-action{
+	position: absolute;
+	right: 10px;
+	top: 5%;
+	color: lighten(@fos-app-content-color, 50%);
+	font-size: @fos-basefont-size + 0.5em;
+  	opacity: 0;
+}
+.fos-notification-item-action .fos-notification-item-action-links{
+	color: lighten(@fos-app-content-color, 50%);
+	display: block;
+}
+.fos-notification-item-action .fos-notification-item-action-links:hover{
+	cursor: pointer;
+	color: @fos-theme-color;
+}
+.fos-notification-items:hover{
+	background: lighten(@fos-shadow-border, 90%);
+	cursor: pointer;
+}
+.fos-notification-items:hover .fos-notification-item-action{
+	opacity: 1;
+}
+.fos-notification-icon{
+	width: 50px;
+	float: left;
+	height: 50px;
+	border-radius: 50%;
+	padding: 6px;
+	text-align: center;
+	background: lighten(@fos-shadow-border, 90%);
+	color: lighten(@fos-app-content-color, 100%);
+}
+.fos-notification-items:hover .fos-notification-icon{
+	background: lighten(@fos-shadow-border, 80%);
+}
+.fos-edit-jobseeker{
+	margin: -10px -15px 0 -15px !important;
+}
+.fos-edit-jobseeker .tab-content{
+	margin-right: 4px !important;
+}
+/*Subscription module*/
+.fos-subscription{
+	width: 90%;
+	min-height: 100px;
+	padding: 10px;
+	box-shadow: 5px 5px 10px lighten(@fos-shadow-border, 75%);
+	border: 1px solid lighten(@fos-shadow-border, 80%);
+	margin: 0 auto 10px auto;
+	overflow: hidden;
+}
+.fos-subscription:hover{
+	box-shadow: 5px 5px 10px lighten(@fos-theme-color, 40%);
+}
+.fos-subscription label{
+	font-weight: initial !important;
+}
+.fos-subscription .fos-package-type{
+	text-align: center;
+	font-size: @fos-basefont-size + 0.5em;
+	font-weight: 600;
+	margin: 0;
+	padding: 5px;
+	color: lighten(@fos-base-font-color, 40%);
+}
+.fos-package-icon-wrapper{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	border: 2px solid @fos-theme-color;
+	padding: 5px;
+	margin: 0 auto;
+}
+.fos-package-icon-wrapper .fos-package-icon{
+	width: 85px;
+	height: 85px;
+	border-radius: 85px;
+	background: @fos-theme-color;
+	padding: 18px;
+}
+.fos-package-icon-wrapper .fos-package-icon .fos-basic{
+	width: 50px;
+	height: 50px;
+	background: url('@{fos-images}fos-svg-icons/basic.svg') no-repeat;
+}
+.fos-package-icon-wrapper .fos-package-icon .fos-premium{
+	width: 50px;
+	height: 50px;
+	background: url('@{fos-images}fos-svg-icons/premium.svg') no-repeat;
+}
+.fos-package-icon-wrapper .fos-package-icon .fos-custom{
+	width: 50px;
+	height:50px;
+	background: url('@{fos-images}fos-svg-icons/custom.svg') no-repeat;
+}
+.fos-subscription-seperator{
+	width: 60%; 
+	margin: 0 auto;
+	height: 1px; 
+	color: lighten(@fos-shadow-border, 85%); 
+	background: lighten(@fos-shadow-border, 85%); 
+	border: none;
+}
+.fos-package-feature-heading{
+	font-weight: 500;
+	font-size: @fos-basefont-size + 0.2em;
+	color: lighten(@fos-shadow-border, 40%);
+	padding: 10px 0; 
+}
+.fos-package-feature{
+	list-style: none;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+.fos-package-feature .fos-package-feature-list{
+	padding: 5px 0;
+}
+.fos-package-feature .fos-package-feature-list strong{
+	color: @fos-theme-color;
+	font-weight: initial;
+}
+.fos-package-feature .fos-package-feature-list:before{
+	font-family: FontAwesome;
+  	content: '\f058';
+  	font-size: @fos-basefont-size + 0.2em;
+  	color: @fos-theme-color;
+  	padding-right: 5px;
+  	margin-left: -25px;
+}
+.fos-package{
+	font-size: @fos-basefont-size - 0.1em;
+	font-weight: 600;
+}
+.list-group .list-group-item .fos-topup-icon{
+	width: 40px;
+	height:40px;
+	margin-right: 15px;
+}
+/*.list-group .list-group-item .fos-combo{
+	width: 30px;
+	height:30px;
+	background: url('@{fos-images}fos-svg-icons/combo.svg') no-repeat;
+	background-size: cover;
+}
+.list-group .list-group-item .fos-job_posting{
+	width: 30px;
+	height:30px;
+	background: url('@{fos-images}fos-svg-icons/job_posting.svg') no-repeat;
+}
+.list-group .list-group-item .fos-cv_search{
+	width: 30px;
+	height:30px;
+	background: url('@{fos-images}fos-svg-icons/cv_search.svg') no-repeat;
+	background-size: cover;
+}*/
+.fos-pkg-price{
+	background: @fos-theme-color;
+	color: lighten(@fos-app-content-color, 100%);
+	padding: 4px 0;
+	line-height: 1.5;
+	text-align: center;
+	border-radius: 5px;
+}
+.fos-pkg-header{
+	background: lighten(@fos-shadow-border, 80%);
+	position: relative;
+	padding: 2px 10px;
+}
+.fos-pkg-header .fos-right-arrow{
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	width: 0;
+	height: 0;
+	border-left: 10px solid lighten(@fos-shadow-border, 80%);
+	position: absolute;
+	top: 0;
+	right: -10px;
+}
+.fos-pkg-header .fos-right-arrow:before{
+	font-family: FontAwesome;
+  	content: '\f111';
+	color: lighten(@fos-app-content-color, 100%);
+	z-index: 100;
+	position: absolute;
+	top: -7px;
+	font-size: @fos-basefont-size - 0.2em;
+	left: -20px;
+}
+.fos-package-row-spacing{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+/*=================================================================
+	Media queries for Device compatibility
+-------------------Smartphones (portrait and landscape) ----------- 
+*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */	
+}
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen 
+and (max-width : 1366px) {
+/* Styles */
+	.container{
+		width: 100%;
+	}
+}
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+
+.fos-sub-usertype i{
+	paddig: 0 5px;
+}
+.fos-sub-usertype i:after{
+	content: ',';
+}
+.fos-sub-usertype i:last-child:after{
+	content: '';
+}
+
+.fos-payment{
+	margin-top: 10%;
+	border: 1px solid @fos-theme-color;
+}
+
+.fos-crm-level{
+	background: lighten(@fos-shadow-border, 100%) !important;
+	margin-top: 0 !important;
+}
+
+.fos-collapse-menu .active .fos-level-2{
+	background-color: lighten(@fos-shadow-border, 100%) !important;
+}
+.fos-collapse-menu .active .fos-collapse-btn-text{
+	color: @fos-theme-color !important;
+}
+.fos-collapse-btn-text-level2{
+	font-size: @fos-basefont-size - 0.4em !important;
+	font-weight: 600;
+}
+.fos-crm-hoz-menu{
+	height: 70px;
+	width: 100%;
+	overflow: hidden;
+	z-index: 1;
+	position: relative;
+	box-shadow: 0 3px 5px lighten(@fos-shadow-border, 70%); 
+}
+.fos-crm-hoz-menu-items{
+	position: relative;
+}
+.fos-crm-hoz-menu-items a{
+	height: 70px;
+	width: 80px;
+	float: left;
+	overflow: hidden;
+}
+.fos-crm-hoz-menu-items a:hover, .fos-crm-hoz-menu-items a.active {
+	background: lighten(@fos-theme-color, 45%);
+}
+.fos-crm-hoz-menu-items:hover .fos-crm-item-text, .fos-crm-hoz-menu-items a.active .fos-crm-item-text{
+	color: @fos-theme-color;
+}
+.fos-crm-item-icon{
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 20%;
+}
+.fos-crm-item-text{
+	width: 100%;
+	text-align: center;
+	color: lighten(@fos-base-font-color, 60%);
+	text-transform: uppercase;
+	font-size: @fos-basefont-size - 0.1em;
+}
+.fos-crm-item-1{
+	background: url('@{fos-images}fos-svg-icons/crm_item_1.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-item-2{
+	background: url('@{fos-images}fos-svg-icons/crm_item_2.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-item-3{
+	background: url('@{fos-images}fos-svg-icons/crm_item_3.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-item-4{
+	background: url('@{fos-images}fos-svg-icons/crm_item_4.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-item-5{
+	background: url('@{fos-images}fos-svg-icons/crm_item_5.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-item-6{
+	background: url('@{fos-images}fos-svg-icons/crm_item_6.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-item-7{
+	background: url('@{fos-images}fos-svg-icons/crm_item_7.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+
+/* Active*/
+.fos-crm-hoz-menu-items a:hover .fos-crm-item-1, .fos-crm-hoz-menu-items a.active .fos-crm-item-1{
+	background: url('@{fos-images}fos-svg-icons/crm_item_1_active.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-hoz-menu-items a:hover .fos-crm-item-2, .fos-crm-hoz-menu-items a.active .fos-crm-item-2{
+	background: url('@{fos-images}fos-svg-icons/crm_item_2_active.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-hoz-menu-items a:hover .fos-crm-item-3, .fos-crm-hoz-menu-items a.active .fos-crm-item-3{
+	background: url('@{fos-images}fos-svg-icons/crm_item_3_active.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-hoz-menu-items a:hover .fos-crm-item-4, .fos-crm-hoz-menu-items a.active .fos-crm-item-4{
+	background: url('@{fos-images}fos-svg-icons/crm_item_4_active.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.fos-crm-hoz-menu-items a:hover .fos-crm-item-5, .fos-crm-hoz-menu-items a.active .fos-crm-item-5{
+	background: url('@{fos-images}fos-svg-icons/crm_item_5_active.svg') no-repeat;	
+	width: 100%;
+	margin: auto auto;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.popover-content{
+	padding: 0;
+}
+.fos-popover-items{
+	padding: 15px 5px 0 5px;
+	min-width: 200px;
+}
+.fos-popover-items li{
+	padding: 5px 5px 5px 10px;
+	list-style: none;
+	height: 40px;
+}
+.fos-popover-items li span{
+	float: left;
+	height: 25px;
+	width: 25px;
+	padding: 2% 2% 5% 5%;
+}
+.fos-popover-items li:hover{
+	background: lighten(@fos-theme-color, 45%);
+}
+.fos-popover-items li:hover span.fos-crm-item-text{
+	font-weight: 600;
+	color: @fos-theme-color;
+	cursor: pointer;
+}
+
+
+
+/*Expanding Search*/
+.fos-expanding-search{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	-webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.fos-expanding-search:hover{
+	cursor: pointer;
+}
+
+.search-form .form-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding: 15px 60px 0 10px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 400px;
+  border-radius: 0 50px 50px 0;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 1;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: @fos-theme-color;
+  left: initial;
+  font-size: 20px;
+}
+.fos-ribbon-logo{
+	height: 45px;
+	padding: 0;
+	margin: -5px;
+	display: none;
+	background: url('@{fos-images}fos-svg-icons/fos-logo-white.svg') no-repeat;
+}
+.form-control-feedback{
+	cursor: pointer;
+}
+
+.tooltip-inner {
+  max-width: @tooltip-max-width;
+  min-width: @tooltip-min-width;
+  padding: 5px;
+  background-color: darken(@fos-theme-color, 80%);
+  border-radius: 0;
+  font-size: @fos-basefont-size - 0.3em;
+}
+.tooltip {
+  &.top .tooltip-arrow {
+    border-top-color: darken(@fos-theme-color, 80%);
+  }
+  &.top-left .tooltip-arrow {
+    border-top-color: darken(@fos-theme-color, 80%);
+  }
+  &.top-right .tooltip-arrow {
+    border-top-color: darken(@fos-theme-color, 80%);
+  }
+  &.right .tooltip-arrow {
+    border-right-color: darken(@fos-theme-color, 80%);
+  }
+  &.left .tooltip-arrow {
+    border-left-color: darken(@fos-theme-color, 80%);
+  }
+  &.bottom .tooltip-arrow {
+    border-bottom-color: darken(@fos-theme-color, 80%);
+  }
+  &.bottom-left .tooltip-arrow {
+    border-bottom-color: darken(@fos-theme-color, 80%);
+  }
+  &.bottom-right .tooltip-arrow {
+    border-bottom-color: darken(@fos-theme-color, 80%);
+  }
+}
+
+
+
+
+
+

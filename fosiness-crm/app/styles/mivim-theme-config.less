@@ -1,0 +1,70 @@
+/*=====================================================================================================
+Author		: MIVIM 
+Date Created: 15-01-2015 10:00 AM
+Project		: Foosiness 
+=====================================================================================================*/
+
+//Google CDN Fonts
+	@import url(http://fonts.googleapis.com/css?family=Lato);
+
+//Colour Definitions
+	@fos-theme-color			:	#b54927; // Theme Base Colour b54927, D14827
+	@fos-link-colors			:	#055bd1;
+	@fos-black					:	#000000;	// Dark Black
+	@fos-parrot-green			:	#77c551;	// Parrot Green colour for Video Demo section
+	@fos-green 					:	#3CbC75;	// Green with white tinch 
+	@fos-dialogs-bg				:	#fff;
+	@fos-base-font-color		:	#000;		// Base font Color
+	@fos-shadow-border			:	#000;
+	@fos-notification-bg 		:	#64b045;
+	@fos-tab-menu-bg			:	#EFE9E8;
+	@fos-available				:	#0b7e05;
+	@fos-busy					:	@fos-theme-color;
+	@fos-offline				:	#808080;
+	@fos-list-item-active		:	#e0ceca;
+	@fos-app-content-color		:	#000;
+	@fos-premium-color			:	#2faae5;
+	@fos-move-color				:	#eaca1b;
+
+//---------------------------------------------------------------------------------------------------------------------------
+// DATA URIs for Vector Image Generation
+
+	@carousel-button-pattern	: 	~'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAEElEQVQImWP4DwUMyIAGggAbzCfZ9oD9ywAAAABJRU5ErkJggg==';
+	@fos-indiv-user				:	~'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBmaWxsPSIjRjdGNUY1IiBkPSJNMjIuNyw4OS40Yy0xLjItMC40LTIuMy0wLjktMy4xLTEuOWMtMC44LTEtMS4yLTItMS4yLTMuM2MwLTcuMywwLTE0LjYsMC0yMS45YzAtNC43LDQtOS4yLDguNy05LjkNCgkJCWMwLjgtMC4xLDEuNy0wLjIsMi41LTAuMmMzLjEsMCw2LjIsMCw5LjIsMGMwLjYsMCwxLDAuMiwxLjMsMC43YzMuMiw0LjgsNi40LDkuNiw5LjYsMTQuNGMwLjIsMC4yLDAuMywwLjUsMC42LDAuOA0KCQkJYzAuMi0wLjMsMC40LTAuNSwwLjYtMC44YzMuMi00LjgsNi40LTkuNiw5LjYtMTQuNGMwLjMtMC41LDAuNi0wLjcsMS4yLTAuN2MzLjMsMCw2LjUsMCw5LjgsMGM2LjEsMCwxMC43LDQuNywxMC43LDEwLjcNCgkJCWMwLDYuOS0wLjEsMTMuOCwwLDIwLjdjMCwyLjktMS44LDUuMi00LjEsNS43Yy0wLjEsMC0wLjEsMC4xLTAuMiwwLjFDNTkuNSw4OS40LDQxLjEsODkuNCwyMi43LDg5LjR6Ii8+DQoJCTxwYXRoIGZpbGw9IiNGN0Y1RjUiIGQ9Ik01Mi4yLDQuNEM1My42LDQuNyw1NSw1LDU2LjQsNS41YzQuOSwxLjksOC4zLDUuNCwxMC40LDEwLjFjMy4zLDcuMywzLDE0LjUtMC44LDIxLjUNCgkJCWMtMi41LDQuNi02LjMsNy44LTExLjQsOS4yQzQ5LDQ3LjcsNDQsNDYuNSwzOS42LDQyLjljLTQuNi0zLjctNy04LjctNy43LTE0LjZjLTAuNy01LjgsMC41LTExLjEsMy44LTE1LjljMy00LjMsNy03LjEsMTIuMy03LjkNCgkJCWMwLjIsMCwwLjMtMC4xLDAuNS0wLjJDNDkuNyw0LjQsNTAuOSw0LjQsNTIuMiw0LjR6IE0zNy45LDIzLjljLTAuMSwwLjItMC4yLDAuMy0wLjIsMC41Yy0xLjEsMy41LTAuNyw2LjksMSwxMC4xDQoJCQljMC40LDAuNywwLjcsMC45LDEuNCwwLjZjMy4yLTEuMyw2LjQtMi42LDkuNi0zLjhjMC40LTAuMSwwLjktMC4xLDEuMywwYzEuOCwwLjcsMy42LDEuNCw1LjUsMi4yYzEuNywwLjcsMy4zLDEuMyw1LDINCgkJCWM0LjUtNi42LDEuNi0xNi4yLTUuOC0xOS4xYy0yLDMuNC00LjgsNS44LTguMyw3LjNDNDQuMywyNC45LDQxLjEsMjUuNiwzNy45LDIzLjl6IE01NS42LDM2LjNjLTMuNSwwLTcsMC0xMC41LDANCgkJCWMwLjEsMywyLjUsNS4zLDUuMyw1LjNDNTMuMyw0MS41LDU1LjUsMzkuMiw1NS42LDM2LjN6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=';
+	@fos-corp-user				:	~'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0yOC4xLDQ3LjZjMC0wLjksMC0xLjcsMC0yLjdjLTMuNCwwLTYuOCwwLTEwLjIsMA0KCQljMCwwLjksMCwxLjgsMCwyLjdjLTMuNywwLjEtNy40LDAuNS0xMC40LTIuM2MtMS42LTEuNS0yLjctMy4zLTIuNi01LjdjMC4xLTQuOSwwLTkuOCwwLTE0LjdjMC0wLjQsMC0wLjksMC0xLjQNCgkJYzkuOSwwLDE5LjgsMCwyOS44LDBjMC0xLjksMC0zLjYsMC01LjRjMC0zLjQsMC4yLTMuNiwzLjUtMy42YzcuOCwwLDE1LjcsMCwyMy41LDBjMS45LDAsMi41LDAuNSwyLjUsMi41YzAsMi4xLDAsNC4yLDAsNi40DQoJCWM5LjksMCwxOS42LDAsMjkuNSwwYzAsMC41LDAuMSwwLjksMC4xLDEuNGMwLDQuNy0wLjEsOS4zLDAsMTRjMC4xLDMuNC0yLjYsOC4xLTcuNCw4LjdjLTIuNywwLjQtNS41LDAuMS04LjQsMC4xDQoJCWMwLTAuOCwwLTEuNiwwLTIuN2MtMS44LDAtMy41LDAtNS4xLDBjLTEuNiwwLTMuMywwLTUsMGMwLDAuOSwwLDEuOCwwLDIuOEM1NC41LDQ3LjYsNDEuNCw0Ny42LDI4LjEsNDcuNnogTTM4LjEsMjMuMw0KCQljNy42LDAsMTUsMCwyMi41LDBjMC0xLjgsMC0zLjUsMC01LjNjLTcuNSwwLTE1LDAtMjIuNSwwQzM4LjEsMTkuOCwzOC4xLDIxLjUsMzguMSwyMy4zeiIvPg0KCTxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik02Ny44LDUwYzAsMi40LDAsNC43LDAsNy4xYzMuNCwwLDYuNywwLDEwLjIsMA0KCQljMC0yLjQsMC00LjcsMC03LjFjMi4yLDAsNC4zLDAsNi40LDBjMy4xLDAsNS45LTEsOC4yLTMuMmMwLjQtMC4zLDAuNy0wLjcsMS4yLTEuMmMwLDEzLjcsMCwyNy4yLDAsNDAuOGMtMjkuNiwwLTU5LjEsMC04OC43LDANCgkJYzAtMTMuNCwwLTI2LjcsMC00MC40YzMuNiw0LjEsOC4xLDQuMiwxMi45LDMuOWMwLDIuNSwwLDQuOCwwLDcuMmMzLjQsMCw2LjcsMCwxMC4yLDBjMC0yLjMsMC00LjcsMC03LjFDNDEuMyw1MCw1NC40LDUwLDY3LjgsNTB6DQoJCSIvPg0KPC9nPg0KPC9zdmc+DQo=';
+
+/* DATA URI ends here */
+//---------------------------------------------------------------------------------------------------------------------------
+
+//RBGA Colour value thumb flip navigation
+	@fos-flip-red				:	0;		// Color value for red
+	@fos-flip-green				:	0;		// Color value for green
+	@fos-flip-blue				:	0;		// Color value for blue
+	@fos-flip-alpha				:	0.5;	// Opacity for the tab background
+
+//Font Family 
+	@fos-basefont-content 		:	Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	@fos-basefont-button 		:	Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	@fos-basefont-heading 		: 	Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+//Layout Width and height
+	@container-width			: 	1366px;
+
+//Image Path for images use in css
+	@fos-images 				: 	"../images/home-images-css/";
+
+//----------------------------------------------------------------------
+//Navigation Colour Scheme
+	@fos-topNav 				: 	@fos-black;
+	@fos-tabnavigation			:	@fos-black;
+//----------------------------------------------------------------------
+//Font-size settings
+	@fos-basefont-size 			: 	1em;
+
+//----------------------------------------------------------------------
+//App font Color
+	@fos-basefont-color			:	@fos-black;
+//----------------------------------------------------------------------
+//Bootstrap default falue overwrite
+	@tooltip-max-width			:	160px;
+	@tooltip-min-width			:	20px;
